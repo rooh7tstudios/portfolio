@@ -850,8 +850,10 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
     </a>
     <div class="chips" id="library-filters" style="margin-top:1.5rem;margin-bottom:0.9rem;">
       <button class="bfilter active" data-type="all">all</button>
-      <button class="bfilter" data-type="pdf">pdfs</button>
-      <button class="bfilter" data-type="note">notes</button>
+      <button class="bfilter" data-type="networking">networking</button>
+      <button class="bfilter" data-type="cybersecurity">cybersecurity</button>
+      <button class="bfilter" data-type="career">career</button>
+      <button class="bfilter" data-type="ai">ai</button>
     </div>
     <div class="cards" id="library-grid"></div>
     <div id="library-empty" class="rh-empty" style="display:none;margin-top:1rem">
@@ -869,7 +871,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
     <div class="book-tooltip-title" id="lib-title"></div>
     <div id="lib-pdf-wrap" style="display:none;margin-top:0.75rem;">
       <embed id="lib-pdf-embed" type="application/pdf" width="100%" height="420" style="border:1px solid var(--border);border-radius:var(--radius-sm);">
-      <a id="lib-pdf-download" href="#" target="_blank" class="goodreads-link" style="margin-top:0.6rem;">open in new tab →</a>
+      <a id="lib-pdf-download" href="#" download class="goodreads-link" style="margin-top:0.6rem;">download →</a>
     </div>
     <div id="lib-note-wrap" style="display:none;margin-top:0.75rem;font-size:0.82rem;color:var(--text-muted);line-height:1.75;white-space:pre-wrap;"></div>
   </div>
@@ -1310,7 +1312,7 @@ countUp();
     const grid=document.getElementById('library-grid');
     const empty=document.getElementById('library-empty');
     if(!grid)return;
-    const filtered=currentType==='all'?libraryItems:libraryItems.filter(i=>i.type===currentType);
+    const filtered=currentType==='all'?libraryItems:libraryItems.filter(i=>i.category===currentType);
     if(filtered.length===0){
       grid.innerHTML='';
       empty.style.display=libraryItems.length===0?'block':'none';
@@ -1319,7 +1321,7 @@ countUp();
     empty.style.display='none';
     grid.innerHTML=filtered.map(item=>{
       const idx=libraryItems.indexOf(item);
-      const tag=item.type==='pdf'?'PDF':'Note';
+      const tag=item.category?item.category:(item.type==='pdf'?'PDF':'Note');
       const meta=item.type==='pdf'&&item.size_kb?`${item.size_kb} KB`:'';
       return `<div class="card reveal visible" style="cursor:pointer" onclick="openLibraryItem(${idx})"><div class="card-title">${escapeHtml(item.title)}</div><p class="card-desc">${meta}</p><span class="card-tag">${tag}</span></div>`;
     }).join('');
