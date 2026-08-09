@@ -1358,6 +1358,16 @@ countUp();
     .then(r=>r.ok?r.json():[])
     .then(data=>{libraryItems=data;renderLibrary();if(typeof ScrollTrigger!=='undefined')ScrollTrigger.refresh();})
     .catch(()=>{renderLibrary();});
+
+  document.addEventListener('click',function(e){
+    var link=e.target.closest('a[onclick*="resourcehub"]');
+    if(link){
+      setTimeout(function(){
+        document.querySelectorAll('#library-grid .card').forEach(function(c){c.style.opacity='1';c.style.transform='none';});
+        if(typeof ScrollTrigger!=='undefined')ScrollTrigger.refresh();
+      },300);
+    }
+  },true);
 })();
 </script>
 <!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ab2da21cbba24a68b755ebfb50cec0f8"}'></script><!-- Cloudflare Pages Analytics --></body>
