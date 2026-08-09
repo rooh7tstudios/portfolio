@@ -1356,7 +1356,7 @@ countUp();
 
   fetch('/library.json')
     .then(r=>r.ok?r.json():[])
-    .then(data=>{libraryItems=data;renderLibrary();})
+    .then(data=>{libraryItems=data;renderLibrary();if(typeof ScrollTrigger!=='undefined')ScrollTrigger.refresh();})
     .catch(()=>{renderLibrary();});
 })();
 </script>
