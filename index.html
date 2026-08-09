@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="rohit raj rajana — network security engineer. building things, securing systems." />
+<meta name="description" content="rohit raj rajana â network security engineer. building things, securing systems." />
 <title>Rohit Raj Rajana</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -357,7 +357,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
 }
 @media(min-width:601px){.mob-bar{display:none}}
 
-/* ── PAGE BANNERS (parallax) ── */
+/* ââ PAGE BANNERS (parallax) ââ */
 .page-banner{width:100%;height:200px;background-size:cover;background-position:center;border-radius:var(--radius);margin-bottom:0;position:relative;overflow:hidden}
 .page-banner-img{position:absolute;inset:0;background-size:cover;background-position:center;will-change:transform}
 .page-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.35));border-radius:var(--radius);z-index:1}
@@ -373,63 +373,63 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
 .banner-resourcehub{background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1400&q=75')}
 .banner-contact{background-image:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1400&q=75')}
 
-/* ── CURSOR SPOTLIGHT ── */
+/* ââ CURSOR SPOTLIGHT ââ */
 .card-grid-spotlight{position:relative}
 .card-grid-spotlight::before{content:'';position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(193,101,47,0.06) 0%,transparent 70%);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);opacity:0;transition:opacity 0.3s;z-index:0}
 .card-grid-spotlight:hover::before{opacity:1}
 
-/* ── 3D TILT CARDS ── */
+/* ââ 3D TILT CARDS ââ */
 .tilt-card{transform-style:preserve-3d;perspective:800px;transition:transform 0.1s ease-out}
 .tilt-card .card-title,.tilt-card .card-desc,.tilt-card .card-tag{transform:translateZ(20px)}
 
-/* ── PULL QUOTE ── */
+/* ââ PULL QUOTE ââ */
 .pull-quote{font-family:var(--display);font-size:1.3rem;font-weight:500;color:var(--text);line-height:1.45;font-style:italic;border-left:3px solid var(--accent);padding:0.5rem 0 0.5rem 1.25rem;margin:1.5rem 0;letter-spacing:-0.01em}
 .pull-quote em{color:var(--accent);font-style:normal}
 
-/* ── SHIMMER EFFECT (store products) ── */
+/* ââ SHIMMER EFFECT (store products) ââ */
 .shimmer-card{position:relative;overflow:hidden}
 .shimmer-card::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.08),transparent);transform:skewX(-15deg);transition:none;pointer-events:none}
 .shimmer-card:hover::after{left:120%;transition:left 0.6s ease}
 [data-theme="light"] .shimmer-card::after{background:linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent)}
 
-/* ── FLOAT ANIMATION (book covers) ── */
+/* ââ FLOAT ANIMATION (book covers) ââ */
 .float-anim{animation:gentle-float 3s ease-in-out infinite alternate}
 @keyframes gentle-float{from{transform:translateY(0)}to{transform:translateY(-3px)}}
 @media(prefers-reduced-motion:reduce){.float-anim{animation:none}}
 
-/* ── BREATHING ANIMATION ── */
+/* ââ BREATHING ANIMATION ââ */
 .breathe{animation:breathe-pulse 3s ease-in-out infinite}
 @keyframes breathe-pulse{0%,100%{transform:scale(1);opacity:0.4}50%{transform:scale(1.05);opacity:0.6}}
 @media(prefers-reduced-motion:reduce){.breathe{animation:none}}
 
-/* ── TEASER PULSE ── */
+/* ââ TEASER PULSE ââ */
 .teaser-card{animation:teaser-border-pulse 3s ease-in-out infinite}
 @keyframes teaser-border-pulse{0%,100%{border-color:rgba(193,101,47,0.2)}50%{border-color:rgba(193,101,47,0.5)}}
 @media(prefers-reduced-motion:reduce){.teaser-card{animation:none}}
 
-/* ── MAGNETIC HOVER ── */
+/* ââ MAGNETIC HOVER ââ */
 .magnetic{transition:transform 0.3s cubic-bezier(0.23,1,0.32,1)}
 
-/* ── SOCIAL LINK SLIDE ── */
+/* ââ SOCIAL LINK SLIDE ââ */
 .social-slide td a{display:inline-block;transition:transform 0.2s ease,color 0.15s}
 .social-slide tr:hover td a{transform:translateX(4px);color:var(--accent)}
 
-/* ── TITLE REVEAL ── */
+/* ââ TITLE REVEAL ââ */
 .title-reveal{overflow:hidden}
 .title-reveal span{display:inline-block;transform:translateY(100%);opacity:0;transition:transform 0.5s cubic-bezier(0.16,1,0.3,1),opacity 0.5s ease}
 .title-reveal.revealed span{transform:translateY(0);opacity:1}
 
-/* ── LANG BAR ANIMATE ── */
+/* ââ LANG BAR ANIMATE ââ */
 .lang-fill{transition:width 1s cubic-bezier(0.16,1,0.3,1)}
 .lang-fill-initial{width:0 !important}
 
-/* ── TYPING EFFECT ── */
+/* ââ TYPING EFFECT ââ */
 .typewriter{overflow:hidden;white-space:nowrap;border-right:2px solid var(--accent);width:0;animation:typing 2s steps(35) 0.8s forwards,blink-caret 0.6s step-end infinite}
 @keyframes typing{from{width:0}to{width:100%}}
 @keyframes blink-caret{from,to{border-color:transparent}50%{border-color:var(--accent)}}
 @media(prefers-reduced-motion:reduce){.typewriter{width:100%;animation:none;border-right:none}}
 
-/* ── SECTION CHOREOGRAPHY ── */
+/* ââ SECTION CHOREOGRAPHY ââ */
 .section-choreo .section-label{opacity:0;transform:translateX(-12px)}
 .section-choreo h1,.section-choreo h2,.section-choreo .title-row{opacity:0;transform:translateY(20px)}
 .section-choreo p,.section-choreo .callout,.section-choreo .medium-callout{opacity:0;transform:translateY(16px)}
@@ -485,9 +485,9 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
   <div class="page-banner no-overlay" style="height:auto;aspect-ratio:3/2;max-height:450px"><div class="page-banner-img" style="background-image:url('grad-chicago.jpg');background-position:center center"></div></div>
   <div class="page-header">
     <h1 class="title-reveal" id="hero-title"><span style="transition-delay:0s">rohit</span> <span style="transition-delay:0.08s">raj</span> <span style="transition-delay:0.16s">rajana</span></h1>
-    <div style="font-family:var(--mono);font-size:0.68rem;color:var(--text-dim);letter-spacing:0.08em;margin:0.5rem 0 0.75rem;display:inline-block" class="typewriter">5+ yrs · 3 countries</div><br>
-    <code>network security engineer · germany</code>
-    <p style="margin-top:0.75rem">i secure networks for a living — firewalls, zero trust, cloud infrastructure, and the bits in between. 5+ years working across palo alto ngfw, cisco asa, aws, and enterprise security tooling.</p>
+    <div style="font-family:var(--mono);font-size:0.68rem;color:var(--text-dim);letter-spacing:0.08em;margin:0.5rem 0 0.75rem;display:inline-block" class="typewriter">5+ yrs Â· 3 countries</div><br>
+    <code>network security engineer Â· germany</code>
+    <p style="margin-top:0.75rem">i secure networks for a living â firewalls, zero trust, cloud infrastructure, and the bits in between. 5+ years working across palo alto ngfw, cisco asa, aws, and enterprise security tooling.</p>
     <p>outside of work i'm building homelab infrastructure, automating workflows with n8n, writing about applied ai in security engineering, and learning german.</p>
     <div class="nav-blocks reveal">
       <a class="nav-block" onclick="return showPage('work')">
@@ -523,21 +523,21 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
       <span class="age-display"><span style="color:var(--text-dim)">age </span><span id="age-whole">29</span><span id="age-decimal">.000000000</span></span>
     </div>
     <div class="pull-quote reveal">i didn't plan on becoming a network security engineer.</div>
-    <p>it started with a simple question: <em>how does all of this actually connect?</em> networks. systems. people. invisible threads, quietly carrying everything that matters. that curiosity pulled me in — and 5+ years later, i'm the one mapping the flow, spotting the weak links, and making sure things run the way they're supposed to… not the way attackers hope they will.</p>
-    <p>along the way, i earned a master's in management information systems from the university of illinois chicago, usa, and before that, a bachelor of technology in computer science from gitam university, visakhapatnam. i'm also ccna (cisco certified network associate) certified — part engineer, part "keeper of the blinking lights," making sure the digital world stays up, running, and a little less chaotic.</p>
+    <p>it started with a simple question: <em>how does all of this actually connect?</em> networks. systems. people. invisible threads, quietly carrying everything that matters. that curiosity pulled me in â and 5+ years later, i'm the one mapping the flow, spotting the weak links, and making sure things run the way they're supposed toâ¦ not the way attackers hope they will.</p>
+    <p>along the way, i earned a master's in management information systems from the university of illinois chicago, usa, and before that, a bachelor of technology in computer science from gitam university, visakhapatnam. i'm also ccna (cisco certified network associate) certified â part engineer, part "keeper of the blinking lights," making sure the digital world stays up, running, and a little less chaotic.</p>
     <p>but the real story? at my core, i'm driven by faith in god and curiosity. one keeps me grounded. the other keeps pulling me forward.</p>
     <p>so i build. i learn. i question things. i automate anything that dares to repeat itself. because if i've done it twice, it's already asking to be scripted.</p>
-    <p>somewhere between clean network diagrams and late-night troubleshooting, i share what actually works — no fluff, no theory for the sake of sounding smart.</p>
+    <p>somewhere between clean network diagrams and late-night troubleshooting, i share what actually works â no fluff, no theory for the sake of sounding smart.</p>
   </div>
   <div class="section">
     <span class="section-label">pursuits</span>
     <div class="pursuits-list">
-      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="security"><span class="pursuit-icon">🔐</span><span class="pursuit-name">network security</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:25%"></div></div><span class="pursuit-pct">25%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-security"><p>what started as curiosity about how packets move across networks became a full career. 5+ years deploying palo alto ngfw, cisco asa, arista switching, and zero trust architectures — measured against a 20-year career arc, still early days.</p></div></div>
-      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="automation"><span class="pursuit-icon">🤖</span><span class="pursuit-name">automation & ai</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:75%"></div></div><span class="pursuit-pct">75%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-automation"><p>if a task happens more than twice, i automate it — n8n is my primary tool. i've built pipelines for content scheduling, receipt processing, birthday messages, and more. the intersection of ai and security engineering is where i spend most of my thinking time these days.</p></div></div>
-      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="photography"><span class="pursuit-icon">📸</span><span class="pursuit-name">photography</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:45%"></div></div><span class="pursuit-pct">45%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-photography"><p>shooting with a sony alpha a6700. started with street photography and architecture. you can follow the photography work at <a href="https://www.instagram.com/travellin.soldier/" target="_blank" style="color:var(--accent);">@travellin.soldier →</a></p></div></div>
-      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="fitness"><span class="pursuit-icon">🏋️</span><span class="pursuit-name">fitness</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:60%"></div></div><span class="pursuit-pct">60%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-fitness"><p>training is a non-negotiable part of my week. mostly compound lifts — consistency over intensity.</p></div></div>
-      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="badminton"><span class="pursuit-icon">🏸</span><span class="pursuit-name">badminton</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:70%"></div></div><span class="pursuit-pct">70%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-badminton"><p>semifinalist in team doubles at UIC's 2024 intramural tournament. the only sport where i actually enjoy the competitive pressure.</p></div></div>
-      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="finance"><span class="pursuit-icon">💰</span><span class="pursuit-name">finance & investing</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:50%"></div></div><span class="pursuit-pct">50%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-finance"><p>long-term focused. investing in ucits etfs with german tax optimization in mind. heavily influenced by naval ravikant's philosophy on wealth creation: own equity, not time.</p></div></div>
+      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="security"><span class="pursuit-icon">ð</span><span class="pursuit-name">network security</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:25%"></div></div><span class="pursuit-pct">25%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-security"><p>what started as curiosity about how packets move across networks became a full career. 5+ years deploying palo alto ngfw, cisco asa, arista switching, and zero trust architectures â measured against a 20-year career arc, still early days.</p></div></div>
+      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="automation"><span class="pursuit-icon">ð¤</span><span class="pursuit-name">automation & ai</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:75%"></div></div><span class="pursuit-pct">75%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-automation"><p>if a task happens more than twice, i automate it â n8n is my primary tool. i've built pipelines for content scheduling, receipt processing, birthday messages, and more. the intersection of ai and security engineering is where i spend most of my thinking time these days.</p></div></div>
+      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="photography"><span class="pursuit-icon">ð¸</span><span class="pursuit-name">photography</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:45%"></div></div><span class="pursuit-pct">45%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-photography"><p>shooting with a sony alpha a6700. started with street photography and architecture. you can follow the photography work at <a href="https://www.instagram.com/travellin.soldier/" target="_blank" style="color:var(--accent);">@travellin.soldier â</a></p></div></div>
+      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="fitness"><span class="pursuit-icon">ðï¸</span><span class="pursuit-name">fitness</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:60%"></div></div><span class="pursuit-pct">60%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-fitness"><p>training is a non-negotiable part of my week. mostly compound lifts â consistency over intensity.</p></div></div>
+      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="badminton"><span class="pursuit-icon">ð¸</span><span class="pursuit-name">badminton</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:70%"></div></div><span class="pursuit-pct">70%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-badminton"><p>semifinalist in team doubles at UIC's 2024 intramural tournament. the only sport where i actually enjoy the competitive pressure.</p></div></div>
+      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="finance"><span class="pursuit-icon">ð°</span><span class="pursuit-name">finance & investing</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:50%"></div></div><span class="pursuit-pct">50%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-finance"><p>long-term focused. investing in ucits etfs with german tax optimization in mind. heavily influenced by naval ravikant's philosophy on wealth creation: own equity, not time.</p></div></div>
     </div>
   </div>
   <div class="section">
@@ -546,17 +546,17 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
       <div class="lang-card reveal"><div class="lang-top"><span class="lang-name">English</span><span class="lang-code">C1</span></div><div class="lang-track"><div class="lang-fill" style="width:85%"></div><div class="lang-markers"><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span class="lang-marker-active">C1</span><span>C2</span></div></div><span class="lang-label">fluent</span></div>
       <div class="lang-card reveal"><div class="lang-top"><span class="lang-name">Telugu</span><span class="lang-code">Native</span></div><div class="lang-track"><div class="lang-fill" style="width:100%"></div><div class="lang-markers"><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span><span class="lang-marker-active">C2</span></div></div><span class="lang-label">mother tongue</span></div>
       <div class="lang-card reveal"><div class="lang-top"><span class="lang-name">Hindi</span><span class="lang-code">B1</span></div><div class="lang-track"><div class="lang-fill" style="width:55%"></div><div class="lang-markers"><span>A1</span><span>A2</span><span class="lang-marker-active">B1</span><span>B2</span><span>C1</span><span>C2</span></div></div><span class="lang-label">can get the message across</span></div>
-      <div class="lang-card lang-card-learning reveal"><div class="lang-top"><span class="lang-name">German 🇩🇪</span><span class="lang-code">A1 → C1</span></div><div class="lang-track"><div class="lang-fill" style="width:17%"></div><div class="lang-markers"><span class="lang-marker-active">A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span><span>C2</span></div></div><span class="lang-label">currently learning · target C1</span></div>
+      <div class="lang-card lang-card-learning reveal"><div class="lang-top"><span class="lang-name">German ð©ðª</span><span class="lang-code">A1 â C1</span></div><div class="lang-track"><div class="lang-fill" style="width:17%"></div><div class="lang-markers"><span class="lang-marker-active">A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span><span>C2</span></div></div><span class="lang-label">currently learning Â· target C1</span></div>
     </div>
   </div>
   <div class="section">
     <span class="section-label">products i'm using</span>
-    <div class="product-section"><h3>tech & gadgets</h3><div class="chips"><span class="chip">Asus Zephyrus G14</span><span class="chip">Samsung Odyssey G5</span><span class="chip">iPhone 14 Pro</span><span class="chip">CMF Nothing Phone 1</span><span class="chip">Truthear × Crinacle Zero:RED</span><span class="chip">Logi MX Keys Mini</span><span class="chip">Sony Alpha A6700</span><span class="chip">DJI Osmo Action 5 Pro</span><span class="chip">Elgato Stream Deck Neo</span></div></div>
+    <div class="product-section"><h3>tech & gadgets</h3><div class="chips"><span class="chip">Asus Zephyrus G14</span><span class="chip">Samsung Odyssey G5</span><span class="chip">iPhone 14 Pro</span><span class="chip">CMF Nothing Phone 1</span><span class="chip">Truthear Ã Crinacle Zero:RED</span><span class="chip">Logi MX Keys Mini</span><span class="chip">Sony Alpha A6700</span><span class="chip">DJI Osmo Action 5 Pro</span><span class="chip">Elgato Stream Deck Neo</span></div></div>
     <div class="product-section"><h3>software</h3><div class="chips"><span class="chip">Notion</span><span class="chip">Obsidian</span><span class="chip">n8n</span><span class="chip">Brave Browser</span></div></div>
     <div class="product-section">
       <h3>gaming</h3>
-      <div style="margin-bottom:0.5rem;"><span style="font-size:0.62rem;font-family:var(--mono);color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;display:block;margin-bottom:0.4rem;">▶ now playing</span><div class="chips" id="now-playing"></div></div>
-      <div><span style="font-size:0.62rem;font-family:var(--mono);color:var(--text-dim);letter-spacing:0.08em;text-transform:uppercase;display:block;margin-bottom:0.4rem;">✓ played</span><div class="chips" id="played"></div></div>
+      <div style="margin-bottom:0.5rem;"><span style="font-size:0.62rem;font-family:var(--mono);color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;display:block;margin-bottom:0.4rem;">â¶ now playing</span><div class="chips" id="now-playing"></div></div>
+      <div><span style="font-size:0.62rem;font-family:var(--mono);color:var(--text-dim);letter-spacing:0.08em;text-transform:uppercase;display:block;margin-bottom:0.4rem;">â played</span><div class="chips" id="played"></div></div>
     </div>
   </div>
 </div>
@@ -572,8 +572,8 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
   <div class="section">
     <span class="section-label">launched</span>
     <div class="cards">
-      <a class="card reveal" href="https://rooh7t.gumroad.com/l/your-ai-headstart" target="_blank"><div class="card-title">Your AI Head Start</div><p class="card-desc">field guide — ai tools, systems &amp; prompting. first book.</p><span class="card-tag">published</span></a>
-      <a class="card reveal" href="https://rooh7t.gumroad.com/l/ThePromptVault" target="_blank"><div class="card-title">AI Prompt Vault</div><p class="card-desc">companion workbook — curated, ready-to-use prompt library.</p><span class="card-tag">published</span></a>
+      <a class="card reveal" href="https://rooh7t.gumroad.com/l/your-ai-headstart" target="_blank"><div class="card-title">Your AI Head Start</div><p class="card-desc">field guide â ai tools, systems &amp; prompting. first book.</p><span class="card-tag">published</span></a>
+      <a class="card reveal" href="https://rooh7t.gumroad.com/l/ThePromptVault" target="_blank"><div class="card-title">AI Prompt Vault</div><p class="card-desc">companion workbook â curated, ready-to-use prompt library.</p><span class="card-tag">published</span></a>
       <a class="card reveal" href="https://rooh7t.gumroad.com/l/networking8020" target="_blank"><div class="card-title">Networking 80/20</div><p class="card-desc">the fundamentals that actually run production.</p><span class="card-tag">published</span></a>
     </div>
   </div>
@@ -601,7 +601,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
   <div class="page-banner"><div class="page-banner-img" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=75')"></div></div>
   <div class="page-header">
     <div class="title-row"><h1>work</h1></div>
-    <p>5+ years securing enterprise networks — firewall deployments, cloud architecture, soc operations, cisco networking and products.</p>
+    <p>5+ years securing enterprise networks â firewall deployments, cloud architecture, soc operations, cisco networking and products.</p>
   </div>
   <div class="section">
     <span class="section-label">experience</span>
@@ -611,7 +611,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
         <div class="exp-info">
           <div class="exp-role">SCADA Network Engineer</div>
           <div class="exp-company"><a href="https://www.chevron.com" target="_blank">Chevron</a></div>
-          <div class="exp-meta">Colorado, USA · Dec 2024 – Feb 2026</div>
+          <div class="exp-meta">Colorado, USA Â· Dec 2024 â Feb 2026</div>
         </div>
       </div>
       <div class="exp-card reveal">
@@ -619,7 +619,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
         <div class="exp-info">
           <div class="exp-role">Network Security Engineer</div>
           <div class="exp-company"><a href="https://www.bathandbodyworks.com" target="_blank">Bath &amp; Body Works</a></div>
-          <div class="exp-meta">Chicago, USA · Sep 2023 – Nov 2024</div>
+          <div class="exp-meta">Chicago, USA Â· Sep 2023 â Nov 2024</div>
         </div>
       </div>
       <div class="exp-card reveal">
@@ -627,7 +627,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
         <div class="exp-info">
           <div class="exp-role">System Engineer</div>
           <div class="exp-company"><a href="https://www.tcs.com" target="_blank">Tata Consultancy Services (TCS)</a></div>
-          <div class="exp-meta">Hyderabad, India · Jun 2018 – Jul 2021</div>
+          <div class="exp-meta">Hyderabad, India Â· Jun 2018 â Jul 2021</div>
         </div>
       </div>
     </div>
@@ -640,7 +640,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
         <div class="exp-info">
           <div class="exp-role">Master of Science</div>
           <div class="exp-company">Management Information Systems</div>
-          <div class="exp-meta">University of Illinois Chicago, USA · 2023</div>
+          <div class="exp-meta">University of Illinois Chicago, USA Â· 2023</div>
         </div>
       </div>
       <div class="exp-card reveal">
@@ -648,7 +648,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
         <div class="exp-info">
           <div class="exp-role">Bachelor of Technology</div>
           <div class="exp-company">Computer Science</div>
-          <div class="exp-meta">GITAM University, Visakhapatnam, India · 2018</div>
+          <div class="exp-meta">GITAM University, Visakhapatnam, India Â· 2018</div>
         </div>
       </div>
     </div>
@@ -656,14 +656,14 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
   <div class="section">
     <span class="section-label">certifications</span>
     <div class="cert-grid">
-      <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/cisco.com" alt="Cisco" onerror="this.style.display='none'"></div><span class="cert-badge-text">CCNA</span><span class="cert-badge-status">✅</span></div>
-      <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/aws.amazon.com" alt="AWS" onerror="this.style.display='none'"></div><span class="cert-badge-text">AWS Cloud Practitioner</span><span class="cert-badge-status">✅</span></div>
-      <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/tcm-sec.com" alt="TCM" onerror="this.style.display='none'"></div><span class="cert-badge-text">PJPT</span><span class="cert-badge-status">✅</span></div>
-      <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/tcm-sec.com" alt="TCM" onerror="this.style.display='none'"></div><span class="cert-badge-text">OSINT Investigator</span><span class="cert-badge-status">✅</span></div>
-      <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/google.com" alt="Google" onerror="this.style.display='none'"></div><span class="cert-badge-text">Google Cybersecurity</span><span class="cert-badge-status">✅</span></div>
-      <div class="cert-badge progress reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/comptia.org" alt="CompTIA" onerror="this.style.display='none'"></div><span class="cert-badge-text">Security+</span><span class="cert-badge-status">📖</span></div>
-      <div class="cert-badge progress reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/fortinet.com" alt="Fortinet" onerror="this.style.display='none'"></div><span class="cert-badge-text">Fortinet NSE</span><span class="cert-badge-status">📖</span></div>
-      <div class="cert-badge progress reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" onerror="this.style.display='none'"></div><span class="cert-badge-text">AZ-700 · Azure Network Engineer</span><span class="cert-badge-status">📖</span></div>
+      <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/cisco.com" alt="Cisco" onerror="this.style.display='none'"></div><span class="cert-badge-text">CCNA</span><span class="cert-badge-status">â</span></div>
+      <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/aws.amazon.com" alt="AWS" onerror="this.style.display='none'"></div><span class="cert-badge-text">AWS Cloud Practitioner</span><span class="cert-badge-status">â</span></div>
+      <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/tcm-sec.com" alt="TCM" onerror="this.style.display='none'"></div><span class="cert-badge-text">PJPT</span><span class="cert-badge-status">â</span></div>
+      <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/tcm-sec.com" alt="TCM" onerror="this.style.display='none'"></div><span class="cert-badge-text">OSINT Investigator</span><span class="cert-badge-status">â</span></div>
+      <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/google.com" alt="Google" onerror="this.style.display='none'"></div><span class="cert-badge-text">Google Cybersecurity</span><span class="cert-badge-status">â</span></div>
+      <div class="cert-badge progress reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/comptia.org" alt="CompTIA" onerror="this.style.display='none'"></div><span class="cert-badge-text">Security+</span><span class="cert-badge-status">ð</span></div>
+      <div class="cert-badge progress reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/fortinet.com" alt="Fortinet" onerror="this.style.display='none'"></div><span class="cert-badge-text">Fortinet NSE</span><span class="cert-badge-status">ð</span></div>
+      <div class="cert-badge progress reveal"><div class="cert-badge-logo"><img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" onerror="this.style.display='none'"></div><span class="cert-badge-text">AZ-700 Â· Azure Network Engineer</span><span class="cert-badge-status">ð</span></div>
     </div>
   </div>
   <div class="section">
@@ -686,13 +686,13 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
   <div class="page-banner"><div class="page-banner-img" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&q=75')"></div></div>
   <div class="page-header">
     <div class="title-row"><h1>projects</h1></div>
-    <p>i build, i break, i fix, i defend — a mix of homelab security research, automation pipelines, and infrastructure work.</p>
+    <p>i build, i break, i fix, i defend â a mix of homelab security research, automation pipelines, and infrastructure work.</p>
   </div>
   <div class="section">
     <span class="section-label">cybersecurity</span>
     <div class="cards">
-      <div class="card reveal"><div class="card-title">ethical hacking & active directory security</div><p class="card-desc">penetration testing and ad exploitation in a homelab — kerberoasting, pass-the-hash, smb/llmnr spoofing, and ntlm relay.</p><span class="card-tag">homelab</span><span class="card-tag">pentesting</span><span class="card-tag">active directory</span></div>
-      <div class="card reveal"><div class="card-title">osint — open-source intelligence analysis</div><p class="card-desc">osint investigations using maltego, theharvester, and shodan. built sock puppet accounts, automated data collection, and produced threat intelligence reports.</p><span class="card-tag">homelab</span><span class="card-tag">osint</span></div>
+      <div class="card reveal"><div class="card-title">ethical hacking & active directory security</div><p class="card-desc">penetration testing and ad exploitation in a homelab â kerberoasting, pass-the-hash, smb/llmnr spoofing, and ntlm relay.</p><span class="card-tag">homelab</span><span class="card-tag">pentesting</span><span class="card-tag">active directory</span></div>
+      <div class="card reveal"><div class="card-title">osint â open-source intelligence analysis</div><p class="card-desc">osint investigations using maltego, theharvester, and shodan. built sock puppet accounts, automated data collection, and produced threat intelligence reports.</p><span class="card-tag">homelab</span><span class="card-tag">osint</span></div>
       <div class="card reveal"><div class="card-title">hardened docker security stack</div><p class="card-desc">production-hardened n8n docker environment with portainer, watchtower, crowdsec, and docker socket proxy.</p><span class="card-tag">docker</span><span class="card-tag">security hardening</span></div>
       <div class="card reveal"><div class="card-title">osint dashboard</div><p class="card-desc">centralizing osint tooling into one dashboard for faster recon workflows.</p><span class="card-tag progress">in progress</span></div>
       <div class="card reveal"><div class="card-title">phishing detector extension</div><p class="card-desc">a browser extension that flags suspicious links and sender patterns before a click happens.</p><span class="card-tag progress">in progress</span></div>
@@ -703,7 +703,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
     <span class="section-label">network & infrastructure</span>
     <div class="cards">
       <div class="card reveal"><div class="card-title">self-hosted homelab infrastructure</div><p class="card-desc">zimablade 7700 running casaos/debian. pi-hole, tailscale, portainer, nextcloud, jellyfin.</p><span class="card-tag">infrastructure</span><span class="card-tag">self-hosted</span></div>
-      <div class="card reveal"><div class="card-title">network device scanner & mapper</div><p class="card-desc">discovers and maps active devices — building toward a clean visual topology output.</p><span class="card-tag progress">in progress</span></div>
+      <div class="card reveal"><div class="card-title">network device scanner & mapper</div><p class="card-desc">discovers and maps active devices â building toward a clean visual topology output.</p><span class="card-tag progress">in progress</span></div>
       <div class="card reveal"><div class="card-title">network anomaly detector</div><p class="card-desc">baselines normal traffic patterns and flags deviations.</p><span class="card-tag progress">in progress</span></div>
       <div class="card reveal"><div class="card-title">intrusion detection system</div><p class="card-desc">deploying and tuning snort/suricata rule sets for real-time traffic inspection.</p><span class="card-tag progress">in progress</span></div>
     </div>
@@ -711,7 +711,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
   <div class="section">
     <span class="section-label">ai & automation</span>
     <div class="cards">
-      <div class="card reveal"><div class="card-title">linkedin content automation pipeline</div><p class="card-desc">end-to-end n8n workflow: google sheets → gpt-4o generation → approval gate → auto-publish to linkedin.</p><span class="card-tag">n8n</span><span class="card-tag">gpt-4o</span></div>
+      <div class="card reveal"><div class="card-title">linkedin content automation pipeline</div><p class="card-desc">end-to-end n8n workflow: google sheets â gpt-4o generation â approval gate â auto-publish to linkedin.</p><span class="card-tag">n8n</span><span class="card-tag">gpt-4o</span></div>
       <div class="card reveal"><div class="card-title">receipt-to-invoice automation</div><p class="card-desc">n8n pipeline that monitors email for receipts, extracts structured data using ai, and auto-generates invoices.</p><span class="card-tag">n8n</span><span class="card-tag">document ai</span></div>
       <div class="card reveal"><div class="card-title">birthday automation system</div><p class="card-desc">reads google calendar & contacts, generates personalized birthday messages with gpt-4o, routes through approval gate.</p><span class="card-tag">n8n</span><span class="card-tag">google api</span></div>
     </div>
@@ -723,20 +723,20 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
   <div class="page-banner"><div class="page-banner-img" style="background-image:url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1400&q=75')"></div></div>
   <div class="page-header">
     <div class="title-row"><h1>guides & books</h1></div>
-    <p>things i've written — and things that shaped how i think.</p>
+    <p>things i've written â and things that shaped how i think.</p>
   </div>
   <a href="https://medium.com/@rooh7t" target="_blank" class="medium-callout reveal">
     <div class="medium-icon">M</div>
     <div class="medium-body">
       <div class="medium-title">read on medium</div>
-      <div class="medium-desc">applied ai, security engineering, homelab builds — new posts go up here first.</div>
+      <div class="medium-desc">applied ai, security engineering, homelab builds â new posts go up here first.</div>
     </div>
   </a>
   <div class="section">
     <span class="section-label">guides</span>
     <div class="cards">
       <div class="card reveal"><div class="card-title">zero trust on a budget</div><p class="card-desc">ztna in a small org without enterprise licensing</p><span class="card-tag progress">coming soon</span></div>
-      <div class="card reveal"><div class="card-title">self-hosting with zimablade</div><p class="card-desc">homelab build guide — casaos, portainer, tailscale</p><span class="card-tag progress">coming soon</span></div>
+      <div class="card reveal"><div class="card-title">self-hosting with zimablade</div><p class="card-desc">homelab build guide â casaos, portainer, tailscale</p><span class="card-tag progress">coming soon</span></div>
       <div class="card reveal"><div class="card-title">n8n for security engineers</div><p class="card-desc">automating repetitive security ops with n8n and ai</p><span class="card-tag progress">coming soon</span></div>
       <div class="card reveal"><div class="card-title">relocating to germany as a tech professional</div><p class="card-desc">chancenkarte process, job market, salary expectations</p><span class="card-tag progress">coming soon</span></div>
       <div class="card reveal"><div class="card-title">pentest lab setup guide</div><p class="card-desc">beginner ethical hacking environment at home</p><span class="card-tag progress">coming soon</span></div>
@@ -745,11 +745,11 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
   <div class="section">
     <span class="section-label">favorite books</span>
     <p style="margin-bottom:0.3rem;">the ones that left a mark. one honest line on what i actually took from each.</p>
-    <a href="https://www.goodreads.com/review/list/147558776" target="_blank" class="goodreads-link">see my full shelf on goodreads →</a>
+    <a href="https://www.goodreads.com/review/list/147558776" target="_blank" class="goodreads-link">see my full shelf on goodreads â</a>
     <div class="book-cover-grid" id="book-cover-grid" style="margin-top:1.5rem;"></div>
     <div id="book-tooltip-overlay" class="book-tooltip-overlay" style="display:none;" onclick="if(event.target===this)closeBookTooltip()">
       <div class="book-tooltip-card">
-        <button class="book-tooltip-close" onclick="closeBookTooltip()">✕</button>
+        <button class="book-tooltip-close" onclick="closeBookTooltip()">â</button>
         <div class="book-tooltip-title" id="bt-title"></div>
         <div class="book-tooltip-author" id="bt-author"></div>
         <div class="book-tooltip-takeaway" id="bt-takeaway"></div>
@@ -757,7 +757,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
     </div>
     <div style="margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid var(--border);">
       <button id="allbooks-toggle" onclick="toggleAllBooks()" style="background:none;border:none;cursor:pointer;font-size:0.78rem;color:var(--text-dim);font-family:var(--sans);padding:0;display:inline-flex;align-items:center;gap:0.4rem;transition:color 0.15s;">
-        <span id="allbooks-toggle-icon">○</span>
+        <span id="allbooks-toggle-icon">â</span>
         <span id="allbooks-toggle-label">show all books i've read (<span id="allbooks-count">0</span>)</span>
       </button>
       <div id="allbooks-section" style="display:none;margin-top:1rem;">
@@ -790,20 +790,20 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
   <div class="page-banner"><div class="page-banner-img" style="background-image:url('https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1400&q=75')"></div></div>
   <div class="page-header">
     <div class="title-row"><h1>store</h1></div>
-    <p>things i've made — books, guides, and tools worth your time.</p>
+    <p>things i've made â books, guides, and tools worth your time.</p>
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:1rem 0;">
     <a href="https://rooh7t.gumroad.com" target="_blank" class="store-platform" style="text-decoration:none">
-      <div class="store-platform-icon" style="background:rgba(255,144,232,0.1)">🌍</div>
+      <div class="store-platform-icon" style="background:rgba(255,144,232,0.1)">ð</div>
       <div class="store-platform-name">Gumroad</div>
-      <p style="font-size:0.75rem;color:var(--text-dim);margin-bottom:0.5rem;">cards, paypal & more — worldwide checkout.</p>
-      <span style="font-size:0.72rem;color:var(--accent);font-weight:500;">shop on gumroad →</span>
+      <p style="font-size:0.75rem;color:var(--text-dim);margin-bottom:0.5rem;">cards, paypal & more â worldwide checkout.</p>
+      <span style="font-size:0.72rem;color:var(--accent);font-weight:500;">shop on gumroad â</span>
     </a>
     <a href="https://rooh7t.myinstamojo.com" target="_blank" class="store-platform" style="text-decoration:none">
-      <div class="store-platform-icon" style="background:rgba(193,101,47,0.08)">🇮🇳</div>
+      <div class="store-platform-icon" style="background:rgba(193,101,47,0.08)">ð®ð³</div>
       <div class="store-platform-name">Instamojo</div>
-      <p style="font-size:0.75rem;color:var(--text-dim);margin-bottom:0.5rem;">upi, netbanking & cards — built for india.</p>
-      <span style="font-size:0.72rem;color:var(--accent);font-weight:500;">shop on instamojo →</span>
+      <p style="font-size:0.75rem;color:var(--text-dim);margin-bottom:0.5rem;">upi, netbanking & cards â built for india.</p>
+      <span style="font-size:0.72rem;color:var(--accent);font-weight:500;">shop on instamojo â</span>
     </a>
   </div>
   <div class="section">
@@ -811,12 +811,12 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
     <div class="product-cover-grid" id="product-cover-grid"></div>
     <div id="product-popup-overlay" class="product-popup-overlay" style="display:none;" onclick="if(event.target===this)closeProductPopup()">
       <div class="product-popup-card">
-        <button class="product-popup-close" onclick="closeProductPopup()">✕</button>
+        <button class="product-popup-close" onclick="closeProductPopup()">â</button>
         <div class="product-popup-edition" id="pp-edition"></div>
         <div class="product-popup-title" id="pp-title"></div>
         <p class="product-popup-hook" id="pp-hook"></p>
         <div class="product-popup-tags" id="pp-tags"></div>
-        <a id="pp-cta" href="#" target="_blank" class="product-popup-cta">get it →</a>
+        <a id="pp-cta" href="#" target="_blank" class="product-popup-cta">get it â</a>
       </div>
     </div>
     <div class="teaser-grid">
@@ -825,8 +825,8 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
         <div class="teaser-title">Chancenkarte Playbook</div>
         <p class="teaser-desc">a 2-part bundle for moving to germany on the chancenkarte.</p>
         <div class="teaser-parts">
-          <div class="teaser-part"><span class="num">part 1</span> — the application</div>
-          <div class="teaser-part"><span class="num">part 2</span> — the job</div>
+          <div class="teaser-part"><span class="num">part 1</span> â the application</div>
+          <div class="teaser-part"><span class="num">part 2</span> â the job</div>
         </div>
       </div>
     </div>
@@ -838,14 +838,14 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
   <div class="page-banner"><div class="page-banner-img" style="background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1400&q=75')"></div></div>
   <div class="page-header">
     <div class="title-row"><h1>resource hub</h1></div>
-    <p>free notes, templates, and downloads — things you can take and use.</p>
+    <p>free notes, templates, and downloads â things you can take and use.</p>
   </div>
   <div class="section">
     <a href="https://rooh7t.github.io/cyberarchive" target="_blank" class="medium-callout reveal" style="text-decoration:none">
-      <div class="medium-icon" style="background:rgba(6,182,212,0.1);color:#06B6D4;font-size:1rem">◈</div>
+      <div class="medium-icon" style="background:rgba(6,182,212,0.1);color:#06B6D4;font-size:1rem">â</div>
       <div class="medium-body">
         <div class="medium-title">cyberarchive</div>
-        <div class="medium-desc">my cybersecurity & networking knowledge base — research notes, deep references, and hands-on lab docs. browse, search, and explore.</div>
+        <div class="medium-desc">my cybersecurity & networking knowledge base â research notes, deep references, and hands-on lab docs. browse, search, and explore.</div>
       </div>
     </a>
     <div class="chips" id="library-filters" style="margin-top:1.5rem;margin-bottom:0.9rem;">
@@ -857,7 +857,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
     </div>
     <div class="cards" id="library-grid"></div>
     <div id="library-empty" class="rh-empty" style="display:none;margin-top:1rem">
-      <div class="rh-empty-icon breathe">📦</div>
+      <div class="rh-empty-icon breathe">ð¦</div>
       <div class="rh-empty-title">more resources on the way</div>
       <div class="rh-empty-desc">downloadable templates, cheat sheets, and guides are coming soon. follow me on <a href="https://www.linkedin.com/in/rohit7raj/" target="_blank" style="color:var(--accent)">linkedin</a> to know when they drop.</div>
     </div>
@@ -867,11 +867,11 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
 <!-- LIBRARY VIEWER MODAL -->
 <div id="library-overlay" class="book-tooltip-overlay" style="display:none;" onclick="if(event.target===this)closeLibraryItem()">
   <div class="book-tooltip-card" style="max-width:640px;width:90vw;max-height:80vh;overflow:auto;">
-    <button class="book-tooltip-close" onclick="closeLibraryItem()">✕</button>
+    <button class="book-tooltip-close" onclick="closeLibraryItem()">â</button>
     <div class="book-tooltip-title" id="lib-title"></div>
     <div id="lib-pdf-wrap" style="display:none;margin-top:0.75rem;">
       <embed id="lib-pdf-embed" type="application/pdf" width="100%" height="420" style="border:1px solid var(--border);border-radius:var(--radius-sm);">
-      <a id="lib-pdf-download" href="#" download class="goodreads-link" style="margin-top:0.6rem;">download →</a>
+      <a id="lib-pdf-download" href="#" download class="goodreads-link" style="margin-top:0.6rem;">download â</a>
     </div>
     <div id="lib-note-wrap" style="display:none;margin-top:0.75rem;font-size:0.82rem;color:var(--text-muted);line-height:1.75;white-space:pre-wrap;"></div>
   </div>
@@ -881,30 +881,30 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
 <div id="page-workwithme" class="page-section">
   <div class="ds-wrap">
     <div class="ds-topbar">
-      <span>classified · personnel dossier · ref: RRR-2026-001</span>
-      <span>eyes only · authorised personnel</span>
+      <span>classified Â· personnel dossier Â· ref: RRR-2026-001</span>
+      <span>eyes only Â· authorised personnel</span>
     </div>
     <div class="ds-stampbar">
       <span class="ds-stampbar-title">declassified</span>
-      <span class="ds-stampbar-ref">DOSSIER-2026 · SUBJECT: RRR</span>
+      <span class="ds-stampbar-ref">DOSSIER-2026 Â· SUBJECT: RRR</span>
     </div>
     <div class="ds-hero">
-      <div class="ds-file-label">subject profile · security clearance granted</div>
+      <div class="ds-file-label">subject profile Â· security clearance granted</div>
       <div class="ds-subject">
         <div class="ds-photo"><span>PHOTO<br>ON<br>FILE</span></div>
         <div class="ds-fields">
           <div class="ds-field"><span class="ds-field-k">alias</span><span class="ds-field-v gold">rooh7t</span></div>
-          <div class="ds-field"><span class="ds-field-k">location</span><span class="ds-field-v">Saarbrücken, Germany</span></div>
-          <div class="ds-field"><span class="ds-field-k">clearance</span><span class="ds-field-v gold">network security · L5</span></div>
-          <div class="ds-field"><span class="ds-field-k">status</span><span class="ds-field-v green">● available · taking missions</span></div>
-          <div class="ds-field"><span class="ds-field-k">languages</span><span class="ds-field-v">English · Telugu</span></div>
+          <div class="ds-field"><span class="ds-field-k">location</span><span class="ds-field-v">SaarbrÃ¼cken, Germany</span></div>
+          <div class="ds-field"><span class="ds-field-k">clearance</span><span class="ds-field-v gold">network security Â· L5</span></div>
+          <div class="ds-field"><span class="ds-field-k">status</span><span class="ds-field-v green">â available Â· taking missions</span></div>
+          <div class="ds-field"><span class="ds-field-k">languages</span><span class="ds-field-v">English Â· Telugu</span></div>
         </div>
       </div>
       <h1 class="ds-h1">security engineer.<br>educator. builder.</h1>
-      <p class="ds-tagline">5+ yrs enterprise networks · chevron · bath & body works · TCS<br>helping people learn, build, and grow — no fluff, no theory for theory's sake.</p>
+      <p class="ds-tagline">5+ yrs enterprise networks Â· chevron Â· bath & body works Â· TCS<br>helping people learn, build, and grow â no fluff, no theory for theory's sake.</p>
       <div class="ds-btns">
-        <a href="https://cal.com/rooh7t" target="_blank" class="ds-btn-p">request briefing →</a>
-        <a href="https://rooh7t.gumroad.com/l/your-ai-headstart" target="_blank" class="ds-btn-s">access intel →</a>
+        <a href="https://cal.com/rooh7t" target="_blank" class="ds-btn-p">request briefing â</a>
+        <a href="https://rooh7t.gumroad.com/l/your-ai-headstart" target="_blank" class="ds-btn-s">access intel â</a>
       </div>
     </div>
     <div class="ds-stats">
@@ -916,82 +916,82 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
       <div class="ds-section-label">available operations</div>
       <div class="ds-ops">
         <div class="ds-op">
-          <div class="ds-op-label">OP-001 · tutoring</div>
+          <div class="ds-op-label">OP-001 Â· tutoring</div>
           <div class="ds-op-title">1:1 Training Sessions</div>
-          <div class="ds-op-desc">CCNA · Security+ · AWS · network security. structured sessions, real labs, honest feedback. in english or telugu.</div>
-          <a href="https://cal.com/rooh7t" target="_blank" class="ds-op-link">→ book a session</a>
+          <div class="ds-op-desc">CCNA Â· Security+ Â· AWS Â· network security. structured sessions, real labs, honest feedback. in english or telugu.</div>
+          <a href="https://cal.com/rooh7t" target="_blank" class="ds-op-link">â book a session</a>
         </div>
         <div class="ds-op">
-          <div class="ds-op-label">OP-002 · consulting</div>
+          <div class="ds-op-label">OP-002 Â· consulting</div>
           <div class="ds-op-title">Freelance Engagements</div>
-          <div class="ds-op-desc">network security reviews · ai workflow design · n8n automation builds. short engagements, no fluff.</div>
-          <a href="https://www.linkedin.com/in/rohit7raj/" target="_blank" class="ds-op-link">→ connect on linkedin</a>
+          <div class="ds-op-desc">network security reviews Â· ai workflow design Â· n8n automation builds. short engagements, no fluff.</div>
+          <a href="https://www.linkedin.com/in/rohit7raj/" target="_blank" class="ds-op-link">â connect on linkedin</a>
         </div>
       </div>
     </div>
     <div class="ds-section">
       <div class="ds-section-label">verified credentials</div>
       <div class="ds-certs">
-        <span class="ds-cert earned">CCNA · earned</span>
-        <span class="ds-cert earned">AWS Cloud Practitioner · earned</span>
-        <span class="ds-cert earned">PJPT · earned</span>
-        <span class="ds-cert earned">OSINT Investigator · earned</span>
-        <span class="ds-cert earned">Google Cybersecurity · earned</span>
-        <span class="ds-cert pending">Security+ · in progress</span>
+        <span class="ds-cert earned">CCNA Â· earned</span>
+        <span class="ds-cert earned">AWS Cloud Practitioner Â· earned</span>
+        <span class="ds-cert earned">PJPT Â· earned</span>
+        <span class="ds-cert earned">OSINT Investigator Â· earned</span>
+        <span class="ds-cert earned">Google Cybersecurity Â· earned</span>
+        <span class="ds-cert pending">Security+ Â· in progress</span>
       </div>
     </div>
     <div class="ds-section">
       <div class="ds-section-label">what i teach</div>
       <div class="ds-topic-list">
-        <div class="ds-topic-row"><span class="ds-topic-name">Computer Networking (CCNA, CCNP)</span><span class="ds-topic-desc">routing, switching, VLANs, OSPF/EIGRP/BGP — the fundamentals that everything else builds on.</span></div>
+        <div class="ds-topic-row"><span class="ds-topic-name">Computer Networking (CCNA, CCNP)</span><span class="ds-topic-desc">routing, switching, VLANs, OSPF/EIGRP/BGP â the fundamentals that everything else builds on.</span></div>
         <div class="ds-topic-row"><span class="ds-topic-name">Cybersecurity</span><span class="ds-topic-desc">threat fundamentals, risk, and the concepts behind Security+ and similar certs.</span></div>
-        <div class="ds-topic-row"><span class="ds-topic-name">Cloud Computing (AWS / Azure)</span><span class="ds-topic-desc">VPCs, IAM, core services — getting comfortable in the cloud from a security-first angle.</span></div>
-        <div class="ds-topic-row"><span class="ds-topic-name">Network Security</span><span class="ds-topic-desc">firewalls, zero trust, segmentation — how real enterprise networks actually get protected.</span></div>
-        <div class="ds-topic-row"><span class="ds-topic-name">Next-Gen Firewalls (Palo Alto, Cisco ASA)</span><span class="ds-topic-desc">policy design, NAT, SSL inspection — hands-on with the tools i use daily.</span></div>
-        <div class="ds-topic-row"><span class="ds-topic-name">OT / ICS Security</span><span class="ds-topic-desc">securing industrial and SCADA environments — niche, but where i spend a lot of my actual work hours.</span></div>
+        <div class="ds-topic-row"><span class="ds-topic-name">Cloud Computing (AWS / Azure)</span><span class="ds-topic-desc">VPCs, IAM, core services â getting comfortable in the cloud from a security-first angle.</span></div>
+        <div class="ds-topic-row"><span class="ds-topic-name">Network Security</span><span class="ds-topic-desc">firewalls, zero trust, segmentation â how real enterprise networks actually get protected.</span></div>
+        <div class="ds-topic-row"><span class="ds-topic-name">Next-Gen Firewalls (Palo Alto, Cisco ASA)</span><span class="ds-topic-desc">policy design, NAT, SSL inspection â hands-on with the tools i use daily.</span></div>
+        <div class="ds-topic-row"><span class="ds-topic-name">OT / ICS Security</span><span class="ds-topic-desc">securing industrial and SCADA environments â niche, but where i spend a lot of my actual work hours.</span></div>
       </div>
-      <p style="font-size:0.78rem;color:var(--text-dim);line-height:1.7;margin:0 0 1.5rem;">sessions via zoom or google meet · 60 or 90 min · <span style="color:var(--accent);">CET (UTC+1)</span> · also works for <span style="color:var(--accent);">CST</span> & <span style="color:var(--accent);">IST</span> · english & telugu</p>
+      <p style="font-size:0.78rem;color:var(--text-dim);line-height:1.7;margin:0 0 1.5rem;">sessions via zoom or google meet Â· 60 or 90 min Â· <span style="color:var(--accent);">CET (UTC+1)</span> Â· also works for <span style="color:var(--accent);">CST</span> & <span style="color:var(--accent);">IST</span> Â· english & telugu</p>
     </div>
     <div class="ds-section">
       <div class="ds-section-label">beyond the brief</div>
-      <p class="btb-intro">five 1:1 sessions for the stuff that doesn't fit a cert syllabus — figuring out direction, building momentum, or getting unstuck.</p>
+      <p class="btb-intro">five 1:1 sessions for the stuff that doesn't fit a cert syllabus â figuring out direction, building momentum, or getting unstuck.</p>
       <div class="btb-grid">
-        <div class="btb-card"><div class="btb-card-title">find your ikigai</div><div class="btb-card-hook">most people never sit down and actually answer what they're good at, love, and can get paid for.</div><div class="btb-card-what">guided questions feed into a purpose-built ai process, then we review it together.</div><div class="btb-card-who"><span>who it's for</span><br>anyone drifting, switching jobs or majors without knowing why.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">→ book a session</a></div>
-        <div class="btb-card"><div class="btb-card-title">organize your life</div><div class="btb-card-hook">some days you scroll for two hours and have no idea where the time went.</div><div class="btb-card-what">an honest conversation about where you feel stuck, followed by a simple tracking tool to rebuild momentum.</div><div class="btb-card-who"><span>who it's for</span><br>anyone feeling foggy, on autopilot, or worried about wasting time — at any age.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">→ book a session</a></div>
-        <div class="btb-card"><div class="btb-card-title">fitness roadmap</div><div class="btb-card-hook">beat 80% of people with 20% of the effort.</div><div class="btb-card-what">a personal notion template for tracking workouts, calories, and measurements, customized to your goals.</div><div class="btb-card-who"><span>who it's for</span><br>anyone whose fitness apps fizzled out after two weeks.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">→ book a session</a></div>
-        <div class="btb-card"><div class="btb-card-title">build your portfolio</div><div class="btb-card-hook">everyone has a cv. almost nobody has a place that shows what they can actually do.</div><div class="btb-card-what">a 5-session hands-on workshop building a live website from scratch.</div><div class="btb-card-who"><span>who it's for</span><br>students, job seekers, freelancers, creators.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">→ book a session</a></div>
-        <div class="btb-card"><div class="btb-card-title">career roadmapping</div><div class="btb-card-hook">applying abroad is a maze of conflicting advice.</div><div class="btb-card-what">university shortlisting, document checklist, and SOP refinement for germany, the usa, or canada.</div><div class="btb-card-who"><span>who it's for</span><br>students and professionals who want a real roadmap, not generic search results.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">→ book a session</a></div>
+        <div class="btb-card"><div class="btb-card-title">find your ikigai</div><div class="btb-card-hook">most people never sit down and actually answer what they're good at, love, and can get paid for.</div><div class="btb-card-what">guided questions feed into a purpose-built ai process, then we review it together.</div><div class="btb-card-who"><span>who it's for</span><br>anyone drifting, switching jobs or majors without knowing why.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">â book a session</a></div>
+        <div class="btb-card"><div class="btb-card-title">organize your life</div><div class="btb-card-hook">some days you scroll for two hours and have no idea where the time went.</div><div class="btb-card-what">an honest conversation about where you feel stuck, followed by a simple tracking tool to rebuild momentum.</div><div class="btb-card-who"><span>who it's for</span><br>anyone feeling foggy, on autopilot, or worried about wasting time â at any age.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">â book a session</a></div>
+        <div class="btb-card"><div class="btb-card-title">fitness roadmap</div><div class="btb-card-hook">beat 80% of people with 20% of the effort.</div><div class="btb-card-what">a personal notion template for tracking workouts, calories, and measurements, customized to your goals.</div><div class="btb-card-who"><span>who it's for</span><br>anyone whose fitness apps fizzled out after two weeks.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">â book a session</a></div>
+        <div class="btb-card"><div class="btb-card-title">build your portfolio</div><div class="btb-card-hook">everyone has a cv. almost nobody has a place that shows what they can actually do.</div><div class="btb-card-what">a 5-session hands-on workshop building a live website from scratch.</div><div class="btb-card-who"><span>who it's for</span><br>students, job seekers, freelancers, creators.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">â book a session</a></div>
+        <div class="btb-card"><div class="btb-card-title">career roadmapping</div><div class="btb-card-hook">applying abroad is a maze of conflicting advice.</div><div class="btb-card-what">university shortlisting, document checklist, and SOP refinement for germany, the usa, or canada.</div><div class="btb-card-who"><span>who it's for</span><br>students and professionals who want a real roadmap, not generic search results.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">â book a session</a></div>
       </div>
     </div>
     <div class="ds-section">
       <div class="ds-section-label" style="margin-bottom:0.75rem;">book via platform</div>
       <div style="display:flex;flex-direction:column;gap:0.45rem;">
         <div style="display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0.9rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);">
-          <div><span style="font-size:0.8rem;font-weight:500;color:var(--text);font-family:var(--display)">Preply</span><span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);display:block;margin-top:0.1rem;">trial lesson available · first session risk-free</span></div>
+          <div><span style="font-size:0.8rem;font-weight:500;color:var(--text);font-family:var(--display)">Preply</span><span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);display:block;margin-top:0.1rem;">trial lesson available Â· first session risk-free</span></div>
           <span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);border:1px dashed var(--border);padding:0.2em 0.6em;border-radius:4px;letter-spacing:0.08em;">coming soon</span>
         </div>
         <div style="display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0.9rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);">
           <div><span style="font-size:0.8rem;font-weight:500;color:var(--text);font-family:var(--display)">Superprof</span><span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);display:block;margin-top:0.1rem;">great for students in india & middle east</span></div>
-          <a href="https://www.superprof.de/ir/43311690-e02a11" target="_blank" style="font-family:var(--mono);font-size:0.6rem;color:var(--accent);border:1px solid rgba(193,101,47,0.3);padding:0.2em 0.6em;border-radius:4px;letter-spacing:0.08em;text-decoration:none;">book →</a>
+          <a href="https://www.superprof.de/ir/43311690-e02a11" target="_blank" style="font-family:var(--mono);font-size:0.6rem;color:var(--accent);border:1px solid rgba(193,101,47,0.3);padding:0.2em 0.6em;border-radius:4px;letter-spacing:0.08em;text-decoration:none;">book â</a>
         </div>
         <div style="display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0.9rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);">
           <div><span style="font-size:0.8rem;font-weight:500;color:var(--text);font-family:var(--display)">Wyzant</span><span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);display:block;margin-top:0.1rem;">us-based professionals & cert candidates</span></div>
           <span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);border:1px dashed var(--border);padding:0.2em 0.6em;border-radius:4px;letter-spacing:0.08em;">coming soon</span>
         </div>
         <div style="display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0.9rem;background:var(--bg-card);border:1px solid rgba(193,101,47,0.2);border-radius:var(--radius-sm);">
-          <div><span style="font-size:0.8rem;font-weight:500;color:var(--text);font-family:var(--display)">Direct booking</span><span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);display:block;margin-top:0.1rem;">best rate · schedule directly via cal.com/rooh7t</span></div>
-          <a href="https://cal.com/rooh7t" target="_blank" style="font-family:var(--mono);font-size:0.6rem;color:var(--accent);border:1px solid rgba(193,101,47,0.3);padding:0.2em 0.6em;border-radius:4px;letter-spacing:0.08em;text-decoration:none;">book →</a>
+          <div><span style="font-size:0.8rem;font-weight:500;color:var(--text);font-family:var(--display)">Direct booking</span><span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);display:block;margin-top:0.1rem;">best rate Â· schedule directly via cal.com/rooh7t</span></div>
+          <a href="https://cal.com/rooh7t" target="_blank" style="font-family:var(--mono);font-size:0.6rem;color:var(--accent);border:1px solid rgba(193,101,47,0.3);padding:0.2em 0.6em;border-radius:4px;letter-spacing:0.08em;text-decoration:none;">book â</a>
         </div>
       </div>
     </div>
     <div class="ds-cta">
       <span class="ds-cta-stamp">access granted</span>
       <h2 class="ds-cta-h">ready to begin a mission?</h2>
-      <p class="ds-cta-s">free 20-min intro call · no commitment · no pressure</p>
+      <p class="ds-cta-s">free 20-min intro call Â· no commitment Â· no pressure</p>
       <div class="ds-cta-btns">
-        <a href="https://cal.com/rooh7t" target="_blank" class="ds-btn-p">initiate contact →</a>
-        <a href="https://www.linkedin.com/in/rohit7raj/" target="_blank" class="ds-btn-s">linkedin →</a>
-        <a href="https://www.instagram.com/rooh7t.studios/" target="_blank" class="ds-btn-s">instagram →</a>
+        <a href="https://cal.com/rooh7t" target="_blank" class="ds-btn-p">initiate contact â</a>
+        <a href="https://www.linkedin.com/in/rohit7raj/" target="_blank" class="ds-btn-s">linkedin â</a>
+        <a href="https://www.instagram.com/rooh7t.studios/" target="_blank" class="ds-btn-s">instagram â</a>
       </div>
     </div>
   </div>
@@ -1011,12 +1011,12 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
   <div class="section">
     <span class="section-label">find me here</span>
     <table class="social-slide"><tbody>
-      <tr><td>💼 LinkedIn</td><td><a href="https://www.linkedin.com/in/rohit7raj/" target="_blank">linkedin.com/in/rohit7raj →</a></td></tr>
-      <tr><td>📸 Instagram</td><td><a href="https://www.instagram.com/rooh7t.studios/" target="_blank">instagram.com/rooh7t.studios →</a></td></tr>
-      <tr><td>▶️ YouTube</td><td><a href="https://www.youtube.com/@itsrooh7t" target="_blank">youtube.com/@itsrooh7t →</a></td></tr>
-      <tr><td>🎞️ Photography</td><td><a href="https://www.instagram.com/travellin.soldier/" target="_blank">instagram.com/travellin.soldier →</a></td></tr>
-      <tr><td>✍️ Medium</td><td><a href="https://medium.com/@rooh7t" target="_blank">medium.com/@rooh7t →</a></td></tr>
-      <tr><td>☕ Buy Me a Coffee</td><td><a href="https://buymeacoffee.com/rooh7t" target="_blank">buymeacoffee.com/rooh7t →</a></td></tr>
+      <tr><td>ð¼ LinkedIn</td><td><a href="https://www.linkedin.com/in/rohit7raj/" target="_blank">linkedin.com/in/rohit7raj â</a></td></tr>
+      <tr><td>ð¸ Instagram</td><td><a href="https://www.instagram.com/rooh7t.studios/" target="_blank">instagram.com/rooh7t.studios â</a></td></tr>
+      <tr><td>â¶ï¸ YouTube</td><td><a href="https://www.youtube.com/@itsrooh7t" target="_blank">youtube.com/@itsrooh7t â</a></td></tr>
+      <tr><td>ðï¸ Photography</td><td><a href="https://www.instagram.com/travellin.soldier/" target="_blank">instagram.com/travellin.soldier â</a></td></tr>
+      <tr><td>âï¸ Medium</td><td><a href="https://medium.com/@rooh7t" target="_blank">medium.com/@rooh7t â</a></td></tr>
+      <tr><td>â Buy Me a Coffee</td><td><a href="https://buymeacoffee.com/rooh7t" target="_blank">buymeacoffee.com/rooh7t â</a></td></tr>
     </tbody></table>
   </div>
 </div>
@@ -1028,20 +1028,20 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
   <span class="footer-left">
     currently in germany (<span id="berlin-time">--:--</span>)
     <span id="status-dot" class="status-ping"><span class="status-ping-outer"></span><span class="status-ping-inner"></span></span>
-    <span id="status-moon" style="display:none;">🌙</span>
+    <span id="status-moon" style="display:none;">ð</span>
     <span id="status-offline" style="display:none;"><span class="status-ping"><span class="status-ping-inner" style="background:var(--text-dim);opacity:0.35;"></span></span></span>
-    <span class="neko" id="neko" title="click me">🐱</span>
+    <span class="neko" id="neko" title="click me">ð±</span>
   </span>
   <div class="footer-right">
     <a href="https://www.linkedin.com/in/rohit7raj/" target="_blank" rel="noopener">linkedin</a>
     <a href="https://www.youtube.com/@itsrooh7t" target="_blank" rel="noopener">youtube</a>
     <a href="https://www.instagram.com/rooh7t.studios/" target="_blank" rel="noopener">instagram</a>
-    <span class="footer-dot">·</span>
-    <button onclick="window.open('https://buymeacoffee.com/rooh7t','_blank')">☕ buy me a coffee</button>
+    <span class="footer-dot">Â·</span>
+    <button onclick="window.open('https://buymeacoffee.com/rooh7t','_blank')">â buy me a coffee</button>
   </div>
 </footer>
 <div style="width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--pad) 1.25rem;text-align:center;">
-  <span style="font-family:var(--mono);font-size:0.62rem;color:var(--text-dim);letter-spacing:0.08em;">packets secured · pages hand-coded · coffee consumed</span>
+  <span style="font-family:var(--mono);font-size:0.62rem;color:var(--text-dim);letter-spacing:0.08em;">packets secured Â· pages hand-coded Â· coffee consumed</span>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -1050,7 +1050,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
 gsap.registerPlugin(ScrollTrigger);
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ── BANNER PARALLAX (GSAP scrub) ── */
+/* ââ BANNER PARALLAX (GSAP scrub) ââ */
 function initParallax(){
   if(reducedMotion)return;
   document.querySelectorAll('.page-section.active .page-banner-img').forEach(img=>{
@@ -1059,7 +1059,7 @@ function initParallax(){
   })
 }
 
-/* ── SECTION CHOREOGRAPHY ── */
+/* ââ SECTION CHOREOGRAPHY ââ */
 function initChoreography(){
   if(reducedMotion)return;
   document.querySelectorAll('.page-section.active .section').forEach(sec=>{
@@ -1076,7 +1076,7 @@ function initChoreography(){
   })
 }
 
-/* ── NAVIGATION ── */
+/* ââ NAVIGATION ââ */
 function showPage(name){
   document.querySelectorAll('.page-section').forEach(s=>s.classList.remove('active'));
   const p=document.getElementById('page-'+name);
@@ -1090,7 +1090,7 @@ function showPage(name){
 }
 function navTo(name){document.getElementById('mobile-menu').classList.remove('open');document.getElementById('icon-menu').classList.remove('hidden');document.getElementById('icon-close').classList.add('hidden');showPage(name)}
 
-/* ── THEME ── */
+/* ââ THEME ââ */
 function syncToggle(){const light=document.documentElement.getAttribute('data-theme')==='light';document.querySelectorAll('.theme-toggle-btn').forEach(b=>light?b.classList.add('is-light'):b.classList.remove('is-light'))}
 syncToggle();
 function toggleTheme(){const next=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('theme',next);syncToggle()}
@@ -1098,21 +1098,21 @@ document.getElementById('tt-desk').addEventListener('click',toggleTheme);
 document.getElementById('tt-mob').addEventListener('click',toggleTheme);
 document.getElementById('menu-btn').addEventListener('click',function(){const open=document.getElementById('mobile-menu').classList.toggle('open');document.getElementById('icon-menu').classList.toggle('hidden',open);document.getElementById('icon-close').classList.toggle('hidden',!open)});
 
-/* ── AGE COUNTER ── */
+/* ââ AGE COUNTER ââ */
 (function(){const bd=new Date(1996,8,12).getTime();const we=document.getElementById('age-whole');const de=document.getElementById('age-decimal');if(!we)return;function tick(){const age=(Date.now()-bd)/(365.2425*864e5);const w=Math.floor(age);const f=(age-w).toFixed(9).slice(1);we.textContent=w;de.textContent=f}tick();setInterval(tick,50)})();
 
-/* ── PURSUITS ACCORDION ── */
+/* ââ PURSUITS ACCORDION ââ */
 document.querySelectorAll('.pursuit-toggle').forEach(btn=>{btn.addEventListener('click',function(){const id=btn.dataset.id;const body=document.getElementById('pursuit-'+id);const chev=btn.querySelector('.pursuit-chevron');const wasOpen=body.classList.contains('open');document.querySelectorAll('.pursuit-body').forEach(b=>b.classList.remove('open'));document.querySelectorAll('.pursuit-chevron').forEach(c=>c.classList.remove('open'));if(!wasOpen){body.classList.add('open');chev.classList.add('open')}})});
 
-/* ── NEKO ── */
-const nekoFrames=['🐱','😺','😸','🐾','😻','🐱'];let nekoIdx=0;const nekoEl=document.getElementById('neko');
-if(nekoEl){nekoEl.addEventListener('click',function(){nekoIdx=(nekoIdx+1)%nekoFrames.length;nekoEl.textContent=nekoFrames[nekoIdx];setTimeout(()=>{nekoEl.textContent='🐱';nekoIdx=0},1500)})}
+/* ââ NEKO ââ */
+const nekoFrames=['ð±','ðº','ð¸','ð¾','ð»','ð±'];let nekoIdx=0;const nekoEl=document.getElementById('neko');
+if(nekoEl){nekoEl.addEventListener('click',function(){nekoIdx=(nekoIdx+1)%nekoFrames.length;nekoEl.textContent=nekoFrames[nekoIdx];setTimeout(()=>{nekoEl.textContent='ð±';nekoIdx=0},1500)})}
 
-/* ── BERLIN TIME ── */
-function updateBerlin(){const el=document.getElementById('berlin-time');if(!el)return;const t=new Date().toLocaleTimeString('en-US',{timeZone:'Europe/Berlin',hour:'2-digit',minute:'2-digit',hour12:false});el.textContent=t;const h=parseInt(t.split(':')[0]);const dot=document.getElementById('status-dot');const moon=document.getElementById('status-moon');const offline=document.getElementById('status-offline');if(!dot)return;if(h>=5&&h<17){dot.style.display='';moon.style.display='none';offline.style.display='none'}else if(h>=17&&h<23){dot.style.display='none';moon.style.display='';offline.style.display='';if(nekoEl)nekoEl.textContent='😴'}}
+/* ââ BERLIN TIME ââ */
+function updateBerlin(){const el=document.getElementById('berlin-time');if(!el)return;const t=new Date().toLocaleTimeString('en-US',{timeZone:'Europe/Berlin',hour:'2-digit',minute:'2-digit',hour12:false});el.textContent=t;const h=parseInt(t.split(':')[0]);const dot=document.getElementById('status-dot');const moon=document.getElementById('status-moon');const offline=document.getElementById('status-offline');if(!dot)return;if(h>=5&&h<17){dot.style.display='';moon.style.display='none';offline.style.display='none'}else if(h>=17&&h<23){dot.style.display='none';moon.style.display='';offline.style.display='';if(nekoEl)nekoEl.textContent='ð´'}}
 updateBerlin();setInterval(updateBerlin,30000);
 
-/* ── SCROLL REVEAL (GSAP) ── */
+/* ââ SCROLL REVEAL (GSAP) ââ */
 function initReveals(){
   const els=document.querySelectorAll('.reveal:not(.visible)');
   if(!els.length)return;
@@ -1126,7 +1126,7 @@ function initReveals(){
 }
 initReveals();
 
-/* ── 3D TILT ON CARDS ── */
+/* ââ 3D TILT ON CARDS ââ */
 function initTilt(){
   if(reducedMotion||'ontouchstart' in window)return;
   document.querySelectorAll('.page-section.active .card, .page-section.active .exp-card, .page-section.active .ds-op').forEach(card=>{
@@ -1145,7 +1145,7 @@ function initTilt(){
 }
 initTilt();
 
-/* ── MAGNETIC HOVER (CTAs) ── */
+/* ââ MAGNETIC HOVER (CTAs) ââ */
 function initMagnetic(){
   if(reducedMotion||'ontouchstart' in window)return;
   document.querySelectorAll('.ds-btn-p, .nav-block, .medium-callout, .product-popup-cta').forEach(el=>{
@@ -1163,7 +1163,7 @@ function initMagnetic(){
 }
 initMagnetic();
 
-/* ── LANGUAGE BAR ANIMATION ── */
+/* ââ LANGUAGE BAR ANIMATION ââ */
 function initLangBars(){
   document.querySelectorAll('.lang-fill').forEach(bar=>{
     if(bar.dataset.animated)return;
@@ -1183,7 +1183,7 @@ initLangBars();
 initParallax();
 initChoreography();
 
-/* ── COUNT-UP STATS (GSAP) ── */
+/* ââ COUNT-UP STATS (GSAP) ââ */
 function countUp(){document.querySelectorAll('[data-count]').forEach(el=>{const target=parseInt(el.dataset.count);if(el.dataset.counted)return;
   ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter:()=>{
     el.dataset.counted='1';const obj={v:0};
@@ -1192,14 +1192,14 @@ function countUp(){document.querySelectorAll('[data-count]').forEach(el=>{const 
 })}
 countUp();
 
-/* ── HERO TITLE REVEAL ── */
+/* ââ HERO TITLE REVEAL ââ */
 (function(){
   const t=document.getElementById('hero-title');
   if(!t||reducedMotion){if(t)t.classList.add('revealed');return}
   setTimeout(()=>t.classList.add('revealed'),300);
 })();
 
-/* ── CURSOR SPOTLIGHT ON CARD GRIDS ── */
+/* ââ CURSOR SPOTLIGHT ON CARD GRIDS ââ */
 (function(){
   if(reducedMotion||'ontouchstart' in window)return;
   document.querySelectorAll('.cards').forEach(grid=>{
@@ -1216,28 +1216,28 @@ countUp();
   document.head.appendChild(style);
 })();
 
-/* ── SHIMMER ON PRODUCT CARDS ── */
+/* ââ SHIMMER ON PRODUCT CARDS ââ */
 (function(){
   document.querySelectorAll('.product-cover-card').forEach(c=>c.classList.add('shimmer-card'));
 })();
 
-/* ── BOOKS ── */
+/* ââ BOOKS ââ */
 (function(){
   const books=[
     {title:"Tuesdays with Morrie",author:"Mitch Albom",takeaway:"a dying man taught me more about living than anything i've read since.",genre:"memoir",status:"read"},
     {title:"The Compound Effect",author:"Darren Hardy",takeaway:"small choices, made consistently, quietly become the whole story.",genre:"self-help",status:"read"},
-    {title:"Greenlights",author:"Matthew McConaughey",takeaway:"some setbacks aren't stop signs — they're just redirects you didn't ask for.",genre:"memoir",status:"read"},
+    {title:"Greenlights",author:"Matthew McConaughey",takeaway:"some setbacks aren't stop signs â they're just redirects you didn't ask for.",genre:"memoir",status:"read"},
     {title:"The Almanack of Naval Ravikant",author:"Eric Jorgenson",takeaway:"own equity, not time. that one line changed how i think about work.",genre:"philosophy",status:"read"},
-    {title:"A Man Called Ove",author:"Fredrik Backman",takeaway:"grumpy on the outside, broken on the inside — reminded me that everyone's carrying something.",genre:"fiction",status:"read"},
+    {title:"A Man Called Ove",author:"Fredrik Backman",takeaway:"grumpy on the outside, broken on the inside â reminded me that everyone's carrying something.",genre:"fiction",status:"read"},
     {title:"Eat That Frog",author:"Brian Tracy",takeaway:"do the hardest thing first. everything else gets easier after that.",genre:"self-help",status:"read"},
-    {title:"The Richest Man in Babylon",author:"George S. Clason",takeaway:"pay yourself first — ancient advice that most people still haven't acted on.",genre:"business",status:"read"},
+    {title:"The Richest Man in Babylon",author:"George S. Clason",takeaway:"pay yourself first â ancient advice that most people still haven't acted on.",genre:"business",status:"read"},
     {title:"Who Moved My Cheese",author:"Spencer Johnson",takeaway:"change is coming whether you're ready or not.",genre:"self-help",status:"read"},
     {title:"The Dip",author:"Seth Godin",takeaway:"quitting strategically is a skill.",genre:"business",status:"read"},
     {title:"Make Time",author:"Jake Knapp & John Zeratsky",takeaway:"highlight one thing each day.",genre:"self-help",status:"read"},
-    {title:"Steal Like an Artist",author:"Austin Kleon",takeaway:"nothing is original — collect what you love, remix it, and make it yours.",genre:"creativity",status:"read"},
+    {title:"Steal Like an Artist",author:"Austin Kleon",takeaway:"nothing is original â collect what you love, remix it, and make it yours.",genre:"creativity",status:"read"},
     {title:"Zero to One",author:"Peter Thiel",takeaway:"competition is for losers. build something the world doesn't have yet.",genre:"business",status:"read"},
-    {title:"Frames of Mind",author:"Howard Gardner",takeaway:"intelligence isn't one thing — it's many.",genre:"psychology",status:"read"},
-    {title:"Tools of Titans",author:"Tim Ferriss",takeaway:"a dense toolkit from 200 world-class people — you don't read it, you mine it.",genre:"self-help",status:"read"},
+    {title:"Frames of Mind",author:"Howard Gardner",takeaway:"intelligence isn't one thing â it's many.",genre:"psychology",status:"read"},
+    {title:"Tools of Titans",author:"Tim Ferriss",takeaway:"a dense toolkit from 200 world-class people â you don't read it, you mine it.",genre:"self-help",status:"read"},
     {title:"The Psychology of Money",author:"Morgan Housel",takeaway:"your relationship with money is shaped by when and where you grew up.",genre:"business",status:"read"},
     {title:"Sapiens",author:"Yuval Noah Harari",takeaway:"we run the world on stories we collectively agreed to believe.",genre:"philosophy",status:"read"},
     {title:"Red Rising",author:"Pierce Brown",takeaway:"",genre:"fiction",status:"reading"},
@@ -1264,33 +1264,33 @@ countUp();
     {title:"The Subtle Art of Not Giving a F*ck",author:"Mark Manson",takeaway:"",genre:"self-help",status:"want"},
     {title:"Elon Musk",author:"Walter Isaacson",takeaway:"",genre:"memoir",status:"want"}
   ];
-  const statusMap={read:{label:'✓ read',cls:'status-read'},reading:{label:'▶ reading',cls:'status-reading'},want:{label:'○ want',cls:'status-want'}};
+  const statusMap={read:{label:'â read',cls:'status-read'},reading:{label:'â¶ reading',cls:'status-reading'},want:{label:'â want',cls:'status-want'}};
   const FAVORITES=["Tuesdays with Morrie","The Compound Effect","Greenlights","The Richest Man in Babylon","Sapiens"];
   let currentGenre='all',showAllBooks=false;
-  function renderBooks(genre){currentGenre=genre;const tbody=document.getElementById('books-tbody'),empty=document.getElementById('books-empty'),count=document.getElementById('book-count');if(!tbody)return;const readBooks=books.filter(b=>(b.status==='read'||b.status==='reading')&&(genre==='all'||b.genre===genre));count.textContent=readBooks.length;if(readBooks.length===0){tbody.innerHTML='';empty.style.display='block'}else{empty.style.display='none';tbody.innerHTML=readBooks.map(b=>{const s=statusMap[b.status];const takeaway=b.takeaway||'<span style="color:var(--text-dim);font-style:italic;">—</span>';return`<tr><td class="book-title-cell">${b.title}</td><td>${b.author}</td><td>${takeaway}</td><td><span class="book-genre-pill">${b.genre}</span></td><td><span class="book-status ${s.cls}">${s.label}</span></td></tr>`}).join('')}const totalRead=books.filter(b=>b.status==='read'||b.status==='reading').length;const ac=document.getElementById('allbooks-count');if(ac)ac.textContent=totalRead}
+  function renderBooks(genre){currentGenre=genre;const tbody=document.getElementById('books-tbody'),empty=document.getElementById('books-empty'),count=document.getElementById('book-count');if(!tbody)return;const readBooks=books.filter(b=>(b.status==='read'||b.status==='reading')&&(genre==='all'||b.genre===genre));count.textContent=readBooks.length;if(readBooks.length===0){tbody.innerHTML='';empty.style.display='block'}else{empty.style.display='none';tbody.innerHTML=readBooks.map(b=>{const s=statusMap[b.status];const takeaway=b.takeaway||'<span style="color:var(--text-dim);font-style:italic;">â</span>';return`<tr><td class="book-title-cell">${b.title}</td><td>${b.author}</td><td>${takeaway}</td><td><span class="book-genre-pill">${b.genre}</span></td><td><span class="book-status ${s.cls}">${s.label}</span></td></tr>`}).join('')}const totalRead=books.filter(b=>b.status==='read'||b.status==='reading').length;const ac=document.getElementById('allbooks-count');if(ac)ac.textContent=totalRead}
   function renderCoverGrid(){const grid=document.getElementById('book-cover-grid');if(!grid)return;const showcase=books.filter(b=>FAVORITES.includes(b.title));window._showcaseBooks=showcase;grid.innerHTML=showcase.map((b,i)=>`<div class="book-cover-card" onclick='openBookTooltip(${i})'><div class="book-cover-img-wrap" id="cover-wrap-${i}"><div class="book-cover-placeholder"><div class="book-cover-placeholder-title">${b.title}</div><div class="book-cover-placeholder-author">${b.author}</div></div></div><div class="book-cover-info"><div class="book-cover-title-text">${b.title}</div><div class="book-cover-author-text">${b.author}</div></div></div>`).join('');showcase.forEach((b,i)=>{const query=encodeURIComponent(`${b.title} ${b.author}`);fetch(`https://openlibrary.org/search.json?q=${query}&limit=1&fields=cover_i,title`).then(r=>r.json()).then(data=>{const doc=data.docs&&data.docs[0];if(doc&&doc.cover_i){const wrap=document.getElementById(`cover-wrap-${i}`);if(wrap)wrap.innerHTML=`<img src="https://covers.openlibrary.org/b/id/${doc.cover_i}-M.jpg" alt="${b.title}">`}}).catch(()=>{})})}
   window.openBookTooltip=function(i){const b=window._showcaseBooks[i];document.getElementById('bt-title').textContent=b.title;document.getElementById('bt-author').textContent=b.author;document.getElementById('bt-takeaway').textContent=b.takeaway||'no takeaway noted yet.';document.getElementById('book-tooltip-overlay').style.display='flex'};
   window.closeBookTooltip=function(){document.getElementById('book-tooltip-overlay').style.display='none'};
-  window.toggleAllBooks=function(){showAllBooks=!showAllBooks;const section=document.getElementById('allbooks-section');const icon=document.getElementById('allbooks-toggle-icon');const label=document.getElementById('allbooks-toggle-label');const totalRead=books.filter(b=>b.status==='read'||b.status==='reading').length;if(showAllBooks){section.style.display='block';icon.textContent='●';label.innerHTML='hide full list';renderBooks(currentGenre)}else{section.style.display='none';icon.textContent='○';label.innerHTML=`show all books i've read (<span id="allbooks-count">${totalRead}</span>)`}};
+  window.toggleAllBooks=function(){showAllBooks=!showAllBooks;const section=document.getElementById('allbooks-section');const icon=document.getElementById('allbooks-toggle-icon');const label=document.getElementById('allbooks-toggle-label');const totalRead=books.filter(b=>b.status==='read'||b.status==='reading').length;if(showAllBooks){section.style.display='block';icon.textContent='â';label.innerHTML='hide full list';renderBooks(currentGenre)}else{section.style.display='none';icon.textContent='â';label.innerHTML=`show all books i've read (<span id="allbooks-count">${totalRead}</span>)`}};
   renderBooks('all');renderCoverGrid();
   // Add float animation to book covers
   setTimeout(()=>{document.querySelectorAll('.book-cover-card').forEach((c,i)=>{c.querySelector('.book-cover-img-wrap').style.animationDelay=(i*0.4)+'s';c.querySelector('.book-cover-img-wrap').classList.add('float-anim')})},500);
   document.querySelectorAll('.bfilter').forEach(btn=>{btn.addEventListener('click',function(){document.querySelectorAll('.bfilter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderBooks(btn.dataset.genre)})});
 })();
 
-/* ── GAMES ── */
+/* ââ GAMES ââ */
 (function(){
   const nowPlaying=[{name:'God of War'},{name:'Ghost of Tsushima'},{name:'The Witcher 3'},{name:'Hogwarts Legacy'},{name:'COD Mobile'},{name:'PUBG Mobile'}];
-  const played=[{name:'Red Dead Redemption 2 ★'},{name:"Assassin's Creed franchise (till Mirage)"},{name:'GTA franchise'},{name:'NFS franchise'},{name:'COD franchise'},{name:'Watch Dogs franchise'},{name:"Tom Clancy's Ghost Recon: Wildlands"},{name:"Tom Clancy's The Division"},{name:'Horizon Zero Dawn'},{name:'Forza Horizon 4'},{name:'Hitman 2'},{name:'The Crew 2'},{name:'Genshin Impact'}];
+  const played=[{name:'Red Dead Redemption 2 â'},{name:"Assassin's Creed franchise (till Mirage)"},{name:'GTA franchise'},{name:'NFS franchise'},{name:'COD franchise'},{name:'Watch Dogs franchise'},{name:"Tom Clancy's Ghost Recon: Wildlands"},{name:"Tom Clancy's The Division"},{name:'Horizon Zero Dawn'},{name:'Forza Horizon 4'},{name:'Hitman 2'},{name:'The Crew 2'},{name:'Genshin Impact'}];
   function renderGames(games,id){const el=document.getElementById(id);if(!el)return;el.innerHTML=games.map(g=>`<span class="chip">${g.name}</span>`).join('')}
   renderGames(nowPlaying,'now-playing');renderGames(played,'played');
 })();
 
-/* ── STORE PRODUCTS ── */
+/* ââ STORE PRODUCTS ââ */
 (function(){
   const products=[
-    {id:'ai-bundle',icon:'📦',name:'Your AI Head Start Bundle',sub:'field guide + prompt vault',edition:'rooh7t · bundle',title:'Your AI Head Start Bundle',hook:"you're not bad at AI. you were just never shown how to actually use it. the field guide + the prompt vault — everything you need in one package.",tags:['17 modules','8 AI tools','prompt library','complete bundle'],cta:'https://rooh7t.gumroad.com/l/YourAIHeadStartBundle'},
-    {id:'networking-8020',icon:'🌐',name:'Networking 80/20',sub:'the fundamentals',edition:'rooh7t',title:'Networking 80/20',hook:'the fundamentals that actually run production. no filler, no fluff — just the 20% of networking knowledge that covers 80% of real-world scenarios.',tags:['networking','fundamentals','production'],cta:'https://rooh7t.gumroad.com/l/networking8020'}
+    {id:'ai-bundle',icon:'ð¦',name:'Your AI Head Start Bundle',sub:'field guide + prompt vault',edition:'rooh7t Â· bundle',title:'Your AI Head Start Bundle',hook:"you're not bad at AI. you were just never shown how to actually use it. the field guide + the prompt vault â everything you need in one package.",tags:['17 modules','8 AI tools','prompt library','complete bundle'],cta:'https://rooh7t.gumroad.com/l/YourAIHeadStartBundle'},
+    {id:'networking-8020',icon:'ð',name:'Networking 80/20',sub:'the fundamentals',edition:'rooh7t',title:'Networking 80/20',hook:'the fundamentals that actually run production. no filler, no fluff â just the 20% of networking knowledge that covers 80% of real-world scenarios.',tags:['networking','fundamentals','production'],cta:'https://rooh7t.gumroad.com/l/networking8020'}
   ];
   window._products=products;
   function renderProductGrid(){const grid=document.getElementById('product-cover-grid');if(!grid)return;grid.innerHTML=products.map((p,i)=>`<div class="product-cover-card" onclick="openProductPopup(${i})"><span class="product-cover-icon">${p.icon}</span><span class="product-cover-name">${p.name}</span><span class="product-cover-sub">${p.sub}</span></div>`).join('')}
@@ -1299,7 +1299,7 @@ countUp();
   renderProductGrid();
 })();
 
-/* ── LIBRARY (PDFs + notes, from library.json) ── */
+/* ââ LIBRARY (PDFs + notes, from library.json) ââ */
 (function(){
   let libraryItems=[];
   let currentType='all';
@@ -1312,7 +1312,7 @@ countUp();
     const grid=document.getElementById('library-grid');
     const empty=document.getElementById('library-empty');
     if(!grid)return;
-    const filtered=currentType==='all'?libraryItems:libraryItems.filter(i=>i.category===currentType);
+    const filtered=currentType==='all'?libraryItems:libraryItems.filter(i=>i.category&&i.category.toLowerCase()===currentType.toLowerCase());
     if(filtered.length===0){
       grid.innerHTML='';
       empty.style.display=libraryItems.length===0?'block':'none';
