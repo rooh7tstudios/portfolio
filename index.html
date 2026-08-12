@@ -433,6 +433,14 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
 .section-choreo .section-label{opacity:0;transform:translateX(-12px)}
 .section-choreo h1,.section-choreo h2,.section-choreo .title-row{opacity:0;transform:translateY(20px)}
 .section-choreo p,.section-choreo .callout,.section-choreo .medium-callout{opacity:0;transform:translateY(16px)}
+
+/* ── TIMELINE DRAW ── */
+.exp-grid{position:relative;padding-left:28px}
+.exp-grid::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),#39FF14);transform:scaleY(0);transform-origin:top;transition:transform 1.2s cubic-bezier(0.16,1,0.3,1)}
+.exp-grid.tl-drawn::before{transform:scaleY(1)}
+.exp-grid .exp-card{position:relative}
+.exp-grid .exp-card::before{content:'';position:absolute;left:-22px;top:18px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);opacity:0;transition:opacity 0.4s ease 0.3s;z-index:1}
+.exp-grid.tl-drawn .exp-card.visible::before{opacity:1}
 </style>
 </head>
 <body>
@@ -537,7 +545,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
       <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="photography"><span class="pursuit-icon">📸</span><span class="pursuit-name">photography</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:45%"></div></div><span class="pursuit-pct">45%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-photography"><p>shooting with a sony alpha a6700. started with street photography and architecture. you can follow the photography work at <a href="https://www.instagram.com/travellin.soldier/" target="_blank" style="color:var(--accent);">@travellin.soldier →</a></p></div></div>
       <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="fitness"><span class="pursuit-icon">🏋️</span><span class="pursuit-name">fitness</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:60%"></div></div><span class="pursuit-pct">60%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-fitness"><p>training is a non-negotiable part of my week. mostly compound lifts — consistency over intensity.</p></div></div>
       <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="badminton"><span class="pursuit-icon">🏸</span><span class="pursuit-name">badminton</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:70%"></div></div><span class="pursuit-pct">70%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-badminton"><p>semifinalist in team doubles at UIC's 2024 intramural tournament. the only sport where i actually enjoy the competitive pressure.</p></div></div>
-      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="finance"><span class="pursuit-icon">💰</span><span class="pursuit-name">finance & investing</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:50%"></div></div><span class="pursuit-pct">50%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-finance"><p>long-term focused. investing in ucits etfs with german tax optimization in mind. heavily influenced by naval ravikant's philosophy on wealth creation: own equity, not time.</p></div></div>
+      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="finance"><span class="pursuit-icon">💰</span><span class="pursuit-name">finance & investing</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:50%"></div></div><span class="pursuit-pct">50%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-finance"><p>long-term focused. heavily influenced by naval ravikant's philosophy on wealth creation: own equity, not time.</p></div></div>
     </div>
   </div>
   <div class="section">
@@ -552,7 +560,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
   <div class="section">
     <span class="section-label">products i'm using</span>
     <div class="product-section"><h3>tech & gadgets</h3><div class="chips"><span class="chip">Asus Zephyrus G14</span><span class="chip">Samsung Odyssey G5</span><span class="chip">iPhone 14 Pro</span><span class="chip">CMF Nothing Phone 1</span><span class="chip">Truthear × Crinacle Zero:RED</span><span class="chip">Logi MX Keys Mini</span><span class="chip">Sony Alpha A6700</span><span class="chip">DJI Osmo Action 5 Pro</span><span class="chip">Elgato Stream Deck Neo</span></div></div>
-    <div class="product-section"><h3>software</h3><div class="chips"><span class="chip">Notion</span><span class="chip">Obsidian</span><span class="chip">n8n</span><span class="chip">Brave Browser</span></div></div>
+    <div class="product-section"><h3>software</h3><div class="chips"><span class="chip">Notion</span><span class="chip">Obsidian</span><span class="chip">n8n</span><span class="chip">Brave Browser</span><span class="chip">Claude</span></div></div>
     <div class="product-section">
       <h3>gaming</h3>
       <div style="margin-bottom:0.5rem;"><span style="font-size:0.62rem;font-family:var(--mono);color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;display:block;margin-bottom:0.4rem;">▶ now playing</span><div class="chips" id="now-playing"></div></div>
@@ -612,6 +620,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
           <div class="exp-role">SCADA Network Engineer</div>
           <div class="exp-company"><a href="https://www.chevron.com" target="_blank">Chevron</a></div>
           <div class="exp-meta">Colorado, USA · Dec 2024 – Feb 2026</div>
+          <p style="font-size:0.72rem;color:var(--text-dim);font-style:italic;margin:0.35rem 0 0;line-height:1.5;">Directly descended from Rockefeller's Standard Oil, the empire so powerful the US government broke it apart in 1911.</p>
         </div>
       </div>
       <div class="exp-card reveal">
@@ -620,6 +629,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
           <div class="exp-role">Network Security Engineer</div>
           <div class="exp-company"><a href="https://www.bathandbodyworks.com" target="_blank">Bath &amp; Body Works</a></div>
           <div class="exp-meta">Chicago, USA · Sep 2023 – Nov 2024</div>
+          <p style="font-size:0.72rem;color:var(--text-dim);font-style:italic;margin:0.35rem 0 0;line-height:1.5;">Grew from one experimental mall store in Ohio in 1990 into America's largest bath and personal care retailer within seven years.</p>
         </div>
       </div>
       <div class="exp-card reveal">
@@ -628,6 +638,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
           <div class="exp-role">System Engineer</div>
           <div class="exp-company"><a href="https://www.tcs.com" target="_blank">Tata Consultancy Services (TCS)</a></div>
           <div class="exp-meta">Hyderabad, India · Jun 2018 – Jul 2021</div>
+          <p style="font-size:0.72rem;color:var(--text-dim);font-style:italic;margin:0.35rem 0 0;line-height:1.5;">Runs the technology backbone of the world's largest banks and retailers: 600,000+ people across 46+ countries.</p>
         </div>
       </div>
     </div>
@@ -641,6 +652,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
           <div class="exp-role">Master of Science</div>
           <div class="exp-company">Management Information Systems</div>
           <div class="exp-meta">University of Illinois Chicago, USA · 2023</div>
+          <p style="font-size:0.72rem;color:var(--text-dim);font-style:italic;margin:0.35rem 0 0;line-height:1.5;">Chicago's only public research university, and one of the most diverse research campuses in the country.</p>
         </div>
       </div>
       <div class="exp-card reveal">
@@ -649,8 +661,22 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
           <div class="exp-role">Bachelor of Technology</div>
           <div class="exp-company">Computer Science</div>
           <div class="exp-meta">GITAM University, Visakhapatnam, India · 2018</div>
+          <p style="font-size:0.72rem;color:var(--text-dim);font-style:italic;margin:0.35rem 0 0;line-height:1.5;">Its main campus sits on a beach in a port city with roots back to the 6th century BC, not your typical engineering-school backdrop.</p>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="section">
+    <span class="section-label">core capabilities</span>
+    <div class="cards">
+      <div class="card reveal"><div class="card-title">next-gen firewalls</div><p class="card-desc">palo alto ngfw, panorama, cisco asa, policy management, nat, ssl inspection</p></div>
+      <div class="card reveal"><div class="card-title">cisco networking</div><p class="card-desc">routing (ospf, eigrp, bgp), switching (vlans, stp, etherchannel), layer 2/3 troubleshooting, cisco ios</p></div>
+      <div class="card reveal"><div class="card-title">network infrastructure</div><p class="card-desc">arista, network segmentation, subnetting, acls, wan/lan design</p></div>
+      <div class="card reveal"><div class="card-title">cloud security</div><p class="card-desc">aws vpc, transit gateway, iam, security groups, scada/ot network security</p></div>
+      <div class="card reveal"><div class="card-title">endpoint & threat</div><p class="card-desc">crowdstrike falcon, nessus, splunk, vulnerability assessment</p></div>
+      <div class="card reveal"><div class="card-title">monitoring</div><p class="card-desc">solarwinds, splunk siem, log analysis, network performance monitoring</p></div>
+      <div class="card reveal"><div class="card-title">architecture</div><p class="card-desc">zero trust network access (ztna), network segmentation, dmz design</p></div>
+      <div class="card reveal"><div class="card-title">automation</div><p class="card-desc">n8n, docker, python scripting, network automation</p></div>
     </div>
   </div>
   <div class="section">
@@ -850,10 +876,8 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
     </a>
     <div class="chips" id="library-filters" style="margin-top:1.5rem;margin-bottom:0.9rem;">
       <button class="bfilter active" data-type="all">all</button>
-      <button class="bfilter" data-type="networking">networking</button>
-      <button class="bfilter" data-type="cybersecurity">cybersecurity</button>
-      <button class="bfilter" data-type="career">career</button>
-      <button class="bfilter" data-type="ai">ai</button>
+      <button class="bfilter" data-type="pdf">pdfs</button>
+      <button class="bfilter" data-type="note">notes</button>
     </div>
     <div class="cards" id="library-grid"></div>
     <div id="library-empty" class="rh-empty" style="display:none;margin-top:1rem">
@@ -871,7 +895,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
     <div class="book-tooltip-title" id="lib-title"></div>
     <div id="lib-pdf-wrap" style="display:none;margin-top:0.75rem;">
       <embed id="lib-pdf-embed" type="application/pdf" width="100%" height="420" style="border:1px solid var(--border);border-radius:var(--radius-sm);">
-      <a id="lib-pdf-download" href="#" download class="goodreads-link" style="margin-top:0.6rem;">download →</a>
+      <a id="lib-pdf-download" href="#" target="_blank" class="goodreads-link" style="margin-top:0.6rem;">open in new tab →</a>
     </div>
     <div id="lib-note-wrap" style="display:none;margin-top:0.75rem;font-size:0.82rem;color:var(--text-muted);line-height:1.75;white-space:pre-wrap;"></div>
   </div>
@@ -933,7 +957,7 @@ footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);
       <div class="ds-section-label">verified credentials</div>
       <div class="ds-certs">
         <span class="ds-cert earned">CCNA · earned</span>
-        <span class="ds-cert earned">AWS Cloud Practitioner · earned</span>
+        <span class="ds-cert earned">AWS Cloud · earned</span>
         <span class="ds-cert earned">PJPT · earned</span>
         <span class="ds-cert earned">OSINT Investigator · earned</span>
         <span class="ds-cert earned">Google Cybersecurity · earned</span>
@@ -1280,7 +1304,7 @@ countUp();
 
 /* ── GAMES ── */
 (function(){
-  const nowPlaying=[{name:'God of War'},{name:'Ghost of Tsushima'},{name:'The Witcher 3'},{name:'Hogwarts Legacy'},{name:'COD Mobile'},{name:'PUBG Mobile'}];
+  const nowPlaying=[{name:'God of War'},{name:'Ghost of Tsushima'},{name:'Cyberpunk 2077: Phantom Liberty'},{name:'COD Mobile'},{name:'PUBG Mobile'}];
   const played=[{name:'Red Dead Redemption 2 ★'},{name:"Assassin's Creed franchise (till Mirage)"},{name:'GTA franchise'},{name:'NFS franchise'},{name:'COD franchise'},{name:'Watch Dogs franchise'},{name:"Tom Clancy's Ghost Recon: Wildlands"},{name:"Tom Clancy's The Division"},{name:'Horizon Zero Dawn'},{name:'Forza Horizon 4'},{name:'Hitman 2'},{name:'The Crew 2'},{name:'Genshin Impact'}];
   function renderGames(games,id){const el=document.getElementById(id);if(!el)return;el.innerHTML=games.map(g=>`<span class="chip">${g.name}</span>`).join('')}
   renderGames(nowPlaying,'now-playing');renderGames(played,'played');
@@ -1302,28 +1326,57 @@ countUp();
 /* ── LIBRARY (PDFs + notes, from library.json) ── */
 (function(){
   let libraryItems=[];
-  let currentType='all';
+  let activeFilter='all'; // 'all' | 'pdf' | 'note' | category name
 
   function escapeHtml(s){
     return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function buildFilters(){
+    const wrap=document.getElementById('library-filters');
+    if(!wrap)return;
+    // collect unique non-null categories in order of appearance
+    const cats=[...new Set(libraryItems.map(i=>i.category).filter(Boolean))].sort();
+    wrap.innerHTML=
+      `<button class="bfilter active" data-f="all">all</button>`+
+      `<button class="bfilter" data-f="pdf">pdfs</button>`+
+      `<button class="bfilter" data-f="note">notes</button>`+
+      cats.map(c=>`<button class="bfilter" data-f="${escapeHtml(c)}">${escapeHtml(c.toLowerCase())}</button>`).join('');
+    wrap.querySelectorAll('.bfilter').forEach(btn=>{
+      btn.addEventListener('click',function(){
+        wrap.querySelectorAll('.bfilter').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter=btn.dataset.f;
+        renderLibrary();
+      });
+    });
   }
 
   function renderLibrary(){
     const grid=document.getElementById('library-grid');
     const empty=document.getElementById('library-empty');
     if(!grid)return;
-    const filtered=currentType==='all'?libraryItems:libraryItems.filter(i=>i.category&&i.category.toLowerCase()===currentType.toLowerCase());
+    const filtered=libraryItems.filter(i=>{
+      if(activeFilter==='all')return true;
+      if(activeFilter==='pdf'||activeFilter==='note')return i.type===activeFilter;
+      return i.category===activeFilter;
+    });
     if(filtered.length===0){
       grid.innerHTML='';
-      empty.style.display=libraryItems.length===0?'block':'none';
+      empty.style.display='block';
       return;
     }
     empty.style.display='none';
     grid.innerHTML=filtered.map(item=>{
       const idx=libraryItems.indexOf(item);
-      const tag=item.category?item.category:(item.type==='pdf'?'PDF':'Note');
+      const typeTag=item.type==='pdf'?'PDF':'Note';
+      const catTag=item.category?`<span class="card-tag">${escapeHtml(item.category)}</span>`:'';
       const meta=item.type==='pdf'&&item.size_kb?`${item.size_kb} KB`:'';
-      return `<div class="card reveal visible" style="cursor:pointer" onclick="openLibraryItem(${idx})"><div class="card-title">${escapeHtml(item.title)}</div><p class="card-desc">${meta}</p><span class="card-tag">${tag}</span></div>`;
+      return `<div class="card reveal visible" style="cursor:pointer" onclick="openLibraryItem(${idx})">
+        <div class="card-title">${escapeHtml(item.title)}</div>
+        <p class="card-desc">${meta}</p>
+        ${catTag}<span class="card-tag">${typeTag}</span>
+      </div>`;
     }).join('');
   }
 
@@ -1345,30 +1398,15 @@ countUp();
   };
   window.closeLibraryItem=function(){document.getElementById('library-overlay').style.display='none'};
 
-  document.querySelectorAll('#library-filters .bfilter').forEach(btn=>{
-    btn.addEventListener('click',function(){
-      document.querySelectorAll('#library-filters .bfilter').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      currentType=btn.dataset.type;
-      renderLibrary();
-    });
-  });
-
   fetch('/library.json')
     .then(r=>r.ok?r.json():[])
-    .then(data=>{libraryItems=data;renderLibrary();if(typeof ScrollTrigger!=='undefined')ScrollTrigger.refresh();})
+    .then(data=>{libraryItems=data;buildFilters();renderLibrary();})
     .catch(()=>{renderLibrary();});
-
-  document.addEventListener('click',function(e){
-    var link=e.target.closest('a[onclick*="resourcehub"]');
-    if(link){
-      setTimeout(function(){
-        document.querySelectorAll('#library-grid .card').forEach(function(c){c.style.opacity='1';c.style.transform='none';});
-        if(typeof ScrollTrigger!=='undefined')ScrollTrigger.refresh();
-      },300);
-    }
-  },true);
 })();
 </script>
+
+/* ── TIMELINE DRAW ── */
+(function(){var grids=document.querySelectorAll('.exp-grid');if(!grids.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('tl-drawn');io.unobserve(e.target)}})},{threshold:0.15});grids.forEach(function(g){io.observe(g)})})();
+
 <!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ab2da21cbba24a68b755ebfb50cec0f8"}'></script><!-- Cloudflare Pages Analytics --></body>
 </html>
