@@ -1,1423 +1,1128 @@
-
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="rohit raj rajana — network security engineer. building things, securing systems." />
-<title>Rohit Raj Rajana</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<script>const saved=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',saved||'light');</script>
+<title>Rohit Raj Rajana · Network Security Engineer</title>
+<meta name="description" content="Network security engineer in Saarbrücken, Germany. Five years across enterprise and OT/SCADA networks: firewalls, Zero Trust access, industrial switching." />
+<meta name="theme-color" content="#F4F1E9" />
+<meta name="color-scheme" content="light dark" />
+<link rel="canonical" href="https://rooh7t.pages.dev/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F4B5F'/%3E%3Ctext x='16' y='22.5' font-family='Arial,sans-serif' font-size='17' font-weight='700' fill='%23fff' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Rohit Raj Rajana · Network Security Engineer" />
+<meta property="og:description" content="Five years securing enterprise and OT/SCADA networks. Based in Saarbrücken, Germany." />
+<meta property="og:url" content="https://rooh7t.pages.dev/" />
+<meta property="og:image" content="https://rooh7t.pages.dev/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Rohit Raj Rajana, Network Security Engineer, Saarbrücken" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preload" href="fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
 <style>
-:root {
-  --bg: #FAFAF8; --bg-card: #FFFFFF; --bg-hover: #F5F3EE;
-  --text: #1A1A1A; --text-muted: #5A5A5A; --text-dim: #999;
-  --border: #E8E5E0; --primary: #1F4B5F; --primary-rgb: 31,75,95; --primary-soft: rgba(31,75,95,0.07);
-  --secondary: #0E8C74; --secondary-rgb: 14,140,116; --secondary-soft: rgba(14,140,116,0.08); --signature: #2E6E68; --signature-rgb: 46,110,104; --signature-soft: rgba(46,110,104,0.08);
-  --max: min(94vw, 1600px); --pad: 1.5rem; --radius: 16px; --radius-sm: 8px;
-  --display: 'Space Grotesk', system-ui, sans-serif;
-  --sans: 'Inter', system-ui, sans-serif;
-  --mono: 'JetBrains Mono', monospace;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
-  --shadow-lg: 0 12px 32px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04);
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/fraunces-latin-opsz-normal.woff2) format('woff2')}
+@font-face{font-family:'Geist';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/geist-latin-wght-normal.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:100 800;font-display:swap;src:url(fonts/jetbrains-mono-latin-wght-normal.woff2) format('woff2')}
+</style>
+<script>
+(function(){
+  var r=document.documentElement,t='light',p=null;
+  try{t=localStorage.getItem('theme')||'light';p=localStorage.getItem('motion')}catch(e){}
+  if(t!=='dark'&&t!=='light')t='light';
+  r.setAttribute('data-theme',t);
+  r.classList.add('js');
+  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='dark'?'#090E11':'#F4F1E9');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* "mo" = motion allowed. Without it the page is static and fully visible. */
+  if(!reduce&&'IntersectionObserver' in window){r.classList.add('mo');if(p==='paused')r.classList.add('paused')}
+  /* failsafe: if the main script does not finish, drop motion so no content stays hidden */
+  setTimeout(function(){if(!r.classList.contains('ready'))r.classList.remove('mo')},4000);
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Rohit Raj Rajana","jobTitle":"Network Security Engineer","url":"https://rooh7t.pages.dev/","address":{"@type":"PostalAddress","addressLocality":"Saarbrücken","addressCountry":"DE"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"University of Illinois Chicago"},{"@type":"CollegeOrUniversity","name":"GITAM University"}],"sameAs":["https://www.linkedin.com/in/rohit7raj/"]}
+</script>
+<style>
+/* ── TOKENS ── light first, near-black dark ── */
+:root{
+  color-scheme:light;
+  --bg:#F4F1E9; --bg-card:#FBF9F4; --bg-hover:#EAE6DA; --band:#EBE7DB; --chip:#E7E2D5;
+  --text:#10181D; --text-muted:#444F56; --text-dim:#5C676D;
+  --rule:rgba(16,24,29,.12); --line-strong:#6E767A;
+  --primary:#14394A; --on-primary:#F7F5EE; --primary-soft:rgba(20,57,74,.08);
+  --accent:#0A7A65; --on-accent:#fff;
+  --con-bg:#0B1419; --con-bg2:#122028; --con-text:#E6ECEE; --con-dim:#93A6AE; --con-line:#5E737C; --con-wire:#2A3D45;
+  --led-ent:#7FB6D1; --led-edu:#C8D3D7; --led-ot:#3FCFA8;
+  --mesh:20,57,74; --mesh-acc:10,122,101; --mesh-a:.36; --mesh-l:.17; --mesh-glow:.16;
+  --glass:rgba(244,241,233,.82); --shadow:rgba(16,24,29,.30); --wordmark:rgba(16,24,29,.055);
+  --display:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Geist',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --wrap:min(100% - 3rem,76rem);
+  --radius:10px;
+  --ease:cubic-bezier(.16,1,.3,1);
 }
-[data-theme="dark"] {
-  --bg: #0F0F0F; --bg-card: #1A1A1A; --bg-hover: #222;
-  --text: #E8E6E0; --text-muted: #999; --text-dim: #666;
-  --border: #2A2A2A; --primary: #6FA8C4; --primary-rgb: 111,168,196; --primary-soft: rgba(111,168,196,0.1); --secondary: #3FCFA8; --secondary-rgb: 63,207,168; --secondary-soft: rgba(63,207,168,0.1); --signature: #6FC3BB; --signature-rgb: 111,195,187; --signature-soft: rgba(111,195,187,0.1);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.2); --shadow-md: 0 4px 12px rgba(0,0,0,0.3); --shadow-lg: 0 12px 32px rgba(0,0,0,0.4);
+[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#090E11; --bg-card:#10191E; --bg-hover:#16232A; --band:#0D1519; --chip:#17252C;
+  --text:#E9EEEE; --text-muted:#A5B3B8; --text-dim:#8799A1;
+  --rule:rgba(233,238,238,.11); --line-strong:#6B7D85;
+  --primary:#8CC3DC; --on-primary:#071014; --primary-soft:rgba(140,195,220,.1);
+  --accent:#3FCFA8; --on-accent:#071014;
+  --con-bg:#0F1B21; --con-bg2:#15252D;
+  --mesh:140,195,220; --mesh-acc:63,207,168; --mesh-a:.5; --mesh-l:.2; --mesh-glow:.15;
+  --glass:rgba(9,14,17,.8); --shadow:rgba(0,0,0,.75); --wordmark:rgba(233,238,238,.05);
 }
+
+/* ── BASE ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:18px;scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;line-height:1.7;min-height:100vh;display:flex;flex-direction:column;transition:background 0.3s,color 0.3s}
-a{color:inherit;text-decoration:none}
+html{font-size:17px;scroll-padding-top:5rem;background:var(--bg)}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{color:var(--text);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--primary);text-underline-offset:.2em}
+a:hover{text-decoration-thickness:2px}
+ul,ol{list-style:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:var(--wrap);margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--primary);color:var(--on-primary);padding:.7rem 1rem;border-radius:8px;z-index:100;font-weight:600;text-decoration:none}
+.skip:focus{top:1rem}
+h1,h2,h3{font-family:var(--display);color:var(--text);line-height:1.1;font-optical-sizing:auto}
+.mono{font-family:var(--mono)}
 
-/* NAV */
-nav{width:100%;max-width:var(--max);margin:0 auto;padding:1.25rem var(--pad);display:flex;align-items:center;justify-content:space-between;position:relative}
-.nav-brand{font-family:var(--display);font-size:0.95rem;font-weight:600;letter-spacing:-0.01em;cursor:pointer;color:var(--text)}
-.nav-links{display:flex;gap:1.1rem;list-style:none}
-.nav-links a{font-size:0.72rem;color:var(--text-dim);display:inline-flex;align-items:center;gap:0.25rem;transition:color 0.15s;font-weight:400}
-.nav-links a:hover,.nav-links a.active{color:var(--text)}
-.theme-toggle-btn{background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center}
-.tt-track{width:36px;height:20px;background:var(--bg-card);border:1px solid var(--border);border-radius:99px;display:flex;align-items:center;padding:0 3px;position:relative;transition:background 0.2s}
-.tt-thumb{width:13px;height:13px;background:var(--text-dim);border-radius:50%;position:absolute;left:3px;transition:transform 0.2s,background 0.2s;pointer-events:none}
-.is-light .tt-thumb{transform:translateX(16px);background:var(--primary)}
-.mob-bar{display:none;align-items:center;gap:0.6rem}
-.mob-menu-btn{background:none;border:none;cursor:pointer;color:var(--text-muted);display:flex}
-#mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);z-index:60;padding:1rem var(--pad)}
-#mobile-menu.open{display:block}
-.mob-links{display:flex;flex-direction:column;gap:0.7rem}
-.mob-links a{font-size:0.83rem;color:var(--text-muted);display:inline-flex;align-items:center;gap:0.45rem;padding:0.15rem 0;transition:color 0.15s}
-.mob-links a:hover{color:var(--text)}
-.hidden{display:none !important}
+/* background canvas + scroll progress */
+#mesh{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.progress{position:fixed;left:0;top:0;height:2px;width:100%;z-index:60;background:var(--accent);transform:scaleX(0);transform-origin:left center;pointer-events:none}
 
-/* PAGE STRUCTURE */
-main{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--pad);flex:1}
-.page-section{display:none}
-.page-section.active{display:block;animation:page-in 0.3s ease-out}
-@keyframes page-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-@media(prefers-reduced-motion:reduce){.page-section.active{animation:none}}
+/* ── HEADER ── */
+.site-header{position:sticky;top:0;z-index:50;background:transparent;transition:background-color .35s}
+.site-header.scrolled{background:var(--glass);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.site-header.scrolled{background:var(--bg)}}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.4rem}
+.brand{font-family:var(--display);font-weight:500;font-size:1.15rem;letter-spacing:-.01em;color:var(--text);text-decoration:none;padding:.5rem 0}
+.primary-nav{position:relative}
+.nav-list{display:flex;gap:.25rem}
+.nav-list a{display:inline-flex;align-items:center;min-height:44px;padding:0 .8rem;font-size:.9rem;color:var(--text-muted);text-decoration:none;border-radius:999px;transition:color .25s,background .25s}
+.nav-list a:hover,.nav-list a[aria-current]{color:var(--text)}
+.nav-list a:hover{background:var(--chip)}
+.nav-ind{position:absolute;left:0;bottom:5px;width:100px;height:2px;border-radius:2px;background:var(--accent);transform-origin:left center;transform:scaleX(0);opacity:0;pointer-events:none}
+.mo .nav-ind{transition:transform .5s var(--ease),opacity .3s}
+.bar-end{display:flex;align-items:center;gap:.15rem}
+.icon-btn{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;background:none;border:none;border-radius:999px;color:var(--text-muted);cursor:pointer;transition:color .2s,background .2s}
+.icon-btn:hover{color:var(--text);background:var(--chip)}
+.theme-btn .i-sun{display:none}
+[data-theme="dark"] .theme-btn .i-sun{display:block}
+[data-theme="dark"] .theme-btn .i-moon{display:none}
+.motion-btn{display:none}
+.mo .motion-btn{display:inline-flex}
+.motion-btn .i-play{display:none}
+.paused .motion-btn .i-play{display:block}
+.paused .motion-btn .i-pause{display:none}
+.m-menu{display:none;position:relative}
+.m-menu summary{list-style:none;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 .8rem;font-size:.9rem;color:var(--text-muted);cursor:pointer;border-radius:999px}
+.m-menu summary::-webkit-details-marker{display:none}
+.m-menu summary:hover{color:var(--text);background:var(--chip)}
+.m-menu ul{position:absolute;right:0;top:100%;min-width:13rem;background:var(--bg-card);border-radius:var(--radius);padding:.4rem;margin-top:.3rem;box-shadow:0 18px 40px -18px var(--shadow)}
+.m-menu li a{display:flex;align-items:center;min-height:44px;padding:0 .8rem;color:var(--text);text-decoration:none;border-radius:8px;font-size:.95rem}
+.m-menu li a:hover{background:var(--chip)}
+@media(max-width:700px){.primary-nav{display:none}.m-menu{display:block}}
+@media(max-width:400px){.brand{font-size:1rem}.m-menu summary{padding:0 .5rem}.bar{gap:.5rem}}
 
-/* TYPOGRAPHY */
-h1{font-family:var(--display);font-size:2rem;font-weight:700;letter-spacing:-0.03em;line-height:1.15;color:var(--text)}
-h2{font-family:var(--display);font-size:1.35rem;font-weight:600;letter-spacing:-0.02em;line-height:1.2}
-.section-label{font-family:var(--mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--primary);margin-bottom:1.1rem;display:block;font-weight:500}
-p{font-size:0.86rem;color:var(--text-muted);line-height:1.75;margin-bottom:0.9rem}
-code{font-family:var(--mono);font-size:0.7rem;background:var(--primary-soft);color:var(--primary);padding:0.15em 0.5em;border-radius:4px}
-
-/* SECTIONS */
-.section{padding:2.5rem 0;border-top:1px solid var(--border)}
-.page-header{padding:2.5rem 0 0}
-.title-row{display:flex;align-items:baseline;gap:0.8rem;margin-bottom:1.25rem}
-
-/* SCROLL REVEAL */
-.reveal{opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-/* HERO CONTENT */
-
-/* NAV BLOCKS (bento tiles on homepage) */
-.nav-blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;margin-top:2rem}
-.nav-block{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;display:flex;flex-direction:column;gap:0.5rem;text-decoration:none}
-.nav-block:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--primary)}
-.nav-block-icon{width:36px;height:36px;border-radius:var(--radius-sm);background:var(--primary-soft);display:flex;align-items:center;justify-content:center;color:var(--primary)}
-.nav-block-title{font-family:var(--display);font-size:0.85rem;font-weight:600;color:var(--text)}
-.nav-block-desc{font-size:0.72rem;color:var(--text-dim);line-height:1.5}
-
-/* BENTO CARDS */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0.75rem}
-.card{border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.2rem;background:var(--bg-card);transition:transform 0.2s ease,box-shadow 0.2s ease,border-color 0.2s ease;box-shadow:var(--shadow-sm)}
-.card:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-.card-title{font-family:var(--display);font-size:0.85rem;font-weight:600;margin-bottom:0.35rem;color:var(--text)}
-.card-desc{font-size:0.76rem;color:var(--text-dim);line-height:1.6;margin:0}
-.card-tag{display:inline-block;margin-top:0.55rem;margin-right:0.25rem;font-size:0.6rem;font-family:var(--mono);color:var(--primary);background:var(--primary-soft);padding:0.15em 0.5em;border-radius:4px;font-weight:500}
-.card-tag.progress{color:var(--secondary);background:var(--secondary-soft)}
-
-/* CHIPS & PILLS */
-.chips{display:flex;flex-wrap:wrap;gap:0.4rem}
-.chip{font-size:0.76rem;padding:0.28rem 0.65rem;border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text-muted);background:var(--bg-card);transition:border-color 0.15s,color 0.15s,transform 0.15s}
-.chip:hover{border-color:var(--primary);color:var(--text);transform:translateY(-1px)}
-.pills{display:flex;flex-wrap:wrap;gap:0.38rem;margin:0.4rem 0 0.9rem}
-.pill{font-size:0.7rem;font-family:var(--mono);background:var(--bg-card);color:var(--text-dim);padding:0.18em 0.55em;border-radius:4px;border:1px solid var(--border)}
-
-/* CALLOUT */
-.callout{border:1px solid var(--border);border-left:3px solid var(--primary);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:0.8rem 1rem;font-size:0.8rem;color:var(--text-muted);margin:1rem 0;background:var(--bg-card)}
-
-/* TABLES */
-table{width:100%;border-collapse:collapse;font-size:0.82rem}
-th{text-align:left;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-dim);font-weight:500;padding:0.45rem 0.5rem;border-bottom:1px solid var(--border);font-family:var(--mono)}
-td{padding:0.6rem 0.5rem;border-bottom:1px solid var(--border);color:var(--text-muted);vertical-align:middle}
-td a{color:var(--primary);transition:color 0.15s}
-td a:hover{color:var(--text)}
-tr:last-child td{border-bottom:none}
-
-/* PURSUITS ACCORDION */
-.pursuits-list{display:flex;flex-direction:column;gap:0.45rem}
-.pursuit-item{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform 0.15s,box-shadow 0.15s;background:var(--bg-card)}
-.pursuit-item:hover{transform:translateY(-1px);box-shadow:var(--shadow-md)}
-.pursuit-toggle{width:100%;background:none;border:none;cursor:pointer;padding:0.7rem 1rem;display:flex;align-items:center;gap:0.7rem;text-align:left;color:var(--text);transition:background 0.15s}
-.pursuit-toggle:hover{background:var(--bg-hover)}
-.pursuit-icon{width:28px;height:28px;border-radius:var(--radius-sm);background:var(--primary-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.85rem}
-.pursuit-name{font-size:0.83rem;flex:1;color:var(--text-muted);font-family:var(--display);font-weight:500}
-.pursuit-bar-wrap{display:flex;align-items:center;gap:0.55rem;flex:1;max-width:175px}
-.pursuit-track{flex:1;height:4px;background:var(--bg-hover);border-radius:99px;overflow:hidden}
-.pursuit-fill{height:100%;background:var(--primary);border-radius:99px}
-.pursuit-pct{font-size:0.62rem;color:var(--text-dim);font-family:var(--mono);flex-shrink:0}
-.pursuit-chevron{color:var(--text-dim);transition:transform 0.2s;flex-shrink:0}
-.pursuit-chevron.open{transform:rotate(180deg)}
-.pursuit-body{display:none;padding:0 1rem 0.9rem}
-.pursuit-body.open{display:block}
-.pursuit-body p{font-size:0.8rem;color:var(--text-muted);margin:0}
-
-/* PRODUCTS USING */
-.product-section{margin-bottom:1.75rem}
-.product-section h3{font-family:var(--mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim);margin-bottom:0.6rem}
-
-/* LANGUAGES */
-.lang-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem}
-@media(max-width:600px){.lang-grid{grid-template-columns:1fr}}
-.lang-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:0.85rem 1rem;min-width:0;transition:border-color 0.15s;box-shadow:var(--shadow-sm)}
-.lang-card:hover{border-color:var(--primary)}
-.lang-card-learning{border-color:rgba(var(--primary-rgb),0.3)}
-.lang-card-learning:hover{border-color:var(--primary)}
-.lang-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.6rem;gap:0.5rem;flex-wrap:wrap}
-.lang-name{font-family:var(--display);font-size:0.85rem;font-weight:500;color:var(--text);white-space:nowrap}
-.lang-code{font-size:0.6rem;font-family:var(--mono);color:var(--primary);background:var(--primary-soft);padding:0.15em 0.5em;border-radius:4px;letter-spacing:0.05em;white-space:nowrap;font-weight:500}
-.lang-track{position:relative;height:4px;background:var(--bg-hover);border-radius:99px;overflow:visible;margin-bottom:1.6rem}
-.lang-fill{height:100%;background:var(--primary);border-radius:99px}
-.lang-markers{display:flex;justify-content:space-between;margin-top:0.35rem}
-.lang-markers span{font-size:0.55rem;font-family:var(--mono);color:var(--text-dim);letter-spacing:0.03em}
-.lang-marker-active{color:var(--primary) !important;font-weight:600}
-.lang-label{font-size:0.68rem;color:var(--text-dim);font-style:italic;display:block;margin-top:0.25rem}
-
-/* BOOK COVERS */
-.book-cover-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:0.9rem;margin-bottom:2rem}
-.book-cover-card{display:flex;flex-direction:column;gap:0.5rem;cursor:pointer}
-.book-cover-img-wrap{position:relative;width:100%;aspect-ratio:2/3;border-radius:var(--radius-sm);overflow:hidden;background:var(--bg-card);border:1px solid var(--border);transition:border-color 0.15s,transform 0.2s,box-shadow 0.2s}
-.book-cover-card:hover .book-cover-img-wrap{border-color:var(--primary);transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-.book-cover-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
-.book-cover-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0.6rem;background:linear-gradient(135deg,var(--bg-card),var(--bg-hover))}
-.book-cover-placeholder-title{font-family:var(--display);font-size:0.68rem;color:var(--primary);line-height:1.3;margin-bottom:0.3rem}
-.book-cover-placeholder-author{font-family:var(--mono);font-size:0.55rem;color:var(--text-dim)}
-.book-cover-info{font-size:0.7rem}
-.book-cover-title-text{font-weight:500;color:var(--text);line-height:1.3;margin-bottom:0.1rem}
-.book-cover-author-text{font-size:0.63rem;color:var(--text-dim)}
-.book-tooltip-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:100;padding:1.5rem}
-.book-tooltip-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;max-width:340px;position:relative;box-shadow:var(--shadow-lg)}
-.book-tooltip-close{position:absolute;top:0.75rem;right:0.75rem;background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:1.1rem;line-height:1}
-.book-tooltip-title{font-family:var(--display);font-size:1.05rem;color:var(--text);margin-bottom:0.2rem;padding-right:1.5rem}
-.book-tooltip-author{font-size:0.75rem;color:var(--text-dim);margin-bottom:0.9rem}
-.book-tooltip-takeaway{font-size:0.8rem;color:var(--text-muted);line-height:1.65;font-style:italic}
-.goodreads-link{font-family:var(--mono);font-size:0.65rem;color:var(--text-dim);letter-spacing:0.04em;display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.4rem}
-.goodreads-link:hover{color:var(--primary)}
-.bfilter{font-size:0.72rem;font-family:var(--mono);background:var(--bg-card);color:var(--text-dim);border:1px solid var(--border);border-radius:4px;padding:0.25em 0.7em;cursor:pointer;transition:all 0.15s;letter-spacing:0.04em}
-.bfilter:hover{color:var(--text);border-color:var(--primary)}
-.bfilter.active{background:var(--primary);color:#fff;border-color:var(--primary)}
-.book-count{font-size:0.68rem;font-family:var(--mono);color:var(--text-dim);margin-bottom:0.6rem;letter-spacing:0.05em}
-.books-table-wrap{overflow-x:auto}
-.books-table{width:100%;border-collapse:collapse;font-size:0.82rem}
-.books-table th{text-align:left;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-dim);font-weight:500;padding:0.45rem 0.5rem;border-bottom:1px solid var(--border);font-family:var(--mono)}
-.books-table td{padding:0.65rem 0.5rem;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-muted)}
-.books-table tr:last-child td{border-bottom:none}
-.books-table tr{transition:background 0.1s}
-.books-table tr:hover td{background:var(--bg-hover)}
-.book-title-cell{color:var(--text);font-weight:500;white-space:nowrap}
-.book-genre-pill{font-size:0.6rem;font-family:var(--mono);color:var(--primary);background:var(--primary-soft);padding:0.15em 0.5em;border-radius:3px;white-space:nowrap}
-.book-status{font-size:0.62rem;font-family:var(--mono);letter-spacing:0.04em;white-space:nowrap}
-.status-read{color:var(--secondary)}.status-reading{color:var(--primary)}.status-want{color:var(--text-dim)}
-
-/* STORE */
-.store-platform{border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;background:var(--bg-card);transition:transform 0.2s,box-shadow 0.2s;box-shadow:var(--shadow-sm)}
-.store-platform:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
-.store-platform-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:0.75rem}
-.store-platform-name{font-family:var(--display);font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.2rem}
-.product-cover-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1rem;margin:1.25rem 0}
-.product-cover-card{cursor:pointer;border-radius:var(--radius);overflow:hidden;position:relative;background:var(--bg-card);border:1px solid var(--border);aspect-ratio:2/3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1rem 0.75rem;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;box-shadow:var(--shadow-sm)}
-.product-cover-card:hover{transform:translateY(-3px);border-color:var(--primary);box-shadow:var(--shadow-lg)}
-.product-cover-icon{font-size:1.7rem;margin-bottom:0.5rem}
-.product-cover-name{font-family:var(--display);font-size:0.82rem;color:var(--text);font-weight:600;line-height:1.3;margin-bottom:0.3rem;position:relative;z-index:1}
-.product-cover-sub{font-family:var(--mono);font-size:0.56rem;color:var(--text-dim);letter-spacing:0.06em;text-transform:uppercase;position:relative;z-index:1}
-.product-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:100;padding:1.5rem}
-.product-popup-card{position:relative;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:2.25rem 2rem;max-width:460px;width:100%;box-shadow:var(--shadow-lg)}
-.product-popup-close{position:absolute;top:0.9rem;right:1rem;background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:1.2rem;line-height:1;z-index:2}
-.product-popup-edition{font-size:0.6rem;font-family:var(--mono);letter-spacing:0.15em;color:var(--primary);text-transform:uppercase;text-align:center;margin-bottom:1.1rem;opacity:0.8}
-.product-popup-title{font-family:var(--display);font-size:1.5rem;font-weight:600;color:var(--text);text-align:center;line-height:1.15;margin-bottom:0.9rem}
-.product-popup-hook{font-size:0.88rem;color:var(--text-muted);text-align:center;line-height:1.6;max-width:360px;margin:0 auto 1.1rem}
-.product-popup-tags{display:flex;justify-content:center;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.3rem}
-.product-popup-tag{font-size:0.6rem;font-family:var(--mono);letter-spacing:0.08em;text-transform:uppercase;color:var(--primary);border:1px solid rgba(var(--primary-rgb),0.3);padding:0.22em 0.65em;border-radius:4px}
-.product-popup-cta{display:block;width:fit-content;margin:0 auto;background:var(--primary);color:#fff;font-size:0.78rem;font-weight:600;font-family:var(--display);letter-spacing:0.04em;padding:0.6rem 1.8rem;border-radius:var(--radius-sm);text-decoration:none;transition:opacity 0.2s,transform 0.2s}
-.product-popup-cta:hover{opacity:0.85;transform:translateY(-1px)}
-.teaser-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:0.75rem}
-@media(max-width:600px){.teaser-grid{grid-template-columns:1fr}}
-.teaser-card{position:relative;border:1px dashed rgba(var(--primary-rgb),0.3);border-radius:var(--radius);padding:1.25rem 1.1rem;background:var(--bg-card);transition:transform 0.15s,box-shadow 0.15s,border-color 0.15s}
-.teaser-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--primary)}
-.teaser-badge{display:inline-block;font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--primary);border:1px solid rgba(var(--primary-rgb),0.3);padding:0.2em 0.6em;border-radius:4px;margin-bottom:0.75rem}
-.teaser-title{font-family:var(--display);font-size:1.05rem;color:var(--text);margin-bottom:0.4rem;line-height:1.3;font-weight:600}
-.teaser-desc{font-size:0.76rem;color:var(--text-dim);line-height:1.65;margin-bottom:0.6rem}
-.teaser-parts{display:flex;flex-direction:column;gap:0.3rem;margin-top:0.6rem}
-.teaser-part{font-family:var(--mono);font-size:0.65rem;color:var(--text-dim);display:flex;align-items:baseline;gap:0.4rem}
-.teaser-part span.num{color:var(--primary)}
-
-/* WORK WITH ME (dossier restyled) */
-.ds-wrap{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:2rem;box-shadow:var(--shadow-sm)}
-.ds-topbar{background:var(--bg-card);border-bottom:1px solid var(--border);padding:0.65rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-radius:var(--radius) var(--radius) 0 0}
-.ds-topbar span{font-family:var(--mono);font-size:0.58rem;color:var(--text-dim);letter-spacing:0.12em;text-transform:uppercase}
-.ds-stampbar{background:var(--signature);padding:0.35rem 1.25rem;display:flex;align-items:center;gap:1rem;opacity:0.9}
-.ds-stampbar-title{font-family:var(--mono);font-size:0.62rem;font-weight:600;color:#fff;letter-spacing:0.25em;text-transform:uppercase}
-.ds-stampbar-ref{font-family:var(--mono);font-size:0.58rem;color:rgba(255,255,255,0.6);margin-left:auto}
-.ds-hero{padding:2rem 1.5rem 1.75rem;border-bottom:1px solid var(--border)}
-.ds-file-label{font-family:var(--mono);font-size:0.58rem;color:var(--text-dim);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.9rem}
-.ds-subject{display:flex;gap:1.25rem;align-items:flex-start;margin-bottom:1.5rem}
-.ds-photo{width:58px;height:72px;background:var(--bg-hover);border:1px solid var(--border);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-.ds-photo span{font-family:var(--mono);font-size:0.5rem;color:var(--text-dim);text-align:center;line-height:1.8}
-.ds-fields{flex:1;display:flex;flex-direction:column;gap:0.3rem}
-.ds-field{display:flex;gap:0.75rem;font-family:var(--mono);font-size:0.68rem}
-.ds-field-k{color:var(--text-dim);min-width:85px;text-transform:uppercase;letter-spacing:0.05em;flex-shrink:0}
-.ds-field-v{color:var(--text-muted)}
-.ds-field-v.gold{color:var(--signature)}
-.ds-field-v.green{color:var(--signature)}
-.ds-h1{font-family:var(--display);font-size:1.6rem;font-weight:700;letter-spacing:-0.02em;color:var(--text);line-height:1.15;margin-bottom:0.4rem}
-.ds-tagline{font-family:var(--mono);font-size:0.7rem;color:var(--text-dim);margin-bottom:1.5rem;line-height:1.7}
-.ds-btns{display:flex;gap:0.75rem;flex-wrap:wrap}
-.ds-btn-p{background:var(--signature);color:#fff;font-size:0.75rem;font-weight:600;font-family:var(--mono);padding:0.6rem 1.25rem;border-radius:var(--radius-sm);letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;transition:opacity 0.2s}
-.ds-btn-p:hover{opacity:0.85}
-.ds-btn-s{background:none;color:var(--signature);font-size:0.75rem;font-family:var(--mono);padding:0.6rem 1.25rem;border-radius:var(--radius-sm);border:1px solid rgba(var(--signature-rgb),0.35);letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;transition:border-color 0.15s}
-.ds-btn-s:hover{border-color:var(--signature)}
-.ds-stats{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--border)}
-.ds-stat{padding:1rem 1.1rem;border-right:1px solid var(--border)}
-.ds-stat:last-child{border-right:none}
-.ds-stat-n{font-family:var(--mono);font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.15rem}
-.ds-stat-l{font-family:var(--mono);font-size:0.55rem;color:var(--text-dim);letter-spacing:0.1em;text-transform:uppercase}
-.ds-section{padding:1.5rem;border-bottom:1px solid var(--border)}
-.ds-section-label{font-family:var(--mono);font-size:0.58rem;color:var(--text-dim);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem}
-.ds-section-label::after{content:'';flex:1;height:1px;background:var(--border);display:block}
-.ds-ops{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem}
-.ds-op{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.9rem 1rem;transition:border-color 0.15s,transform 0.15s,box-shadow 0.15s}
-.ds-op:hover{border-color:var(--signature);transform:translateY(-2px);box-shadow:var(--shadow-md)}
-.ds-op-label{font-family:var(--mono);font-size:0.57rem;color:var(--signature);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.4rem}
-.ds-op-title{font-family:var(--display);font-size:0.83rem;font-weight:600;color:var(--text);margin-bottom:0.3rem}
-.ds-op-desc{font-size:0.72rem;color:var(--text-dim);line-height:1.6;margin-bottom:0.6rem}
-.ds-op-link{font-family:var(--mono);font-size:0.6rem;color:var(--signature);letter-spacing:0.05em;text-decoration:none}
-.ds-certs{display:flex;flex-wrap:wrap;gap:0.45rem}
-.ds-cert{font-family:var(--mono);font-size:0.62rem;padding:0.25em 0.7em;border-radius:4px;transition:transform 0.15s,box-shadow 0.15s}
-.ds-cert.earned{color:var(--signature);border:1px solid rgba(var(--signature-rgb),0.3)}
-.ds-cert.earned:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
-.ds-cert.pending{color:var(--text-dim);border:1px solid var(--border)}
-.ds-topic-list{display:flex;flex-direction:column;gap:0.7rem;margin-bottom:1.25rem}
-.ds-topic-row{display:flex;flex-direction:column;gap:0.15rem}
-.ds-topic-name{font-family:var(--display);font-size:0.78rem;font-weight:500;color:var(--text)}
-.ds-topic-desc{font-size:0.72rem;color:var(--text-dim);line-height:1.55}
-.ds-cta{background:var(--bg-card);border-top:2px solid var(--signature);padding:2rem 1.5rem;text-align:center;border-radius:0 0 var(--radius) var(--radius)}
-.ds-cta-stamp{display:block;width:fit-content;margin:0 auto 1.25rem;border:1.5px solid var(--signature);border-radius:4px;padding:0.2rem 0.9rem;font-family:var(--mono);font-size:0.6rem;font-weight:600;color:var(--signature);letter-spacing:0.28em;text-transform:uppercase;transform:rotate(-1.5deg)}
-.ds-cta-h{font-family:var(--display);font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:0.4rem;letter-spacing:-0.01em}
-.ds-cta-s{font-size:0.78rem;color:var(--text-dim);margin-bottom:1.5rem;line-height:1.7}
-.ds-cta-btns{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap}
-.btb-intro{font-size:0.78rem;color:var(--text-dim);line-height:1.7;margin-bottom:1.25rem}
-.btb-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
-.btb-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.15rem;transition:border-color 0.15s,transform 0.15s,box-shadow 0.15s}
-.btb-card:hover{border-color:var(--signature);transform:translateY(-2px);box-shadow:var(--shadow-md)}
-.btb-card-title{font-family:var(--display);font-size:0.86rem;font-weight:600;color:var(--text);margin-bottom:0.45rem;line-height:1.35}
-.btb-card-hook{font-size:0.74rem;color:var(--text-dim);line-height:1.65;margin-bottom:0.6rem;font-style:italic}
-.btb-card-what{font-size:0.76rem;color:var(--text-muted);line-height:1.65;margin-bottom:0.6rem}
-.btb-card-who{font-size:0.68rem;color:var(--text-dim);line-height:1.6;margin-bottom:0.7rem}
-.btb-card-who span{color:var(--signature);font-family:var(--mono);font-size:0.62rem;letter-spacing:0.04em;text-transform:uppercase}
-.btb-card-link{font-family:var(--mono);font-size:0.6rem;color:var(--signature);letter-spacing:0.05em;text-decoration:none}
-
-/* MEDIUM CALLOUT */
-.medium-callout{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;align-items:center;gap:1.25rem;transition:border-color 0.2s,box-shadow 0.2s,transform 0.2s;cursor:pointer;text-decoration:none;margin:1rem 0}
-.medium-callout:hover{border-color:var(--primary);box-shadow:var(--shadow-md);transform:translateY(-2px)}
-.medium-icon{width:48px;height:48px;border-radius:12px;background:var(--primary-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem;font-weight:700;color:var(--primary);font-family:var(--display)}
-.medium-body{flex:1}
-.medium-title{font-family:var(--display);font-size:0.88rem;font-weight:600;color:var(--text);margin-bottom:0.2rem}
-.medium-desc{font-size:0.76rem;color:var(--text-dim);line-height:1.5}
-
-/* RESOURCE HUB */
-.rh-empty{text-align:center;padding:3rem 1.5rem;border:1px dashed var(--border);border-radius:var(--radius);background:var(--bg-card)}
-.rh-empty-icon{font-size:2rem;margin-bottom:1rem;opacity:0.4}
-.rh-empty-title{font-family:var(--display);font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.4rem}
-.rh-empty-desc{font-size:0.8rem;color:var(--text-dim);max-width:360px;margin:0 auto}
-
-/* EXPERIENCE CARDS */
-.exp-grid{display:grid;grid-template-columns:1fr;gap:0.75rem}
-.exp-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.25rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color 0.15s,transform 0.15s,box-shadow 0.15s;box-shadow:var(--shadow-sm)}
-.exp-card:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:var(--shadow-md)}
-.exp-logo{width:44px;height:44px;border-radius:10px;border:1px solid var(--border);overflow:hidden;flex-shrink:0;background:var(--bg);display:flex;align-items:center;justify-content:center}
-.exp-logo img{width:100%;height:100%;object-fit:contain;padding:4px}
-.exp-info{flex:1;min-width:0}
-.exp-role{font-family:var(--display);font-size:0.85rem;font-weight:600;color:var(--text);margin-bottom:0.15rem}
-.exp-company{font-size:0.78rem;color:var(--primary);margin-bottom:0.15rem}
-.exp-company a{color:var(--primary)}
-.exp-company a:hover{text-decoration:underline}
-.exp-meta{font-family:var(--mono);font-size:0.62rem;color:var(--text-dim);letter-spacing:0.03em}
-
-/* CERT BADGES */
-.cert-grid{display:flex;flex-wrap:wrap;gap:0.5rem}
-.cert-badge{display:flex;align-items:center;gap:0.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.4rem 0.75rem;transition:border-color 0.15s,transform 0.15s}
-.cert-badge:hover{border-color:var(--primary);transform:translateY(-1px)}
-.cert-badge-logo{width:20px;height:20px;border-radius:3px;overflow:hidden;flex-shrink:0}
-.cert-badge-logo img{width:100%;height:100%;object-fit:contain}
-.cert-badge-text{font-family:var(--mono);font-size:0.62rem;color:var(--text-muted);letter-spacing:0.03em}
-.cert-badge-status{font-size:0.55rem;color:var(--text-dim)}
-.cert-badge.earned{border-color:rgba(var(--secondary-rgb),0.3)}
-.cert-badge.progress{border-color:rgba(var(--primary-rgb),0.3)}
-
-/* FOOTER */
-footer{width:100%;max-width:var(--max);margin:0 auto;padding:1.75rem var(--pad);border-top:1px solid var(--border);display:flex;flex-direction:column;gap:0.7rem}
-@media(min-width:600px){footer{flex-direction:row;align-items:center;justify-content:space-between}}
-.footer-left{display:flex;align-items:center;gap:0.45rem;font-size:0.78rem;color:var(--text-muted);flex-wrap:wrap}
-.status-ping{position:relative;display:inline-flex;height:8px;width:8px}
-.status-ping-outer{animation:ping 1.3s cubic-bezier(0,0,0.2,1) infinite;position:absolute;inset:0;border-radius:50%;background:var(--secondary);opacity:0.5}
-.status-ping-inner{position:relative;border-radius:50%;height:8px;width:8px;background:var(--secondary)}
-@keyframes ping{75%,100%{transform:scale(2);opacity:0}}
-.neko{cursor:pointer;user-select:none;font-size:1.1rem;transition:transform 0.15s}
-.neko:hover{transform:scale(1.2)}
-.footer-right{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.footer-right a,.footer-right button{font-size:0.78rem;color:var(--text-muted);background:none;border:none;cursor:pointer;padding:0;font-family:inherit;transition:color 0.15s;display:inline-flex;align-items:center;gap:0.28rem}
-.footer-right a:hover,.footer-right button:hover{color:var(--text)}
-.footer-dot{color:var(--text-dim)}
-
-/* AGE DISPLAY */
-.age-display{font-family:var(--mono);font-size:0.78rem;color:var(--text-dim)}
-
-/* COUNT-UP STAT */
-.stat-number{font-family:var(--mono);font-weight:600}
-
-/* RESPONSIVE */
-@media(max-width:600px){
-  .nav-links{display:none}.tt-desktop{display:none}.mob-bar{display:flex}
-  h1{font-size:1.4rem}
-  .nav-blocks{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr}
-  .pursuit-bar-wrap{max-width:110px}.ds-ops{grid-template-columns:1fr}
-  .ds-stats{grid-template-columns:1fr}.btb-grid{grid-template-columns:1fr}
-  .exp-card{flex-direction:column}.lang-grid{grid-template-columns:1fr}
-  .teaser-grid{grid-template-columns:1fr}
+/* ── HERO ── */
+.hero-band{position:relative}
+.hero{padding:clamp(2.5rem,8vw,6.5rem) 0 clamp(3rem,7vw,5.5rem);display:grid;gap:2.2rem 2rem;grid-template-columns:1fr}
+@media(min-width:900px){
+  .hero{grid-template-columns:repeat(12,minmax(0,1fr));row-gap:2.4rem}
+  .hero h1{grid-column:1/8;grid-row:1}
+  .hero-copy{grid-column:1/8;grid-row:2}
+  .hero-photo{grid-column:8/13;grid-row:1/3;align-self:end}
+  .facts{grid-column:1/-1}
 }
-@media(min-width:601px){.mob-bar{display:none}}
+h1{font-size:clamp(3.2rem,9.6vw,7.6rem);font-weight:340;letter-spacing:-.035em;line-height:.98}
+.h1l{display:block;overflow:hidden;padding-bottom:.2em;margin-bottom:-.2em}
+.h1l>span{display:block}
+.lede{font-family:var(--display);font-weight:360;font-size:clamp(1.35rem,2.1vw,1.8rem);line-height:1.28;letter-spacing:-.015em;color:var(--text);max-width:30em;margin-bottom:1.1rem}
+.lede-sub{color:var(--text-muted);max-width:34rem;margin-bottom:2rem}
+.hero-photo{margin:0}
+.hero-photo img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:50% 30%;border-radius:6px;background:var(--chip)}
+.btn-row{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 1.6rem;border-radius:999px;font-weight:550;font-size:.95rem;text-decoration:none;border:0;transition:transform .35s var(--ease),background .25s,color .25s}
+.btn-primary{background:var(--primary);color:var(--on-primary)}
+.btn-primary:hover{transform:translateY(-2px);text-decoration:none}
+.btn-ghost{background:var(--chip);color:var(--text)}
+.btn-ghost:hover{background:var(--bg-hover);transform:translateY(-2px);text-decoration:none}
 
-/* ── PAGE BANNERS (parallax) ── */
-.page-banner{width:100%;height:200px;background-size:cover;background-position:center;border-radius:var(--radius);margin-bottom:0;position:relative;overflow:hidden}
-.page-banner-img{position:absolute;inset:0;background-size:cover;background-position:center;will-change:transform}
-.page-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.35));border-radius:var(--radius);z-index:1}
-.page-banner.no-overlay::after{display:none}
-[data-theme="light"] .page-banner::after{background:linear-gradient(to bottom,rgba(255,255,255,0.05),rgba(250,250,248,0.6))}
-@media(max-width:768px){.page-banner{height:140px}}
-.banner-about{background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1400&q=75')}
-.banner-2026{background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1400&q=75')}
-.banner-work{background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=75')}
-.banner-projects{background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&q=75')}
-.banner-guides{background-image:url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1400&q=75')}
-.banner-store{background-image:url('https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1400&q=75')}
-.banner-resourcehub{background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1400&q=75')}
-.banner-contact{background-image:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1400&q=75')}
+/* hero entrance: lines rise, the rest fades in. Only when motion is allowed. */
+.mo .h1l>span{transform:translateY(108%);animation:rise 1.3s var(--ease) both;animation-delay:calc(var(--i,0)*120ms + 120ms)}
+@keyframes rise{to{transform:none}}
+.mo .fadein{opacity:0;animation:fadein 1.1s var(--ease) both;animation-delay:var(--d,0ms)}
+@keyframes fadein{to{opacity:1}}
 
-/* ── CURSOR SPOTLIGHT ── */
-.card-grid-spotlight{position:relative}
-.card-grid-spotlight::before{content:'';position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(var(--primary-rgb),0.06) 0%,transparent 70%);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);opacity:0;transition:opacity 0.3s;z-index:0}
-.card-grid-spotlight:hover::before{opacity:1}
+/* card lift (hover) */
+.lift{transition:transform .45s var(--ease),box-shadow .45s}
+.lift:hover{transform:translateY(-3px);box-shadow:0 22px 44px -26px var(--shadow)}
 
-/* ── 3D TILT CARDS ── */
-.tilt-card{transform-style:preserve-3d;perspective:800px;transition:transform 0.1s ease-out}
-.tilt-card .card-title,.tilt-card .card-desc,.tilt-card .card-tag{transform:translateZ(20px)}
+/* at a glance: one flat panel */
+.facts{background:var(--bg-card);border-radius:var(--radius);padding:.6rem 1.6rem 1.2rem}
+.facts-cap{font-family:var(--display);font-size:1.15rem;font-weight:450;color:var(--text);padding:.9rem 0 .3rem}
+.tblock{display:grid;grid-template-columns:repeat(6,1fr);gap:1.1rem 2rem}
+.tblock .cell{grid-column:span 2}
+.tblock .wide{grid-column:span 3}
+.tblock .cell.r{grid-column:span 2}
+.tblock dt{font-size:.82rem;font-weight:600;color:var(--text-dim);margin-bottom:.15rem}
+.tblock dd{font-size:.95rem;color:var(--text);line-height:1.5}
+@media(max-width:820px){.tblock{grid-template-columns:1fr}.tblock .cell,.tblock .wide,.tblock .cell.r{grid-column:auto}}
+.dot{display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:var(--accent);margin-right:.55rem;vertical-align:.05em;box-shadow:0 0 0 3px var(--primary-soft)}
+.mo .dot{animation:live 2.4s ease-in-out infinite}
+@keyframes live{50%{opacity:.4}}
 
-/* ── PULL QUOTE ── */
-.pull-quote{font-family:var(--display);font-size:1.3rem;font-weight:500;color:var(--text);line-height:1.45;font-style:italic;border-left:3px solid var(--primary);padding:0.5rem 0 0.5rem 1.25rem;margin:1.5rem 0;letter-spacing:-0.01em}
-.pull-quote em{color:var(--primary);font-style:normal}
+/* pause states */
+.paused .dot,.paused .pkt-a,.trace-off .pkt-a,.paused .cursor,.trace-off .cursor,.paused .hop.lit .led,.trace-off .hop.lit .led{animation-play-state:paused}
 
-/* ── SHIMMER EFFECT (store products) ── */
-.shimmer-card{position:relative;overflow:hidden}
-.shimmer-card::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.08),transparent);transform:skewX(-15deg);transition:none;pointer-events:none}
-.shimmer-card:hover::after{left:120%;transition:left 0.6s ease}
-[data-theme="light"] .shimmer-card::after{background:linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent)}
+/* ── BUTTONS: plug-in LinkedIn, copy email ── */
+.plug{display:inline-flex;align-items:center;margin-right:.65rem}
+.plug .cable{width:13px;height:2px;border-radius:1px;background:currentColor;opacity:.55;transform:scaleX(.35);transform-origin:left center;transition:transform .35s var(--ease),opacity .3s}
+.plug .jack{width:9px;height:9px;border-radius:50%;border:1.5px solid currentColor;margin-left:2px;transition:background .25s .12s,border-color .25s .12s,box-shadow .25s .12s}
+.btn-plug:hover .cable,.btn-plug:focus-visible .cable{transform:scaleX(1);opacity:1}
+.btn-plug:hover .jack,.btn-plug:focus-visible .jack{background:#3FCFA8;border-color:#3FCFA8;box-shadow:0 0 0 3px rgba(63,207,168,.25),0 0 10px #3FCFA8}
+.copy-mail{gap:.55rem}
+.copy-mail svg{flex:none;opacity:.7;transition:opacity .2s,transform .3s var(--ease)}
+.copy-mail:hover svg{opacity:1;transform:translateY(-1px)}
+.copy-mail .i-ok{display:none;color:var(--accent)}
+.copy-mail.copied .i-ok{display:block}
+.copy-mail.copied .i-copy{display:none}
 
-/* ── FLOAT ANIMATION (book covers) ── */
-.float-anim{animation:gentle-float 3s ease-in-out infinite alternate}
-@keyframes gentle-float{from{transform:translateY(0)}to{transform:translateY(-3px)}}
-@media(prefers-reduced-motion:reduce){.float-anim{animation:none}}
+/* stat link meter */
+.meter{display:block;position:relative;width:3.2rem;height:3px;border-radius:2px;background:var(--rule);margin:.2rem 0 1rem}
+.meter i{position:absolute;inset:0;border-radius:inherit;background:var(--accent);transform-origin:left center}
+.meter::after{content:'';position:absolute;right:-9px;top:-2px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.mo .meter i{transform:scaleX(0)}
+.mo .meter::after{opacity:0;transition:opacity .3s}
+.mo .meter.done::after{opacity:1}
 
-/* ── BREATHING ANIMATION ── */
-.breathe{animation:breathe-pulse 3s ease-in-out infinite}
-@keyframes breathe-pulse{0%,100%{transform:scale(1);opacity:0.4}50%{transform:scale(1.05);opacity:0.6}}
-@media(prefers-reduced-motion:reduce){.breathe{animation:none}}
+/* ── TRACEROUTE: the dark field, the signature ── */
+.trace{background:var(--con-bg);color:var(--con-text);position:relative;isolation:isolate;overflow:hidden;padding:clamp(4rem,9vw,7rem) 0}
+.trace a{color:var(--led-ent)}
+.trace :focus-visible{outline-color:var(--led-ot)}
+.trace-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem 2rem;margin-bottom:3.2rem}
+.trace h2{color:var(--con-text);margin-bottom:.7rem}
+.trace-cmd{font-family:var(--mono);font-size:.86rem;color:var(--con-dim)}
+.trace-cmd b{color:var(--led-ot);font-weight:500}
+.cursor{display:inline-block;width:.55em;height:1.05em;margin-left:.15em;vertical-align:-.15em;background:var(--led-ot)}
+.mo .cursor{animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.replay{display:none;align-items:center;gap:.5rem;min-height:44px;padding:0 1.1rem;border-radius:999px;border:1px solid var(--con-line);background:transparent;color:var(--con-text);font:500 .88rem var(--sans);cursor:pointer;transition:border-color .25s,background .25s}
+.mo .replay{display:inline-flex}
+.replay:hover{border-color:var(--led-ot);background:rgba(63,207,168,.08)}
+.replay svg{transition:transform .5s var(--ease)}
+.replay:hover svg{transform:rotate(-200deg)}
 
-/* ── TEASER PULSE ── */
-.teaser-card{animation:teaser-border-pulse 3s ease-in-out infinite}
-@keyframes teaser-border-pulse{0%,100%{border-color:rgba(var(--primary-rgb),0.2)}50%{border-color:rgba(var(--primary-rgb),0.5)}}
-@media(prefers-reduced-motion:reduce){.teaser-card{animation:none}}
+.trace-path{position:relative}
+.hops{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+.wire{position:absolute;left:12.5%;right:12.5%;top:21px;height:2px;background:var(--con-wire);border-radius:1px}
+.wire-fill{position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,var(--led-ent),var(--led-edu) 33%,var(--led-ent) 66%,var(--led-ot));transform-origin:left center}
+.mo .wire-fill{transform:scaleX(0)}
+.pkt,.pkt-a{position:absolute;left:0;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--led-ot);box-shadow:0 0 0 3px rgba(63,207,168,.22),0 0 14px var(--led-ot);opacity:0;pointer-events:none}
+.pkt.on{opacity:1}
+.pkt-a{width:6px;height:6px;margin:-3px 0 0 -3px;box-shadow:0 0 10px var(--led-ot)}
+.mo .ambient .pkt-a{animation:run-x 3.4s linear infinite}
+.mo .ambient .pkt-a + .pkt-a{animation-delay:-1.7s}
+@keyframes run-x{0%{opacity:0;transform:translateX(0)}8%{opacity:1}92%{opacity:1}100%{opacity:0;transform:translateX(var(--len,0px))}}
+@keyframes run-y{0%{opacity:0;transform:translateY(0)}8%{opacity:1}92%{opacity:1}100%{opacity:0;transform:translateY(var(--len,0px))}}
 
-/* ── MAGNETIC HOVER ── */
-.magnetic{transition:transform 0.3s cubic-bezier(0.23,1,0.32,1)}
+.hop{--c:var(--led-ent);position:relative;display:flex;flex-direction:column;align-items:center;gap:.6rem;min-height:44px;padding:0 .25rem .4rem;background:none;border:none;border-radius:10px;color:var(--con-dim);cursor:pointer;text-align:center;font:inherit}
+.hop.k-edu{--c:var(--led-edu)}
+.hop.k-ot{--c:var(--led-ot)}
+.port{position:relative;flex:none;width:46px;height:42px;border-radius:7px;border:1.5px solid var(--con-line);background:var(--con-bg);transition:border-color .35s,box-shadow .35s,transform .45s var(--ease)}
+.port::before{content:'';position:absolute;left:50%;bottom:7px;width:22px;height:13px;margin-left:-11px;border:1.5px solid var(--con-line);border-radius:2px;clip-path:polygon(0 0,100% 0,100% 100%,72% 100%,72% 120%,28% 120%,28% 100%,0 100%);transition:border-color .35s}
+.port::after{content:'';position:absolute;left:50%;bottom:16px;width:14px;height:2px;margin-left:-7px;background:repeating-linear-gradient(90deg,var(--con-line) 0 2px,transparent 2px 4px);transition:background .35s}
+.led{position:absolute;top:5px;right:6px;width:6px;height:6px;border-radius:50%;background:#26363D;transition:background .3s,box-shadow .3s}
+.hop.lit .port{border-color:var(--c)}
+.hop.lit .port::before{border-color:var(--c)}
+.hop.lit .led{background:var(--c);box-shadow:0 0 8px var(--c)}
+.mo .hop.lit .led{animation:led 1.8s ease-in-out infinite}
+@keyframes led{40%{opacity:.55}}
+.hop[aria-selected="true"] .port{box-shadow:0 0 0 5px color-mix(in srgb,var(--c) 22%,transparent);transform:translateY(-2px)}
+.hop:hover .port{transform:translateY(-2px)}
+.hop-name{display:block;font-family:var(--display);font-weight:450;font-size:1.25rem;color:var(--con-text);line-height:1.2}
+.hop-yr{display:block;font-family:var(--mono);font-size:.76rem;color:var(--con-dim)}
+.hop-k{display:block;font-size:.84rem;font-weight:500;color:var(--c);margin-top:.1rem}
+.hop[aria-selected="true"] .hop-name{text-decoration:underline;text-decoration-color:var(--c);text-decoration-thickness:2px;text-underline-offset:.3em}
 
-/* ── SOCIAL LINK SLIDE ── */
-.social-slide td a{display:inline-block;transition:transform 0.2s ease,color 0.15s}
-.social-slide tr:hover td a{transform:translateX(4px);color:var(--primary)}
+.trace-body{display:grid;grid-template-columns:1fr;gap:1.8rem;margin-top:3rem}
+@media(min-width:900px){.trace-body{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:3.5rem;align-items:start}}
+.trace-out{font-family:var(--mono);font-size:.8rem;line-height:1.95;color:var(--con-dim);white-space:pre;overflow:hidden;padding-top:.4rem}
+.trace-out .ln{display:block}
+.trace-out .h{color:var(--con-text)}
+.trace-out .z{color:var(--led-ot)}
+.trace-out .e{color:var(--led-ent)}
+.mo .trace-out .hl{opacity:0;transform:translateX(-6px);transition:opacity .4s,transform .4s var(--ease)}
+.mo .trace-out .hl.show{opacity:1;transform:none}
+.trace-out .end{color:var(--led-ot)}
 
-/* ── TITLE REVEAL ── */
-.title-reveal{overflow:hidden}
-.title-reveal span{display:inline-block;transform:translateY(100%);opacity:0;transition:transform 0.5s cubic-bezier(0.16,1,0.3,1),opacity 0.5s ease}
-.title-reveal.revealed span{transform:translateY(0);opacity:1}
+.panels{border-radius:var(--radius);background:var(--con-bg2);padding:1.6rem 1.7rem 1.7rem}
+.js .panels{display:grid}
+.js .hp{grid-area:1/1}
+.js .hp.off{visibility:hidden;opacity:0}
+.mo .hp{transition:opacity .4s,transform .45s var(--ease)}
+.mo .hp.off{transform:translateY(6px)}
+.hp + .hp{margin-top:1.6rem}
+.js .hp + .hp{margin-top:0}
+.hp-k{font-size:.86rem;font-weight:500;color:var(--con-dim)}
+.hp h3{color:var(--con-text);font-size:1.6rem;font-weight:420;margin:.3rem 0 .15rem}
+.hp-m{font-family:var(--mono);font-size:.76rem;color:var(--con-dim);margin-bottom:1rem}
+.hp-list{display:grid;gap:.5rem;margin-bottom:1.3rem}
+.hp-list li{position:relative;padding-left:1.1rem;font-size:.95rem;line-height:1.55;color:var(--con-text)}
+.hp-list li::before{content:'';position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;border:1.5px solid var(--c,var(--led-ot))}
+.hp[data-k="ent"]{--c:var(--led-ent)}
+.hp[data-k="edu"]{--c:var(--led-edu)}
+.hp[data-k="ot"]{--c:var(--led-ot)}
+.hp-metric{display:flex;align-items:baseline;gap:.8rem;padding-top:.3rem}
+.hp-num{font-family:var(--display);font-weight:350;font-size:3rem;letter-spacing:-.03em;color:var(--c);font-variant-numeric:tabular-nums;line-height:1}
+.hp-metric span:last-child{font-size:.9rem;color:var(--con-dim);line-height:1.4}
+.sites{display:block;width:100%;max-width:300px;height:auto;margin-top:1rem}
+.sites circle{fill:var(--led-ot)}
+.mo .sites circle{opacity:.14;transition:opacity .25s}
+.mo .sites.fill circle{opacity:.9}
 
-/* ── LANG BAR ANIMATE ── */
-.lang-fill{transition:width 1s cubic-bezier(0.16,1,0.3,1)}
-.lang-fill-initial{width:0 !important}
+@media(max-width:700px){
+  .hops{grid-template-columns:1fr;gap:0}
+  .wire{left:23px;right:auto;top:32px;bottom:32px;width:2px;height:auto}
+  .wire-fill{background:linear-gradient(180deg,var(--led-ent),var(--led-edu) 33%,var(--led-ent) 66%,var(--led-ot));transform-origin:top center}
+  .mo .wire-fill{transform:scaleY(0)}
+  .pkt,.pkt-a{left:50%;top:0;margin:-5px 0 0 -5px}
+  .pkt-a{margin:-3px 0 0 -3px}
+  .mo .ambient .pkt-a{animation-name:run-y}
+  .hop{flex-direction:row;align-items:center;gap:1rem;min-height:64px;padding:0;text-align:left}
+  .hop-txt{display:flex;flex-wrap:wrap;align-items:baseline;gap:.1rem .6rem}
+  .hop-k{width:100%;margin:0}
+  .trace-out{display:none}
+}
 
-/* ── TYPING EFFECT ── */
-.typewriter{overflow:hidden;white-space:nowrap;border-right:2px solid var(--primary);width:0;animation:typing 2s steps(35) 0.8s forwards,blink-caret 0.6s step-end infinite}
-@keyframes typing{from{width:0}to{width:100%}}
-@keyframes blink-caret{from,to{border-color:transparent}50%{border-color:var(--primary)}}
-@media(prefers-reduced-motion:reduce){.typewriter{width:100%;animation:none;border-right:none}}
+/* ── STATS ── */
+.stats{background:var(--band);padding:clamp(3.5rem,8vw,6rem) 0}
+.stat-list{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4rem 2rem}
+@media(max-width:820px){.stat-list{grid-template-columns:1fr 1fr}}
+.stat{padding:0}
+.stat-num{display:block;font-family:var(--display);font-weight:300;font-size:clamp(3.2rem,7vw,5.6rem);letter-spacing:-.04em;line-height:.95;color:var(--text);font-variant-numeric:tabular-nums;margin-bottom:.6rem}
+.stat-label{display:block;font-size:.98rem;color:var(--text);line-height:1.45;margin-bottom:.4rem;max-width:16rem}
+.stat-ctx{display:block;font-size:.84rem;font-weight:500;color:var(--accent)}
 
-/* ── SECTION CHOREOGRAPHY ── */
-.section-choreo .section-label{opacity:0;transform:translateX(-12px)}
-.section-choreo h1,.section-choreo h2,.section-choreo .title-row{opacity:0;transform:translateY(20px)}
-.section-choreo p,.section-choreo .callout,.section-choreo .medium-callout{opacity:0;transform:translateY(16px)}
+/* ── SECTIONS ── */
+.section{padding:clamp(4rem,9vw,8rem) 0}
+.band{background:var(--band)}
+.section-grid{display:grid;gap:2rem;grid-template-columns:1fr}
+@media(min-width:900px){
+  .section-grid{grid-template-columns:minmax(17rem,.4fr) minmax(0,1fr);gap:3.5rem}
+  .section-grid>h2{position:sticky;top:6rem;align-self:start}
+}
+h2{text-wrap:balance;font-size:clamp(2.1rem,3.9vw,3.2rem);font-weight:340;letter-spacing:-.03em}
+h3{font-size:1.2rem;font-weight:500;letter-spacing:-.01em}
+.intro{color:var(--text-muted);max-width:40rem;margin-bottom:2.2rem}
 
-/* ── TIMELINE DRAW ── */
-.exp-grid{position:relative;padding-left:28px}
-.exp-grid::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--primary),#39FF14);transform:scaleY(0);transform-origin:top;transition:transform 1.2s cubic-bezier(0.16,1,0.3,1)}
-.exp-grid.tl-drawn::before{transform:scaleY(1)}
-.exp-grid .exp-card{position:relative}
-.exp-grid .exp-card::before{content:'';position:absolute;left:-22px;top:18px;width:10px;height:10px;border-radius:50%;background:var(--primary);border:2px solid var(--bg);opacity:0;transition:opacity 0.4s ease 0.3s;z-index:1}
-.exp-grid.tl-drawn .exp-card.visible::before{opacity:1}
+/* experience */
+.timeline{position:relative;padding-left:2.2rem}
+.timeline::before{content:'';position:absolute;left:5px;top:.6rem;bottom:.6rem;width:2px;background:var(--rule);transform-origin:top}
+.mo .timeline::before{transform:scaleY(0);transition:transform 1.6s var(--ease)}
+.mo .timeline.drawn::before{transform:scaleY(1)}
+.role{position:relative;padding-bottom:3.4rem}
+.role:last-child{padding-bottom:0}
+.role::before{content:'';position:absolute;left:-2.2rem;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--primary)}
+.role.z-ot::before{border-color:var(--accent);background:var(--accent)}
+.role-head{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .8rem}
+.role-head h3{font-family:var(--display);font-size:1.55rem;font-weight:420;letter-spacing:-.015em}
+.zone-tag{position:relative;display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:550;padding:.15rem .7rem;border-radius:999px;background:color-mix(in srgb,currentColor 11%,transparent);line-height:1.5}
+.zone-tag::before{content:'';width:.42rem;height:.42rem;border-radius:50%;background:currentColor}
+.zone-tag::after{content:'';position:absolute;inset:0;border-radius:inherit;border:1px solid currentColor;opacity:0;pointer-events:none}
+.mo .zone-tag.in::after{animation:ping 1.4s var(--ease) .3s 1}
+@keyframes ping{0%{opacity:.75;transform:scale(1)}100%{opacity:0;transform:scale(1.25,1.9)}}
+.zone-ent{color:var(--primary)}
+.zone-ot{color:var(--accent)}
+.role-org{color:var(--text);font-size:1rem;margin-top:.3rem}
+.role-meta{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);margin:.3rem 0 1.1rem}
+.bullets{display:grid;gap:.7rem;margin-bottom:1.2rem}
+.bullets li{position:relative;padding-left:1.1rem;color:var(--text-muted);font-size:.97rem;line-height:1.65;max-width:44rem}
+.bullets li::before{content:'';position:absolute;left:0;top:.8em;width:.4rem;height:2px;background:var(--line-strong)}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem}
+.tags li{font-size:.82rem;font-weight:500;color:var(--text-muted);background:var(--chip);border-radius:999px;padding:.2rem .8rem;transition:color .25s,background .25s}
+.tags li:hover{color:var(--text);background:var(--bg-hover)}
+.edu{margin-top:4.2rem}
+.edu h3{font-family:var(--display);font-size:1.55rem;font-weight:420;margin-bottom:.6rem}
+.edu-list li{display:grid;gap:.2rem 1.5rem;grid-template-columns:1fr;padding:1.1rem 0;border-top:1px solid var(--rule)}
+@media(min-width:700px){.edu-list li{grid-template-columns:minmax(0,1fr) auto}}
+.edu-list .deg{color:var(--text);font-weight:500;font-size:1rem}
+.edu-list .school{color:var(--text-muted);font-size:.93rem}
+.edu-list .when{font-family:var(--mono);font-size:.76rem;color:var(--text-dim);text-align:left}
+@media(min-width:700px){.edu-list .when{text-align:right}}
+.note{font-size:.9rem;color:var(--text-muted);margin-top:1rem}
+
+/* skills + certs */
+.skill-list{display:grid;gap:0}
+.skill-list .row{display:grid;gap:.2rem 1.5rem;grid-template-columns:1fr;padding:1.05rem 0;border-top:1px solid var(--rule)}
+@media(min-width:700px){.skill-list .row{grid-template-columns:12rem minmax(0,1fr)}}
+.skill-list dt{font-size:.9rem;font-weight:600;color:var(--text-dim);padding-top:.1rem}
+.skill-list dd{color:var(--text);font-size:.98rem;line-height:1.6}
+.certs{margin-top:4rem}
+.certs h3{font-family:var(--display);font-size:1.55rem;font-weight:420;margin-bottom:.6rem}
+.cert-list li{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.2rem 1.5rem;padding:1rem 0;border-top:1px solid var(--rule)}
+.cert-name{color:var(--text);font-weight:500;font-size:1rem}
+.cert-name small{font-weight:400;color:var(--text-muted);font-size:.88rem;margin-left:.5rem}
+.cert-status{font-size:.84rem;font-weight:550;color:var(--text-dim)}
+.cert-status.earned{color:var(--accent)}
+
+/* projects */
+.project-list>li{display:grid;gap:.7rem 2.5rem;grid-template-columns:1fr;padding:2rem 0;border-top:1px solid var(--rule)}
+.project-list>li:last-child{border-bottom:1px solid var(--rule)}
+@media(min-width:760px){.project-list>li{grid-template-columns:minmax(0,15rem) minmax(0,1fr)}}
+.project-list h3{font-family:var(--display);font-size:1.5rem;font-weight:420;line-height:1.2;transition:color .3s}
+.project-list>li:hover h3{color:var(--accent)}
+.project-kind{font-size:.88rem;color:var(--text-dim);margin-top:.4rem}
+.project-body p{color:var(--text-muted);font-size:.98rem;line-height:1.7;max-width:42rem;margin-bottom:.9rem}
+
+/* work with me */
+.brief{border-radius:var(--radius);background:var(--bg-card)}
+.brief-cap{display:flex;justify-content:space-between;gap:1rem;font-family:var(--display);font-size:1.15rem;font-weight:450;color:var(--text);padding:1.3rem 1.8rem .4rem}
+.brief dl{padding:.2rem 1.8rem}
+.brief .row{display:grid;gap:.2rem 1.5rem;grid-template-columns:1fr;padding:1.15rem 0;border-bottom:1px solid var(--rule)}
+.brief .row:last-child{border-bottom:none}
+@media(min-width:700px){.brief .row{grid-template-columns:10rem minmax(0,1fr)}}
+.brief dt{font-size:.9rem;font-weight:600;color:var(--text-dim);padding-top:.1rem}
+.brief dd{color:var(--text);font-size:1rem;line-height:1.6}
+.brief-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem 1.5rem;padding:1.2rem 1.8rem 1.5rem;font-size:.93rem;color:var(--text-muted)}
+
+/* contact */
+.contact-lead{font-family:var(--display);font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:360;letter-spacing:-.02em;line-height:1.2;max-width:24em;margin-bottom:2rem;color:var(--text);text-wrap:balance}
+
+/* footer */
+.more-line{padding:2.4rem 0 0;color:var(--text-muted);font-size:.97rem}
+.site-footer{padding:1.6rem 0 1rem;display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-between;font-size:.86rem;color:var(--text-dim)}
+.site-footer a{color:var(--text-muted)}
+.wordmark{color:var(--wordmark);padding:1rem 0 .3em;user-select:none;line-height:0}
+.wordmark svg{display:block;width:100%;height:auto;overflow:visible}
+.wordmark text{font-family:var(--display);font-weight:340;fill:currentColor}
+
+/* ── REVEALS (only when motion is allowed) ── */
+.mo .rv{opacity:0;transform:translate3d(0,18px,0);transition:opacity .9s var(--ease) var(--d,0ms),transform .9s var(--ease) var(--d,0ms)}
+.mo .rv.in{opacity:1;transform:none}
+
+.paused .hop.lit .led,.trace-off .hop.lit .led,.paused .cursor,.trace-off .cursor,.paused .ambient .pkt-a,.trace-off .ambient .pkt-a{animation-play-state:paused}
+
+/* print */
+@media print{
+  .site-header,.icon-btn,.btn-row,.skip,.more-line,#mesh,.progress,.nav-ind,.replay,.wire,.trace-out,.wordmark{display:none}
+  .trace{background:none;color:#000}
+  .js .hp.off{visibility:visible;opacity:1}
+  .js .hp{grid-area:auto}
+  html{font-size:14px}
+  body,html{background:#fff;color:#000}
+  .band{background:none}
+  .mo .rv,.mo .fadein{opacity:1;transform:none;animation:none}
+  .mo .h1l>span{transform:none;animation:none}
+  .mo .timeline::before{transform:none}
+  .section{padding:1.5rem 0;break-inside:avoid}
+}
+@media(prefers-reduced-motion:reduce){
+  .btn,.lift,.tags li,.plug *{transition:none}
+  .btn:hover,.lift:hover{transform:none}
+}
 </style>
 </head>
-<body>
-<nav>
-  <span class="nav-brand" onclick="showPage('home')">Rohit Raj Rajana</span>
-  <div style="display:flex;align-items:center;gap:1.4rem;">
-    <ul class="nav-links">
-      <li><a href="javascript:void(0)" onclick="return showPage('about')" id="nav-about">know me</a></li>
-      <li><a href="javascript:void(0)" onclick="return showPage('work')" id="nav-work">work</a></li>
-      <li><a href="javascript:void(0)" onclick="return showPage('projects')" id="nav-projects">projects</a></li>
-      <li><a href="javascript:void(0)" onclick="return showPage('resourcehub')" id="nav-resourcehub">resource hub</a></li>
-      <li><a href="javascript:void(0)" onclick="return showPage('guides')" id="nav-guides">guides & books</a></li>
-      <li><a href="javascript:void(0)" onclick="return showPage('store')" id="nav-store">store</a></li>
-      <li><a href="javascript:void(0)" onclick="return showPage('workwithme')" id="nav-workwithme">work with me</a></li>
-      <li><a href="javascript:void(0)" onclick="return showPage('2026')" id="nav-2026">2026</a></li>
-      <li><a href="javascript:void(0)" onclick="return showPage('contact')" id="nav-contact">contact</a></li>
-    </ul>
-    <button class="theme-toggle-btn tt-desktop" id="tt-desk" aria-label="Toggle theme">
-      <span class="tt-track"><span class="tt-thumb"></span></span>
-    </button>
-  </div>
-  <div class="mob-bar">
-    <button class="theme-toggle-btn" id="tt-mob" aria-label="Toggle theme">
-      <span class="tt-track"><span class="tt-thumb"></span></span>
-    </button>
-    <button class="mob-menu-btn" id="menu-btn" aria-label="Menu">
-      <svg id="icon-menu" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-      <svg id="icon-close" class="hidden" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </button>
-  </div>
-  <div id="mobile-menu">
-    <div class="mob-links">
-      <a href="javascript:void(0)" onclick="navTo('about');return false">know me</a>
-      <a href="javascript:void(0)" onclick="navTo('work');return false">work</a>
-      <a href="javascript:void(0)" onclick="navTo('projects');return false">projects</a>
-      <a href="javascript:void(0)" onclick="navTo('resourcehub');return false">resource hub</a>
-      <a href="javascript:void(0)" onclick="navTo('guides');return false">guides & books</a>
-      <a href="javascript:void(0)" onclick="navTo('store');return false">store</a>
-      <a href="javascript:void(0)" onclick="navTo('workwithme');return false">work with me</a>
-      <a href="javascript:void(0)" onclick="navTo('2026');return false">2026</a>
-      <a href="javascript:void(0)" onclick="navTo('contact');return false">contact</a>
-    </div>
-  </div>
-</nav>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="mesh" aria-hidden="true"></canvas>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
-<main>
-
-<!-- HOME -->
-<div id="page-home" class="page-section active">
-  <div class="page-banner no-overlay" style="height:auto;aspect-ratio:3/2;max-height:450px"><div class="page-banner-img" style="background-image:url('grad-chicago.jpg');background-position:center center"></div></div>
-  <div class="page-header">
-    <h1 class="title-reveal" id="hero-title"><span style="transition-delay:0s">rohit</span> <span style="transition-delay:0.08s">raj</span> <span style="transition-delay:0.16s">rajana</span></h1>
-    <div style="font-family:var(--mono);font-size:0.68rem;color:var(--text-dim);letter-spacing:0.08em;margin:0.5rem 0 0.75rem;display:inline-block" class="typewriter">5+ yrs · 3 countries</div><br>
-    <code>network security engineer · germany</code>
-    <p style="margin-top:0.75rem">i secure networks for a living — firewalls, zero trust, cloud infrastructure, and the bits in between. 5+ years working across palo alto ngfw, cisco asa, aws, and enterprise security tooling.</p>
-    <p>outside of work i'm building homelab infrastructure, automating workflows with n8n, writing about applied ai in security engineering, and learning german.</p>
-    <div class="nav-blocks reveal">
-      <a class="nav-block" onclick="return showPage('work')">
-        <div class="nav-block-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-        <div class="nav-block-title">see my work</div>
-        <div class="nav-block-desc">5+ years across chevron, bath & body works, and TCS</div>
-      </a>
-      <a class="nav-block" onclick="return showPage('projects')">
-        <div class="nav-block-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-        <div class="nav-block-title">browse projects</div>
-        <div class="nav-block-desc">homelab research, automation pipelines, security tools</div>
-      </a>
-      <a class="nav-block" onclick="return showPage('store')">
-        <div class="nav-block-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-        <div class="nav-block-title">grab a guide</div>
-        <div class="nav-block-desc">books, templates, and tools i've built</div>
-      </a>
-      <a class="nav-block" onclick="return showPage('workwithme')">
-        <div class="nav-block-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <div class="nav-block-title">work with me</div>
-        <div class="nav-block-desc">tutoring, consulting, and 1:1 sessions</div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ABOUT / KNOW ME -->
-<div id="page-about" class="page-section">
-  <div class="page-banner banner-about"><div class="page-banner-img" style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1400&q=75')"></div></div>
-  <div class="page-header">
-    <div class="title-row">
-      <h1>know me</h1>
-      <span class="age-display"><span style="color:var(--text-dim)">age </span><span id="age-whole">29</span><span id="age-decimal">.000000000</span></span>
-    </div>
-    <div class="pull-quote reveal">i didn't plan on becoming a network security engineer.</div>
-    <p>it started with a simple question: <em>how does all of this actually connect?</em> networks. systems. people. invisible threads, quietly carrying everything that matters. that curiosity pulled me in — and 5+ years later, i'm the one mapping the flow, spotting the weak links, and making sure things run the way they're supposed to… not the way attackers hope they will.</p>
-    <p>along the way, i earned a master's in management information systems from the university of illinois chicago, usa, and before that, a bachelor of technology in computer science from gitam university, visakhapatnam. i'm also ccna (cisco certified network associate) certified — part engineer, part "keeper of the blinking lights," making sure the digital world stays up, running, and a little less chaotic.</p>
-    <p>but the real story? at my core, i'm driven by faith in god and curiosity. one keeps me grounded. the other keeps pulling me forward.</p>
-    <p>so i build. i learn. i question things. i automate anything that dares to repeat itself. because if i've done it twice, it's already asking to be scripted.</p>
-    <p>somewhere between clean network diagrams and late-night troubleshooting, i share what actually works — no fluff, no theory for the sake of sounding smart.</p>
-  </div>
-  <div class="section">
-    <span class="section-label">pursuits</span>
-    <div class="pursuits-list">
-      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="security"><span class="pursuit-icon">🔐</span><span class="pursuit-name">network security</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:25%"></div></div><span class="pursuit-pct">25%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-security"><p>what started as curiosity about how packets move across networks became a full career. 5+ years deploying palo alto ngfw, cisco asa, arista switching, and zero trust architectures — measured against a 20-year career arc, still early days.</p></div></div>
-      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="automation"><span class="pursuit-icon">🤖</span><span class="pursuit-name">automation & ai</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:75%"></div></div><span class="pursuit-pct">75%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-automation"><p>if a task happens more than twice, i automate it — n8n is my primary tool. i've built pipelines for content scheduling, receipt processing, birthday messages, and more. the intersection of ai and security engineering is where i spend most of my thinking time these days.</p></div></div>
-      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="photography"><span class="pursuit-icon">📸</span><span class="pursuit-name">photography</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:45%"></div></div><span class="pursuit-pct">45%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-photography"><p>shooting with a sony alpha a6700. started with street photography and architecture. you can follow the photography work at <a href="https://www.instagram.com/travellin.soldier/" target="_blank" style="color:var(--primary);">@travellin.soldier →</a></p></div></div>
-      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="fitness"><span class="pursuit-icon">🏋️</span><span class="pursuit-name">fitness</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:60%"></div></div><span class="pursuit-pct">60%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-fitness"><p>training is a non-negotiable part of my week. mostly compound lifts — consistency over intensity.</p></div></div>
-      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="badminton"><span class="pursuit-icon">🏸</span><span class="pursuit-name">badminton</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:70%"></div></div><span class="pursuit-pct">70%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-badminton"><p>semifinalist in team doubles at UIC's 2024 intramural tournament. the only sport where i actually enjoy the competitive pressure.</p></div></div>
-      <div class="pursuit-item reveal"><button class="pursuit-toggle" data-id="finance"><span class="pursuit-icon">💰</span><span class="pursuit-name">finance & investing</span><div class="pursuit-bar-wrap"><div class="pursuit-track"><div class="pursuit-fill" style="width:50%"></div></div><span class="pursuit-pct">50%</span></div><svg class="pursuit-chevron" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="pursuit-body" id="pursuit-finance"><p>long-term focused. heavily influenced by naval ravikant's philosophy on wealth creation: own equity, not time.</p></div></div>
-    </div>
-  </div>
-  <div class="section">
-    <span class="section-label">languages</span>
-    <div class="lang-grid">
-      <div class="lang-card reveal"><div class="lang-top"><span class="lang-name">English</span><span class="lang-code">C1</span></div><div class="lang-track"><div class="lang-fill" style="width:85%"></div><div class="lang-markers"><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span class="lang-marker-active">C1</span><span>C2</span></div></div><span class="lang-label">fluent</span></div>
-      <div class="lang-card reveal"><div class="lang-top"><span class="lang-name">Telugu</span><span class="lang-code">Native</span></div><div class="lang-track"><div class="lang-fill" style="width:100%"></div><div class="lang-markers"><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span><span class="lang-marker-active">C2</span></div></div><span class="lang-label">mother tongue</span></div>
-      <div class="lang-card reveal"><div class="lang-top"><span class="lang-name">Hindi</span><span class="lang-code">B1</span></div><div class="lang-track"><div class="lang-fill" style="width:55%"></div><div class="lang-markers"><span>A1</span><span>A2</span><span class="lang-marker-active">B1</span><span>B2</span><span>C1</span><span>C2</span></div></div><span class="lang-label">can get the message across</span></div>
-      <div class="lang-card lang-card-learning reveal"><div class="lang-top"><span class="lang-name">German 🇩🇪</span><span class="lang-code">A1 → C1</span></div><div class="lang-track"><div class="lang-fill" style="width:17%"></div><div class="lang-markers"><span class="lang-marker-active">A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span><span>C2</span></div></div><span class="lang-label">currently learning · target C1</span></div>
-    </div>
-  </div>
-  <div class="section">
-    <span class="section-label">products i'm using</span>
-    <div class="product-section"><h3>tech & gadgets</h3><div class="chips"><span class="chip">Asus Zephyrus G14</span><span class="chip">Samsung Odyssey G5</span><span class="chip">iPhone 14 Pro</span><span class="chip">CMF Nothing Phone 1</span><span class="chip">Truthear × Crinacle Zero:RED</span><span class="chip">Logi MX Keys Mini</span><span class="chip">Sony Alpha A6700</span><span class="chip">DJI Osmo Action 5 Pro</span><span class="chip">Elgato Stream Deck Neo</span></div></div>
-    <div class="product-section"><h3>software</h3><div class="chips"><span class="chip">Notion</span><span class="chip">Obsidian</span><span class="chip">n8n</span><span class="chip">Brave Browser</span><span class="chip">Claude</span></div></div>
-    <div class="product-section">
-      <h3>gaming</h3>
-      <div style="margin-bottom:0.5rem;"><span style="font-size:0.62rem;font-family:var(--mono);color:var(--primary);letter-spacing:0.08em;text-transform:uppercase;display:block;margin-bottom:0.4rem;">▶ now playing</span><div class="chips" id="now-playing"></div></div>
-      <div><span style="font-size:0.62rem;font-family:var(--mono);color:var(--text-dim);letter-spacing:0.08em;text-transform:uppercase;display:block;margin-bottom:0.4rem;">✓ played</span><div class="chips" id="played"></div></div>
-    </div>
-  </div>
-</div>
-
-<!-- 2026 -->
-<div id="page-2026" class="page-section">
-  <div class="page-banner"><div class="page-banner-img" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1400&q=75')"></div></div>
-  <div class="page-header">
-    <div class="title-row"><h1>2026</h1></div>
-    <code>last update: june 2026</code>
-    <p style="margin-top:1rem;">a living record of what i'm building, learning, and doing this year.</p>
-  </div>
-  <div class="section">
-    <span class="section-label">launched</span>
-    <div class="cards">
-      <a class="card reveal" href="https://rooh7t.gumroad.com/l/your-ai-headstart" target="_blank"><div class="card-title">Your AI Head Start</div><p class="card-desc">field guide — ai tools, systems &amp; prompting. first book.</p><span class="card-tag">published</span></a>
-      <a class="card reveal" href="https://rooh7t.gumroad.com/l/ThePromptVault" target="_blank"><div class="card-title">AI Prompt Vault</div><p class="card-desc">companion workbook — curated, ready-to-use prompt library.</p><span class="card-tag">published</span></a>
-      <a class="card reveal" href="https://rooh7t.gumroad.com/l/networking8020" target="_blank"><div class="card-title">Networking 80/20</div><p class="card-desc">the fundamentals that actually run production.</p><span class="card-tag">published</span></a>
-    </div>
-  </div>
-  <div class="section">
-    <span class="section-label">setup</span>
-    <div class="cards">
-      <div class="card reveal"><div class="card-title">zimablade 7700 homelab build</div><p class="card-desc">self-hosted server with casaos/debian</p><span class="card-tag progress">guide coming soon</span></div>
-      <div class="card reveal"><div class="card-title">n8n automation stack</div><p class="card-desc">all the workflows i'm running locally</p><span class="card-tag progress">guide coming soon</span></div>
-      <div class="card reveal"><div class="card-title">security+ study system</div><p class="card-desc">cert prep structured in obsidian</p><span class="card-tag progress">guide coming soon</span></div>
-      <div class="card reveal"><div class="card-title">docker security stack</div><p class="card-desc">portainer, watchtower, crowdsec, socket proxy</p><span class="card-tag progress">guide coming soon</span></div>
-      <a class="card reveal" href="https://tryhackme.com" target="_blank"><div class="card-title">tryhackme rooms</div><p class="card-desc">soc 101, linux 101, active rooms</p><span class="card-tag">active</span></a>
-      <a class="card reveal" href="https://hackthebox.com" target="_blank"><div class="card-title">hack the box</div><p class="card-desc">machines and ctf challenges</p><span class="card-tag">active</span></a>
-    </div>
-  </div>
-  <div class="section">
-    <span class="section-label">tools i'm using</span>
-    <div class="pills">
-      <span class="pill">n8n</span><span class="pill">Notion</span><span class="pill">Obsidian</span><span class="pill">Portainer</span><span class="pill">Tailscale</span><span class="pill">Pi-hole</span><span class="pill">Nextcloud</span><span class="pill">CasaOS</span><span class="pill">GPT-4o</span><span class="pill">Claude</span><span class="pill">TryHackMe</span><span class="pill">HackTheBox</span>
-    </div>
-  </div>
-</div>
-
-<!-- WORK -->
-<div id="page-work" class="page-section">
-  <div class="page-banner"><div class="page-banner-img" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=75')"></div></div>
-  <div class="page-header">
-    <div class="title-row"><h1>work</h1></div>
-    <p>5+ years securing enterprise networks — firewall deployments, cloud architecture, soc operations, cisco networking and products.</p>
-  </div>
-  <div class="section">
-    <span class="section-label">experience</span>
-    <div class="exp-grid">
-      <div class="exp-card reveal">
-        <div class="exp-logo"><img src="https://img.logo.dev/chevron.com?token=pk_NtpANx9sSY-1woJEEBhLXQ" alt="Chevron" onerror="this.parentElement.innerHTML='<span style=font-family:var(--mono);font-size:0.6rem;color:var(--text-dim)>CVX</span>'"></div>
-        <div class="exp-info">
-          <div class="exp-role">SCADA Network Engineer</div>
-          <div class="exp-company"><a href="https://www.chevron.com" target="_blank">Chevron</a></div>
-          <div class="exp-meta">Colorado, USA · Dec 2024 – Feb 2026</div>
-          <p style="font-size:0.72rem;color:var(--text-dim);font-style:italic;margin:0.35rem 0 0;line-height:1.5;">Directly descended from Rockefeller's Standard Oil, the empire so powerful the US government broke it apart in 1911.</p>
-        </div>
-      </div>
-      <div class="exp-card reveal">
-        <div class="exp-logo"><img src="https://img.logo.dev/bathandbodyworks.com?token=pk_NtpANx9sSY-1woJEEBhLXQ" alt="Bath & Body Works" onerror="this.parentElement.innerHTML='<span style=font-family:var(--mono);font-size:0.5rem;color:var(--text-dim)>BBW</span>'"></div>
-        <div class="exp-info">
-          <div class="exp-role">Network Security Engineer</div>
-          <div class="exp-company"><a href="https://www.bathandbodyworks.com" target="_blank">Bath &amp; Body Works</a></div>
-          <div class="exp-meta">Chicago, USA · Sep 2023 – Nov 2024</div>
-          <p style="font-size:0.72rem;color:var(--text-dim);font-style:italic;margin:0.35rem 0 0;line-height:1.5;">Grew from one experimental mall store in Ohio in 1990 into America's largest bath and personal care retailer within seven years.</p>
-        </div>
-      </div>
-      <div class="exp-card reveal">
-        <div class="exp-logo"><img src="https://img.logo.dev/tcs.com?token=pk_NtpANx9sSY-1woJEEBhLXQ" alt="TCS" onerror="this.parentElement.innerHTML='<span style=font-family:var(--mono);font-size:0.6rem;color:var(--text-dim)>TCS</span>'"></div>
-        <div class="exp-info">
-          <div class="exp-role">System Engineer</div>
-          <div class="exp-company"><a href="https://www.tcs.com" target="_blank">Tata Consultancy Services (TCS)</a></div>
-          <div class="exp-meta">Hyderabad, India · Jun 2018 – Jul 2021</div>
-          <p style="font-size:0.72rem;color:var(--text-dim);font-style:italic;margin:0.35rem 0 0;line-height:1.5;">Runs the technology backbone of the world's largest banks and retailers: 600,000+ people across 46+ countries.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <span class="section-label">education</span>
-    <div class="exp-grid">
-      <div class="exp-card reveal">
-        <div class="exp-logo"><img src="https://img.logo.dev/uic.edu?token=pk_NtpANx9sSY-1woJEEBhLXQ" alt="UIC" onerror="this.parentElement.innerHTML='<span style=font-family:var(--mono);font-size:0.55rem;color:var(--text-dim)>UIC</span>'"></div>
-        <div class="exp-info">
-          <div class="exp-role">Master of Science</div>
-          <div class="exp-company">Management Information Systems</div>
-          <div class="exp-meta">University of Illinois Chicago, USA · 2023</div>
-          <p style="font-size:0.72rem;color:var(--text-dim);font-style:italic;margin:0.35rem 0 0;line-height:1.5;">Chicago's only public research university, and one of the most diverse research campuses in the country.</p>
-        </div>
-      </div>
-      <div class="exp-card reveal">
-        <div class="exp-logo"><img src="https://img.logo.dev/gitam.edu?token=pk_NtpANx9sSY-1woJEEBhLXQ" alt="GITAM" onerror="this.parentElement.innerHTML='<span style=font-family:var(--mono);font-size:0.5rem;color:var(--text-dim)>GITAM</span>'"></div>
-        <div class="exp-info">
-          <div class="exp-role">Bachelor of Technology</div>
-          <div class="exp-company">Computer Science</div>
-          <div class="exp-meta">GITAM University, Visakhapatnam, India · 2018</div>
-          <p style="font-size:0.72rem;color:var(--text-dim);font-style:italic;margin:0.35rem 0 0;line-height:1.5;">Its main campus sits on a beach in a port city with roots back to the 6th century BC, not your typical engineering-school backdrop.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <span class="section-label">core capabilities</span>
-    <div class="cards">
-      <div class="card reveal"><div class="card-title">next-gen firewalls</div><p class="card-desc">palo alto ngfw, panorama, cisco asa, policy management, nat, ssl inspection</p></div>
-      <div class="card reveal"><div class="card-title">cisco networking</div><p class="card-desc">routing (ospf, eigrp, bgp), switching (vlans, stp, etherchannel), layer 2/3 troubleshooting, cisco ios</p></div>
-      <div class="card reveal"><div class="card-title">network infrastructure</div><p class="card-desc">arista, network segmentation, subnetting, acls, wan/lan design</p></div>
-      <div class="card reveal"><div class="card-title">cloud security</div><p class="card-desc">aws vpc, transit gateway, iam, security groups, scada/ot network security</p></div>
-      <div class="card reveal"><div class="card-title">endpoint & threat</div><p class="card-desc">crowdstrike falcon, nessus, splunk, vulnerability assessment</p></div>
-      <div class="card reveal"><div class="card-title">monitoring</div><p class="card-desc">solarwinds, splunk siem, log analysis, network performance monitoring</p></div>
-      <div class="card reveal"><div class="card-title">architecture</div><p class="card-desc">zero trust network access (ztna), network segmentation, dmz design</p></div>
-      <div class="card reveal"><div class="card-title">automation</div><p class="card-desc">n8n, docker, python scripting, network automation</p></div>
-    </div>
-  </div>
-  <div class="section">
-    <span class="section-label">certifications</span>
-    <div style="display:flex;flex-direction:column;gap:1.25rem;">
-      <div>
-        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:2px solid #39FF14;">
-          <span style="width:8px;height:8px;border-radius:50%;background:#39FF14;flex-shrink:0;"></span>
-          <span style="font-family:var(--mono);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:#39FF14;font-weight:500;">Cybersecurity</span>
-        </div>
-        <div class="cert-grid">
-          <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://img.logo.dev/tcm-sec.com?token=pk_NtpANx9sSY-1woJEEBhLXQ" alt="TCM" onerror="this.style.display='none'"></div><span class="cert-badge-text">PJPT</span><span class="cert-badge-status">✅</span></div>
-          <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://img.logo.dev/tcm-sec.com?token=pk_NtpANx9sSY-1woJEEBhLXQ" alt="TCM" onerror="this.style.display='none'"></div><span class="cert-badge-text">OSINT Investigator</span><span class="cert-badge-status">✅</span></div>
-          <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://img.logo.dev/google.com?token=pk_NtpANx9sSY-1woJEEBhLXQ" alt="Google" onerror="this.style.display='none'"></div><span class="cert-badge-text">Google Cybersecurity</span><span class="cert-badge-status">✅</span></div>
-          <div class="cert-badge progress reveal"><div class="cert-badge-logo"><img src="https://img.logo.dev/comptia.org?token=pk_NtpANx9sSY-1woJEEBhLXQ" alt="CompTIA" onerror="this.style.display='none'"></div><span class="cert-badge-text">Security+</span><span class="cert-badge-status">📖</span></div>
-        </div>
-      </div>
-      <div>
-        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:2px solid #4169E1;">
-          <span style="width:8px;height:8px;border-radius:50%;background:#4169E1;flex-shrink:0;"></span>
-          <span style="font-family:var(--mono);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:#4169E1;font-weight:500;">Networking</span>
-        </div>
-        <div class="cert-grid">
-          <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://img.logo.dev/cisco.com?token=pk_NtpANx9sSY-1woJEEBhLXQ" alt="Cisco" onerror="this.style.display='none'"></div><span class="cert-badge-text">CCNA</span><span class="cert-badge-status">✅</span></div>
-          <div class="cert-badge progress reveal"><div class="cert-badge-logo"><img src="https://img.logo.dev/fortinet.com?token=pk_NtpANx9sSY-1woJEEBhLXQ" alt="Fortinet" onerror="this.style.display='none'"></div><span class="cert-badge-text">Fortinet NSE</span><span class="cert-badge-status">📖</span></div>
-        </div>
-      </div>
-      <div>
-        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:2px solid #008080;">
-          <span style="width:8px;height:8px;border-radius:50%;background:#008080;flex-shrink:0;"></span>
-          <span style="font-family:var(--mono);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:#008080;font-weight:500;">Cloud</span>
-        </div>
-        <div class="cert-grid">
-          <div class="cert-badge earned reveal"><div class="cert-badge-logo"><img src="https://img.logo.dev/aws.amazon.com?token=pk_NtpANx9sSY-1woJEEBhLXQ" alt="AWS" onerror="this.style.display='none'"></div><span class="cert-badge-text">AWS Cloud Practitioner</span><span class="cert-badge-status">✅</span></div>
-          <div class="cert-badge progress reveal"><div class="cert-badge-logo"><img src="https://img.logo.dev/microsoft.com?token=pk_NtpANx9sSY-1woJEEBhLXQ" alt="Microsoft" onerror="this.style.display='none'"></div><span class="cert-badge-text">AZ-700 · Azure Network Engineer</span><span class="cert-badge-status">📖</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PROJECTS -->
-<div id="page-projects" class="page-section">
-  <div class="page-banner"><div class="page-banner-img" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&q=75')"></div></div>
-  <div class="page-header">
-    <div class="title-row"><h1>projects</h1></div>
-    <p>i build, i break, i fix, i defend — a mix of homelab security research, automation pipelines, and infrastructure work.</p>
-  </div>
-  <div class="section">
-    <span class="section-label">cybersecurity</span>
-    <div class="cards">
-      <div class="card reveal"><div class="card-title">ethical hacking & active directory security</div><p class="card-desc">penetration testing and ad exploitation in a homelab — kerberoasting, pass-the-hash, smb/llmnr spoofing, and ntlm relay.</p><span class="card-tag">homelab</span><span class="card-tag">pentesting</span><span class="card-tag">active directory</span></div>
-      <div class="card reveal"><div class="card-title">osint — open-source intelligence analysis</div><p class="card-desc">osint investigations using maltego, theharvester, and shodan. built sock puppet accounts, automated data collection, and produced threat intelligence reports.</p><span class="card-tag">homelab</span><span class="card-tag">osint</span></div>
-      <div class="card reveal"><div class="card-title">hardened docker security stack</div><p class="card-desc">production-hardened n8n docker environment with portainer, watchtower, crowdsec, and docker socket proxy.</p><span class="card-tag">docker</span><span class="card-tag">security hardening</span></div>
-      <div class="card reveal"><div class="card-title">osint dashboard</div><p class="card-desc">centralizing osint tooling into one dashboard for faster recon workflows.</p><span class="card-tag progress">in progress</span></div>
-      <div class="card reveal"><div class="card-title">phishing detector extension</div><p class="card-desc">a browser extension that flags suspicious links and sender patterns before a click happens.</p><span class="card-tag progress">in progress</span></div>
-      <div class="card reveal"><div class="card-title">dns exfiltration detector</div><p class="card-desc">watches dns query patterns for signs of data exfiltration disguised as normal lookups.</p><span class="card-tag progress">in progress</span></div>
-    </div>
-  </div>
-  <div class="section">
-    <span class="section-label">network & infrastructure</span>
-    <div class="cards">
-      <div class="card reveal"><div class="card-title">self-hosted homelab infrastructure</div><p class="card-desc">zimablade 7700 running casaos/debian. pi-hole, tailscale, portainer, nextcloud, jellyfin.</p><span class="card-tag">infrastructure</span><span class="card-tag">self-hosted</span></div>
-      <div class="card reveal"><div class="card-title">network device scanner & mapper</div><p class="card-desc">discovers and maps active devices — building toward a clean visual topology output.</p><span class="card-tag progress">in progress</span></div>
-      <div class="card reveal"><div class="card-title">network anomaly detector</div><p class="card-desc">baselines normal traffic patterns and flags deviations.</p><span class="card-tag progress">in progress</span></div>
-      <div class="card reveal"><div class="card-title">intrusion detection system</div><p class="card-desc">deploying and tuning snort/suricata rule sets for real-time traffic inspection.</p><span class="card-tag progress">in progress</span></div>
-    </div>
-  </div>
-  <div class="section">
-    <span class="section-label">ai & automation</span>
-    <div class="cards">
-      <div class="card reveal"><div class="card-title">linkedin content automation pipeline</div><p class="card-desc">end-to-end n8n workflow: google sheets → gpt-4o generation → approval gate → auto-publish to linkedin.</p><span class="card-tag">n8n</span><span class="card-tag">gpt-4o</span></div>
-      <div class="card reveal"><div class="card-title">receipt-to-invoice automation</div><p class="card-desc">n8n pipeline that monitors email for receipts, extracts structured data using ai, and auto-generates invoices.</p><span class="card-tag">n8n</span><span class="card-tag">document ai</span></div>
-      <div class="card reveal"><div class="card-title">birthday automation system</div><p class="card-desc">reads google calendar & contacts, generates personalized birthday messages with gpt-4o, routes through approval gate.</p><span class="card-tag">n8n</span><span class="card-tag">google api</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- GUIDES & BOOKS -->
-<div id="page-guides" class="page-section">
-  <div class="page-banner"><div class="page-banner-img" style="background-image:url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1400&q=75')"></div></div>
-  <div class="page-header">
-    <div class="title-row"><h1>guides & books</h1></div>
-    <p>things i've written — and things that shaped how i think.</p>
-  </div>
-  <a href="https://medium.com/@rooh7t" target="_blank" class="medium-callout reveal">
-    <div class="medium-icon">M</div>
-    <div class="medium-body">
-      <div class="medium-title">read on medium</div>
-      <div class="medium-desc">applied ai, security engineering, homelab builds — new posts go up here first.</div>
-    </div>
-  </a>
-  <div class="section">
-    <span class="section-label">guides</span>
-    <div class="cards">
-      <div class="card reveal"><div class="card-title">zero trust on a budget</div><p class="card-desc">ztna in a small org without enterprise licensing</p><span class="card-tag progress">coming soon</span></div>
-      <div class="card reveal"><div class="card-title">self-hosting with zimablade</div><p class="card-desc">homelab build guide — casaos, portainer, tailscale</p><span class="card-tag progress">coming soon</span></div>
-      <div class="card reveal"><div class="card-title">n8n for security engineers</div><p class="card-desc">automating repetitive security ops with n8n and ai</p><span class="card-tag progress">coming soon</span></div>
-      <div class="card reveal"><div class="card-title">relocating to germany as a tech professional</div><p class="card-desc">chancenkarte process, job market, salary expectations</p><span class="card-tag progress">coming soon</span></div>
-      <div class="card reveal"><div class="card-title">pentest lab setup guide</div><p class="card-desc">beginner ethical hacking environment at home</p><span class="card-tag progress">coming soon</span></div>
-    </div>
-  </div>
-  <div class="section">
-    <span class="section-label">favorite books</span>
-    <p style="margin-bottom:0.3rem;">the ones that left a mark. one honest line on what i actually took from each.</p>
-    <a href="https://www.goodreads.com/review/list/147558776" target="_blank" class="goodreads-link">see my full shelf on goodreads →</a>
-    <div class="book-cover-grid" id="book-cover-grid" style="margin-top:1.5rem;"></div>
-    <div id="book-tooltip-overlay" class="book-tooltip-overlay" style="display:none;" onclick="if(event.target===this)closeBookTooltip()">
-      <div class="book-tooltip-card">
-        <button class="book-tooltip-close" onclick="closeBookTooltip()">✕</button>
-        <div class="book-tooltip-title" id="bt-title"></div>
-        <div class="book-tooltip-author" id="bt-author"></div>
-        <div class="book-tooltip-takeaway" id="bt-takeaway"></div>
-      </div>
-    </div>
-    <div style="margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid var(--border);">
-      <button id="allbooks-toggle" onclick="toggleAllBooks()" style="background:none;border:none;cursor:pointer;font-size:0.78rem;color:var(--text-dim);font-family:var(--sans);padding:0;display:inline-flex;align-items:center;gap:0.4rem;transition:color 0.15s;">
-        <span id="allbooks-toggle-icon">○</span>
-        <span id="allbooks-toggle-label">show all books i've read (<span id="allbooks-count">0</span>)</span>
+<header class="site-header" id="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top">Rohit Raj Rajana</a>
+    <nav class="primary-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#work-with-me">Work with me</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <span class="nav-ind" id="nav-ind" aria-hidden="true"></span>
+    </nav>
+    <div class="bar-end">
+      <button type="button" class="icon-btn motion-btn" id="motion-btn" aria-pressed="false" aria-label="Pause motion">
+        <svg class="i-pause" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg>
+        <svg class="i-play" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M7 5l12 7-12 7z"/></svg>
       </button>
-      <div id="allbooks-section" style="display:none;margin-top:1rem;">
-        <div class="book-filters" id="book-filters">
-          <button class="bfilter active" data-genre="all">all</button>
-          <button class="bfilter" data-genre="fiction">fiction</button>
-          <button class="bfilter" data-genre="memoir">memoir</button>
-          <button class="bfilter" data-genre="self-help">self-help</button>
-          <button class="bfilter" data-genre="business">business</button>
-          <button class="bfilter" data-genre="philosophy">philosophy</button>
-          <button class="bfilter" data-genre="creativity">creativity</button>
-          <button class="bfilter" data-genre="psychology">psychology</button>
-          <button class="bfilter" data-genre="politics">politics</button>
-        </div>
-        <div class="book-count"><span id="book-count">0</span> books shown</div>
-        <div class="books-table-wrap">
-          <table class="books-table" id="books-table">
-            <thead><tr><th>title</th><th>author</th><th>takeaway</th><th>genre</th><th>status</th></tr></thead>
-            <tbody id="books-tbody"></tbody>
-          </table>
-          <p id="books-empty" style="display:none;font-size:0.82rem;color:var(--text-dim);padding:1rem 0;">no books in this category yet.</p>
-        </div>
-      </div>
+      <button type="button" class="icon-btn theme-btn" id="theme-btn" aria-label="Switch to dark theme">
+        <svg class="i-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <details class="m-menu" id="m-menu">
+        <summary>Menu</summary>
+        <ul>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#work-with-me">Work with me</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </details>
     </div>
   </div>
-</div>
+</header>
 
-<!-- STORE -->
-<div id="page-store" class="page-section">
-  <div class="page-banner"><div class="page-banner-img" style="background-image:url('https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1400&q=75')"></div></div>
-  <div class="page-header">
-    <div class="title-row"><h1>store</h1></div>
-    <p>things i've made — books, guides, and tools worth your time.</p>
-  </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:1rem 0;">
-    <a href="https://rooh7t.gumroad.com" target="_blank" class="store-platform" style="text-decoration:none">
-      <div class="store-platform-icon" style="background:rgba(255,144,232,0.1)">🌍</div>
-      <div class="store-platform-name">Gumroad</div>
-      <p style="font-size:0.75rem;color:var(--text-dim);margin-bottom:0.5rem;">cards, paypal & more — worldwide checkout.</p>
-      <span style="font-size:0.72rem;color:var(--primary);font-weight:500;">shop on gumroad →</span>
-    </a>
-    <a href="https://rooh7t.myinstamojo.com" target="_blank" class="store-platform" style="text-decoration:none">
-      <div class="store-platform-icon" style="background:rgba(var(--primary-rgb),0.08)">🇮🇳</div>
-      <div class="store-platform-name">Instamojo</div>
-      <p style="font-size:0.75rem;color:var(--text-dim);margin-bottom:0.5rem;">upi, netbanking & cards — built for india.</p>
-      <span style="font-size:0.72rem;color:var(--primary);font-weight:500;">shop on instamojo →</span>
-    </a>
-  </div>
-  <div class="section">
-    <span class="section-label">published</span>
-    <div class="product-cover-grid" id="product-cover-grid"></div>
-    <div id="product-popup-overlay" class="product-popup-overlay" style="display:none;" onclick="if(event.target===this)closeProductPopup()">
-      <div class="product-popup-card">
-        <button class="product-popup-close" onclick="closeProductPopup()">✕</button>
-        <div class="product-popup-edition" id="pp-edition"></div>
-        <div class="product-popup-title" id="pp-title"></div>
-        <p class="product-popup-hook" id="pp-hook"></p>
-        <div class="product-popup-tags" id="pp-tags"></div>
-        <a id="pp-cta" href="#" target="_blank" class="product-popup-cta">get it →</a>
-      </div>
-    </div>
-    <div class="teaser-grid">
-      <div class="teaser-card reveal">
-        <span class="teaser-badge">coming soon</span>
-        <div class="teaser-title">Chancenkarte Playbook</div>
-        <p class="teaser-desc">a 2-part bundle for moving to germany on the chancenkarte.</p>
-        <div class="teaser-parts">
-          <div class="teaser-part"><span class="num">part 1</span> — the application</div>
-          <div class="teaser-part"><span class="num">part 2</span> — the job</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<main id="main">
 
-<!-- RESOURCE HUB -->
-<div id="page-resourcehub" class="page-section">
-  <div class="page-banner"><div class="page-banner-img" style="background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1400&q=75')"></div></div>
-  <div class="page-header">
-    <div class="title-row"><h1>resource hub</h1></div>
-    <p>free notes, templates, and downloads — things you can take and use.</p>
-  </div>
-  <div class="section">
-    <a href="https://rooh7t.github.io/cyberarchive" target="_blank" class="medium-callout reveal" style="text-decoration:none">
-      <div class="medium-icon" style="background:rgba(6,182,212,0.1);color:#06B6D4;font-size:1rem">◈</div>
-      <div class="medium-body">
-        <div class="medium-title">cyberarchive</div>
-        <div class="medium-desc">my cybersecurity & networking knowledge base — research notes, deep references, and hands-on lab docs. browse, search, and explore.</div>
+  <!-- HERO -->
+  <section class="hero-band" id="hero" aria-labelledby="h-name">
+    <div class="wrap hero">
+      <h1 id="h-name"><span class="h1l"><span style="--i:0">Rohit Raj</span></span> <span class="h1l"><span style="--i:1">Rajana</span></span></h1>
+      <div class="hero-copy">
+        <p class="lede fadein" style="--d:520ms">Network security engineer. Five years securing enterprise and industrial networks: firewall migrations, Zero Trust access, and OT/SCADA rollouts for Chevron and Bath &amp; Body Works.</p>
+        <p class="lede-sub fadein" style="--d:640ms">Now studying for an M.Sc. in Cybersecurity at Saarland University, with a focus on network security.</p>
+        <div class="btn-row fadein" style="--d:760ms">
+          <a class="btn btn-primary btn-plug" href="https://www.linkedin.com/in/rohit7raj/" target="_blank" rel="noopener"><span class="plug" aria-hidden="true"><span class="cable"></span><span class="jack"></span></span>Connect on LinkedIn</a>
+          <a class="btn btn-ghost copy-mail" href="mailto:rohit7rajana@gmail.com" data-email="rohit7rajana@gmail.com"><svg class="i-copy" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><svg class="i-ok" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span class="cm-label">rohit7rajana@gmail.com</span></a>
+        </div>
       </div>
-    </a>
-    <div class="chips" id="library-filters" style="margin-top:1.5rem;margin-bottom:0.9rem;">
-      <button class="bfilter active" data-type="all">all</button>
-      <button class="bfilter" data-type="pdf">pdfs</button>
-      <button class="bfilter" data-type="note">notes</button>
+      <figure class="hero-photo fadein" style="--d:700ms"><img src="grad-chicago.jpg" width="1920" height="1280" fetchpriority="high" decoding="async" alt="Rohit Raj Rajana at his graduation in Chicago, with the city skyline behind him" /></figure>
+      <div class="facts lift fadein" style="--d:900ms" role="group" aria-label="At a glance">
+        <p class="facts-cap">At a glance</p>
+        <dl class="tblock">
+          <div class="cell wide"><dt>Based in</dt><dd>Saarbrücken, Germany. Open to relocation across Germany.</dd></div>
+          <div class="cell wide"><dt>Availability</dt><dd><span class="dot" aria-hidden="true"></span>Open to full-time roles, plus part-time and working-student roles. Currently on a Chancenkarte, converting to a student visa.</dd></div>
+          <div class="cell"><dt>Languages</dt><dd>English (C1), German (A2, learning)</dd></div>
+          <div class="cell r"><dt>Driving licence</dt><dd>Class B, Germany</dd></div>
+          <div class="cell"><dt>Education</dt><dd>M.Sc. Cybersecurity, Saarland University<br /><span style="white-space:nowrap">Oct 2026 to present</span></dd></div>
+        </dl>
+      </div>
     </div>
-    <div class="cards" id="library-grid"></div>
-    <div id="library-empty" class="rh-empty" style="display:none;margin-top:1rem">
-      <div class="rh-empty-icon breathe">📦</div>
-      <div class="rh-empty-title">more resources on the way</div>
-      <div class="rh-empty-desc">downloadable templates, cheat sheets, and guides are coming soon. follow me on <a href="https://www.linkedin.com/in/rohit7raj/" target="_blank" style="color:var(--primary)">linkedin</a> to know when they drop.</div>
-    </div>
-  </div>
-</div>
+  </section>
 
-<!-- LIBRARY VIEWER MODAL -->
-<div id="library-overlay" class="book-tooltip-overlay" style="display:none;" onclick="if(event.target===this)closeLibraryItem()">
-  <div class="book-tooltip-card" style="max-width:640px;width:90vw;max-height:80vh;overflow:auto;">
-    <button class="book-tooltip-close" onclick="closeLibraryItem()">✕</button>
-    <div class="book-tooltip-title" id="lib-title"></div>
-    <div id="lib-pdf-wrap" style="display:none;margin-top:0.75rem;">
-      <embed id="lib-pdf-embed" type="application/pdf" width="100%" height="420" style="border:1px solid var(--border);border-radius:var(--radius-sm);">
-      <a id="lib-pdf-download" href="#" target="_blank" class="goodreads-link" style="margin-top:0.6rem;">open in new tab →</a>
-    </div>
-    <div id="lib-note-wrap" style="display:none;margin-top:0.75rem;font-size:0.82rem;color:var(--text-muted);line-height:1.75;white-space:pre-wrap;"></div>
-  </div>
-</div>
 
-<!-- WORK WITH ME -->
-<div id="page-workwithme" class="page-section">
-  <div class="ds-wrap">
-    <div class="ds-topbar">
-      <span>classified · personnel dossier · ref: RRR-2026-001</span>
-      <span>eyes only · authorised personnel</span>
-    </div>
-    <div class="ds-stampbar">
-      <span class="ds-stampbar-title">declassified</span>
-      <span class="ds-stampbar-ref">DOSSIER-2026 · SUBJECT: RRR</span>
-    </div>
-    <div class="ds-hero">
-      <div class="ds-file-label">subject profile · security clearance granted</div>
-      <div class="ds-subject">
-        <div class="ds-photo"><span>PHOTO<br>ON<br>FILE</span></div>
-        <div class="ds-fields">
-          <div class="ds-field"><span class="ds-field-k">alias</span><span class="ds-field-v gold">rooh7t</span></div>
-          <div class="ds-field"><span class="ds-field-k">location</span><span class="ds-field-v">Saarbrücken, Germany</span></div>
-          <div class="ds-field"><span class="ds-field-k">clearance</span><span class="ds-field-v gold">network security · L5</span></div>
-          <div class="ds-field"><span class="ds-field-k">status</span><span class="ds-field-v green">● available · taking missions</span></div>
-          <div class="ds-field"><span class="ds-field-k">languages</span><span class="ds-field-v">English · Telugu</span></div>
+  <!-- CAREER TRACE -->
+  <section class="trace" id="career" aria-labelledby="h-trace">
+    <div class="wrap">
+      <div class="trace-head">
+        <div>
+          <h2 id="h-trace">Five years, one path</h2>
+          <p class="trace-cmd" aria-hidden="true"><b>$</b> traceroute rohit.career --from 2018<span class="cursor"></span></p>
         </div>
+        <button type="button" class="replay" id="replay">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+          Replay trace
+        </button>
       </div>
-      <h1 class="ds-h1">security engineer.<br>educator. builder.</h1>
-      <p class="ds-tagline">5+ yrs enterprise networks · chevron · bath & body works · TCS<br>helping people learn, build, and grow — no fluff, no theory for theory's sake.</p>
-      <div class="ds-btns">
-        <a href="https://cal.com/rooh7t" target="_blank" class="ds-btn-p">request briefing →</a>
-        <a href="https://rooh7t.gumroad.com/l/your-ai-headstart" target="_blank" class="ds-btn-s">access intel →</a>
-      </div>
-    </div>
-    <div class="ds-stats">
-      <div class="ds-stat"><div class="ds-stat-n" data-count="5">0</div><div class="ds-stat-l">yrs enterprise</div></div>
-      <div class="ds-stat"><div class="ds-stat-n">CCNA</div><div class="ds-stat-l">cisco certified</div></div>
-      <div class="ds-stat"><div class="ds-stat-n">EN/TE</div><div class="ds-stat-l">languages</div></div>
-    </div>
-    <div class="ds-section">
-      <div class="ds-section-label">available operations</div>
-      <div class="ds-ops">
-        <div class="ds-op">
-          <div class="ds-op-label">OP-001 · tutoring</div>
-          <div class="ds-op-title">1:1 Training Sessions</div>
-          <div class="ds-op-desc">CCNA · Security+ · AWS · network security. structured sessions, real labs, honest feedback. in english or telugu.</div>
-          <a href="https://cal.com/rooh7t" target="_blank" class="ds-op-link">→ book a session</a>
-        </div>
-        <div class="ds-op">
-          <div class="ds-op-label">OP-002 · consulting</div>
-          <div class="ds-op-title">Freelance Engagements</div>
-          <div class="ds-op-desc">network security reviews · ai workflow design · n8n automation builds. short engagements, no fluff.</div>
-          <a href="https://www.linkedin.com/in/rohit7raj/" target="_blank" class="ds-op-link">→ connect on linkedin</a>
-        </div>
-      </div>
-    </div>
-    <div class="ds-section">
-      <div class="ds-section-label">verified credentials</div>
-      <div class="ds-certs">
-        <span class="ds-cert earned">CCNA · earned</span>
-        <span class="ds-cert earned">AWS Cloud · earned</span>
-        <span class="ds-cert earned">PJPT · earned</span>
-        <span class="ds-cert earned">OSINT Investigator · earned</span>
-        <span class="ds-cert earned">Google Cybersecurity · earned</span>
-        <span class="ds-cert pending">Security+ · in progress</span>
-      </div>
-    </div>
-    <div class="ds-section">
-      <div class="ds-section-label">what i teach</div>
-      <div class="ds-topic-list">
-        <div class="ds-topic-row"><span class="ds-topic-name">Computer Networking (CCNA, CCNP)</span><span class="ds-topic-desc">routing, switching, VLANs, OSPF/EIGRP/BGP — the fundamentals that everything else builds on.</span></div>
-        <div class="ds-topic-row"><span class="ds-topic-name">Cybersecurity</span><span class="ds-topic-desc">threat fundamentals, risk, and the concepts behind Security+ and similar certs.</span></div>
-        <div class="ds-topic-row"><span class="ds-topic-name">Cloud Computing (AWS / Azure)</span><span class="ds-topic-desc">VPCs, IAM, core services — getting comfortable in the cloud from a security-first angle.</span></div>
-        <div class="ds-topic-row"><span class="ds-topic-name">Network Security</span><span class="ds-topic-desc">firewalls, zero trust, segmentation — how real enterprise networks actually get protected.</span></div>
-        <div class="ds-topic-row"><span class="ds-topic-name">Next-Gen Firewalls (Palo Alto, Cisco ASA)</span><span class="ds-topic-desc">policy design, NAT, SSL inspection — hands-on with the tools i use daily.</span></div>
-        <div class="ds-topic-row"><span class="ds-topic-name">OT / ICS Security</span><span class="ds-topic-desc">securing industrial and SCADA environments — niche, but where i spend a lot of my actual work hours.</span></div>
-      </div>
-      <p style="font-size:0.78rem;color:var(--text-dim);line-height:1.7;margin:0 0 1.5rem;">sessions via zoom or google meet · 60 or 90 min · <span style="color:var(--signature);">CET (UTC+1)</span> · also works for <span style="color:var(--signature);">CST</span> & <span style="color:var(--signature);">IST</span> · english & telugu</p>
-    </div>
-    <div class="ds-section">
-      <div class="ds-section-label">beyond the brief</div>
-      <p class="btb-intro">five 1:1 sessions for the stuff that doesn't fit a cert syllabus — figuring out direction, building momentum, or getting unstuck.</p>
-      <div class="btb-grid">
-        <div class="btb-card"><div class="btb-card-title">find your ikigai</div><div class="btb-card-hook">most people never sit down and actually answer what they're good at, love, and can get paid for.</div><div class="btb-card-what">guided questions feed into a purpose-built ai process, then we review it together.</div><div class="btb-card-who"><span>who it's for</span><br>anyone drifting, switching jobs or majors without knowing why.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">→ book a session</a></div>
-        <div class="btb-card"><div class="btb-card-title">organize your life</div><div class="btb-card-hook">some days you scroll for two hours and have no idea where the time went.</div><div class="btb-card-what">an honest conversation about where you feel stuck, followed by a simple tracking tool to rebuild momentum.</div><div class="btb-card-who"><span>who it's for</span><br>anyone feeling foggy, on autopilot, or worried about wasting time — at any age.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">→ book a session</a></div>
-        <div class="btb-card"><div class="btb-card-title">fitness roadmap</div><div class="btb-card-hook">beat 80% of people with 20% of the effort.</div><div class="btb-card-what">a personal notion template for tracking workouts, calories, and measurements, customized to your goals.</div><div class="btb-card-who"><span>who it's for</span><br>anyone whose fitness apps fizzled out after two weeks.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">→ book a session</a></div>
-        <div class="btb-card"><div class="btb-card-title">build your portfolio</div><div class="btb-card-hook">everyone has a cv. almost nobody has a place that shows what they can actually do.</div><div class="btb-card-what">a 5-session hands-on workshop building a live website from scratch.</div><div class="btb-card-who"><span>who it's for</span><br>students, job seekers, freelancers, creators.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">→ book a session</a></div>
-        <div class="btb-card"><div class="btb-card-title">career roadmapping</div><div class="btb-card-hook">applying abroad is a maze of conflicting advice.</div><div class="btb-card-what">university shortlisting, document checklist, and SOP refinement for germany, the usa, or canada.</div><div class="btb-card-who"><span>who it's for</span><br>students and professionals who want a real roadmap, not generic search results.</div><a href="https://cal.com/rooh7t" target="_blank" class="btb-card-link">→ book a session</a></div>
-      </div>
-    </div>
-    <div class="ds-section">
-      <div class="ds-section-label" style="margin-bottom:0.75rem;">book via platform</div>
-      <div style="display:flex;flex-direction:column;gap:0.45rem;">
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0.9rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);">
-          <div><span style="font-size:0.8rem;font-weight:500;color:var(--text);font-family:var(--display)">Preply</span><span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);display:block;margin-top:0.1rem;">trial lesson available · first session risk-free</span></div>
-          <span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);border:1px dashed var(--border);padding:0.2em 0.6em;border-radius:4px;letter-spacing:0.08em;">coming soon</span>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0.9rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);">
-          <div><span style="font-size:0.8rem;font-weight:500;color:var(--text);font-family:var(--display)">Superprof</span><span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);display:block;margin-top:0.1rem;">great for students in india & middle east</span></div>
-          <a href="https://www.superprof.de/ir/43311690-e02a11" target="_blank" style="font-family:var(--mono);font-size:0.6rem;color:var(--signature);border:1px solid rgba(var(--signature-rgb),0.3);padding:0.2em 0.6em;border-radius:4px;letter-spacing:0.08em;text-decoration:none;">book →</a>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0.9rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);">
-          <div><span style="font-size:0.8rem;font-weight:500;color:var(--text);font-family:var(--display)">Wyzant</span><span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);display:block;margin-top:0.1rem;">us-based professionals & cert candidates</span></div>
-          <span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);border:1px dashed var(--border);padding:0.2em 0.6em;border-radius:4px;letter-spacing:0.08em;">coming soon</span>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0.9rem;background:var(--bg-card);border:1px solid rgba(var(--signature-rgb),0.2);border-radius:var(--radius-sm);">
-          <div><span style="font-size:0.8rem;font-weight:500;color:var(--text);font-family:var(--display)">Direct booking</span><span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);display:block;margin-top:0.1rem;">best rate · schedule directly via cal.com/rooh7t</span></div>
-          <a href="https://cal.com/rooh7t" target="_blank" style="font-family:var(--mono);font-size:0.6rem;color:var(--signature);border:1px solid rgba(var(--signature-rgb),0.3);padding:0.2em 0.6em;border-radius:4px;letter-spacing:0.08em;text-decoration:none;">book →</a>
-        </div>
-      </div>
-    </div>
-    <div class="ds-cta">
-      <span class="ds-cta-stamp">access granted</span>
-      <h2 class="ds-cta-h">ready to begin a mission?</h2>
-      <p class="ds-cta-s">free 20-min intro call · no commitment · no pressure</p>
-      <div class="ds-cta-btns">
-        <a href="https://cal.com/rooh7t" target="_blank" class="ds-btn-p">initiate contact →</a>
-        <a href="https://www.linkedin.com/in/rohit7raj/" target="_blank" class="ds-btn-s">linkedin →</a>
-        <a href="https://www.instagram.com/rooh7t.studios/" target="_blank" class="ds-btn-s">instagram →</a>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- CONTACT -->
-<div id="page-contact" class="page-section">
-  <div class="page-banner"><div class="page-banner-img" style="background-image:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1400&q=75')"></div></div>
-  <div class="page-header">
-    <div class="title-row"><h1>contact</h1></div>
-    <p>have a question, collab idea, or just want to say hi? drop a message below.</p>
-  </div>
-  <div class="section" style="padding-top:1.5rem;">
-    <iframe data-tally-src="https://tally.so/embed/J9xVjK?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="284" frameborder="0" marginheight="0" marginwidth="0" title="Contact form" style="border:none;background:transparent;"></iframe>
-    <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s);}</script>
-  </div>
-  <div class="section">
-    <span class="section-label">find me here</span>
-    <table class="social-slide"><tbody>
-      <tr><td>💼 LinkedIn</td><td><a href="https://www.linkedin.com/in/rohit7raj/" target="_blank">linkedin.com/in/rohit7raj →</a></td></tr>
-      <tr><td>📸 Instagram</td><td><a href="https://www.instagram.com/rooh7t.studios/" target="_blank">instagram.com/rooh7t.studios →</a></td></tr>
-      <tr><td>▶️ YouTube</td><td><a href="https://www.youtube.com/@itsrooh7t" target="_blank">youtube.com/@itsrooh7t →</a></td></tr>
-      <tr><td>🎞️ Photography</td><td><a href="https://www.instagram.com/travellin.soldier/" target="_blank">instagram.com/travellin.soldier →</a></td></tr>
-      <tr><td>✍️ Medium</td><td><a href="https://medium.com/@rooh7t" target="_blank">medium.com/@rooh7t →</a></td></tr>
-      <tr><td>☕ Buy Me a Coffee</td><td><a href="https://buymeacoffee.com/rooh7t" target="_blank">buymeacoffee.com/rooh7t →</a></td></tr>
-    </tbody></table>
-  </div>
-</div>
+      <div class="trace-path" id="trace-path">
+        <div class="hops" role="tablist" aria-label="Career hops, 2018 to 2026">
+          <div class="wire" id="wire" aria-hidden="true"><span class="wire-fill" id="wire-fill"></span><span class="pkt" id="pkt"></span><span class="pkt-a"></span><span class="pkt-a"></span></div>
+          <button type="button" class="hop k-ent" role="tab" id="hop-1" aria-controls="hp-1" aria-selected="false" tabindex="-1">
+            <span class="port" aria-hidden="true"><span class="led"></span></span>
+            <span class="hop-txt"><span class="hop-name">TCS</span><span class="hop-yr">2018 to 2021</span><span class="hop-k">Enterprise</span></span>
+          </button>
+          <button type="button" class="hop k-edu" role="tab" id="hop-2" aria-controls="hp-2" aria-selected="false" tabindex="-1">
+            <span class="port" aria-hidden="true"><span class="led"></span></span>
+            <span class="hop-txt"><span class="hop-name">UIC</span><span class="hop-yr">2021 to 2023</span><span class="hop-k">Education</span></span>
+          </button>
+          <button type="button" class="hop k-ent" role="tab" id="hop-3" aria-controls="hp-3" aria-selected="false" tabindex="-1">
+            <span class="port" aria-hidden="true"><span class="led"></span></span>
+            <span class="hop-txt"><span class="hop-name">Bath &amp; Body Works</span><span class="hop-yr">2023 to 2024</span><span class="hop-k">Enterprise</span></span>
+          </button>
+          <button type="button" class="hop k-ot" role="tab" id="hop-4" aria-controls="hp-4" aria-selected="true" tabindex="0">
+            <span class="port" aria-hidden="true"><span class="led"></span></span>
+            <span class="hop-txt"><span class="hop-name">Chevron</span><span class="hop-yr">2024 to 2026</span><span class="hop-k">OT</span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="trace-body">
+        <div class="trace-out" aria-hidden="true"><span class="ln">traceroute to rohit.career, 4 hops max</span><span class="ln hl" data-hop="1"> 1  <span class="h">tcs.hyderabad      </span>  enterprise lan/wan     <span class="e">2018 to 2021</span></span><span class="ln hl" data-hop="2"> 2  <span class="h">uic.chicago        </span>  m.sc. mis              <span class="e">2021 to 2023</span></span><span class="ln hl" data-hop="3"> 3  <span class="h">bbw.chicago        </span>  zero trust, palo alto  <span class="e">2023 to 2024</span></span><span class="ln hl" data-hop="4"> 4  <span class="h">chevron.colorado   </span>  ot/scada, 200+ sites   <span class="z">2024 to 2026</span></span><span class="ln hl end" data-hop="5">trace complete · next hop: security architecture</span></div>
+
+        <div class="panels">
+          <div class="hp off" role="tabpanel" id="hp-1" aria-labelledby="hop-1" data-k="ent">
+            <p class="hp-k">Systems Engineer · Tata Consultancy Services</p>
+            <h3>Enterprise LAN/WAN operations</h3>
+            <p class="hp-m">Hyderabad, India · Jun 2018 to Jul 2021</p>
+            <ul class="hp-list">
+              <li>Switch port provisioning, VLANs, IP address management, routing and ACL changes.</li>
+              <li>Tier 1 and Tier 2 incidents resolved within ITIL-aligned SLAs.</li>
+              <li>Firmware upgrades and change windows with config backups and rollback plans.</li>
+            </ul>
+            <p class="hp-metric"><span class="hp-num">3 yrs</span><span>enterprise network operations</span></p>
+          </div>
+          <div class="hp off" role="tabpanel" id="hp-2" aria-labelledby="hop-2" data-k="edu">
+            <p class="hp-k">M.Sc. Management Information Systems</p>
+            <h3>University of Illinois Chicago</h3>
+            <p class="hp-m">Chicago, USA · 2021 to 2023</p>
+            <ul class="hp-list">
+              <li>Designed a multi-account AWS security baseline: IAM, KMS, VPC peering, Transit Gateway, CloudTrail.</li>
+              <li>Remediated 25+ over-privileged IAM roles in that project.</li>
+            </ul>
+            <p class="hp-metric"><span class="hp-num">3.71</span><span>GPA out of 4.0</span></p>
+          </div>
+          <div class="hp off" role="tabpanel" id="hp-3" aria-labelledby="hop-3" data-k="ent">
+            <p class="hp-k">Network Security Engineer · Cloud88 Inc</p>
+            <h3>Bath &amp; Body Works, retail</h3>
+            <p class="hp-m">Chicago, USA · Sep 2023 to Nov 2024</p>
+            <ul class="hp-list">
+              <li>ZTNA with Aruba ClearPass and Palo Alto User-ID and App-ID.</li>
+              <li>50+ Cisco ASA policies migrated to Palo Alto NGFW.</li>
+              <li>20+ site-to-site IPsec VPN tunnels built.</li>
+            </ul>
+            <p class="hp-metric"><span class="hp-num">40%</span><span>fewer unauthorized access attempts</span></p>
+          </div>
+          <div class="hp" role="tabpanel" id="hp-4" aria-labelledby="hop-4" data-k="ot">
+            <p class="hp-k">Network Security Engineer · Confiminds LLC</p>
+            <h3>Chevron, oil and gas</h3>
+            <p class="hp-m">Colorado, USA · Dec 2024 to Mar 2026</p>
+            <ul class="hp-list">
+              <li>Fortinet FortiGate firewalls configured and deployed across oil-rig sites.</li>
+              <li>Cisco IE3400 rollout with zero unplanned downtime.</li>
+              <li>MTTR cut by 25%, with 99%+ SLA adherence.</li>
+            </ul>
+            <p class="hp-metric"><span class="hp-num" id="sites-num">200+</span><span>field sites on Cisco IE3400 industrial switches</span></p>
+            <svg class="sites" id="sites" viewBox="0 0 300 72" aria-hidden="true"></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="stats band" aria-label="Selected results">
+    <div class="wrap">
+      <ul class="stat-list">
+        <li class="stat rv">
+          <span class="stat-num" data-count="200" data-suffix="+"><span aria-hidden="true">200+</span><span class="sr-only">200+</span></span>
+          <span class="meter" aria-hidden="true"><i></i></span>
+          <span class="stat-label">field sites upgraded with Cisco IE3400 industrial switches</span>
+          <span class="stat-ctx">Chevron · OT/SCADA</span>
+        </li>
+        <li class="stat rv">
+          <span class="stat-num" data-count="40" data-suffix="%"><span aria-hidden="true">40%</span><span class="sr-only">40%</span></span>
+          <span class="meter" aria-hidden="true"><i></i></span>
+          <span class="stat-label">fewer unauthorized access attempts after a ZTNA rollout</span>
+          <span class="stat-ctx">Bath &amp; Body Works</span>
+        </li>
+        <li class="stat rv">
+          <span class="stat-num" data-count="50" data-suffix="+"><span aria-hidden="true">50+</span><span class="sr-only">50+</span></span>
+          <span class="meter" aria-hidden="true"><i></i></span>
+          <span class="stat-label">Cisco ASA policies migrated to Palo Alto NGFW</span>
+          <span class="stat-ctx">Bath &amp; Body Works</span>
+        </li>
+        <li class="stat rv">
+          <span class="stat-num" data-count="25" data-suffix="%"><span aria-hidden="true">25%</span><span class="sr-only">25%</span></span>
+          <span class="meter" aria-hidden="true"><i></i></span>
+          <span class="stat-label">lower mean time to repair (MTTR)</span>
+          <span class="stat-ctx">Chevron</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience" aria-labelledby="h-exp">
+    <div class="wrap section-grid">
+      <h2 id="h-exp" class="rv">Experience</h2>
+      <div>
+        <ol class="timeline" id="timeline">
+          <li class="role z-ot rv">
+            <div class="role-head"><h3>Network Security Engineer</h3><span class="zone-tag zone-ot">OT zone</span></div>
+            <p class="role-org">Confiminds LLC · Client: Chevron, oil and gas</p>
+            <p class="role-meta">Colorado, USA · Dec 2024 to Mar 2026</p>
+            <ul class="bullets">
+              <li>Configured Fortinet FortiGate firewalls from scratch and deployed them across oil-rig sites, with port mapping and switch integration for secure remote connectivity.</li>
+              <li>Rolled out Cisco IE3400 industrial switches to 200+ field sites. The new switches replaced unmanaged hardware and standardized VLAN segmentation, management access, and monitoring across OT/IT boundaries. Rollouts finished with zero unplanned downtime.</li>
+              <li>Cut MTTR by 25% with structured L1 to L3 diagnostic workflows, and held 99%+ SLA adherence across rig sites.</li>
+              <li>Kept configuration baselines and change records in ServiceNow, audit-ready for 100+ network devices.</li>
+            </ul>
+            <ul class="tags" aria-label="Technologies"><li>FortiGate</li><li>Cisco IE3400</li><li>VLAN segmentation</li><li>SCADA</li><li>ServiceNow</li></ul>
+          </li>
+          <li class="role z-ent rv">
+            <div class="role-head"><h3>Network Security Engineer</h3><span class="zone-tag zone-ent">Enterprise zone</span></div>
+            <p class="role-org">Cloud88 Inc · Client: Bath &amp; Body Works, retail</p>
+            <p class="role-meta">Chicago, USA · Sep 2023 to Nov 2024</p>
+            <ul class="bullets">
+              <li>Built the secure-access architecture on Palo Alto NGFW, Arista CloudVision, and Aruba ClearPass. Blocked threat events rose 30% and access-related tickets fell 25%.</li>
+              <li>Designed and deployed a ZTNA framework with ClearPass (TACACS+/RADIUS) and Palo Alto User-ID and App-ID. Unauthorized access attempts dropped 40%.</li>
+              <li>Migrated 50+ Cisco ASA policies to Palo Alto with Expedition and YAML automation, upgraded Panorama, and built 20+ site-to-site IPsec VPN tunnels.</li>
+              <li>Managed firmware and reimaging for 100+ routers and switches in Arista CVP, which cut config-drift incidents by 20%. Set up Azure Express Gateway as a disaster-recovery extension of the on-premises data center.</li>
+            </ul>
+            <ul class="tags" aria-label="Technologies"><li>Palo Alto NGFW</li><li>Panorama</li><li>Aruba ClearPass</li><li>Arista CVP</li><li>ZTNA</li><li>Azure</li></ul>
+          </li>
+          <li class="role z-ent rv">
+            <div class="role-head"><h3>Systems Engineer</h3><span class="zone-tag zone-ent">Enterprise zone</span></div>
+            <p class="role-org">Tata Consultancy Services (TCS)</p>
+            <p class="role-meta">Hyderabad, India · Jun 2018 to Jul 2021</p>
+            <ul class="bullets">
+              <li>Ran LAN/WAN operations for a large enterprise: switch port provisioning, VLANs, IP address management, and routing and ACL changes.</li>
+              <li>Resolved Tier 1 and Tier 2 network incidents (TCP/IP, DNS, DHCP, VLAN, VPN) within ITIL-aligned SLAs, and co-wrote runbooks that reduced repeat incidents.</li>
+              <li>Executed firmware upgrades and change windows across routers, switches, and firewalls, with versioned config backups and rollback plans.</li>
+            </ul>
+            <ul class="tags" aria-label="Technologies"><li>LAN/WAN</li><li>Routing &amp; switching</li><li>ACLs</li><li>ITIL</li></ul>
+          </li>
+        </ol>
+
+        <div class="edu rv">
+          <h3>Education</h3>
+          <ul class="edu-list">
+            <li>
+              <div><p class="deg">M.Sc. Cybersecurity, Network Security specialization</p><p class="school">Saarland University (Saarland Informatics Campus / CISPA), Germany</p></div>
+              <p class="when">Oct 2026 to present</p>
+            </li>
+            <li>
+              <div><p class="deg">M.Sc. Management Information Systems</p><p class="school">University of Illinois Chicago, USA</p></div>
+              <p class="when">2021 to 2023 · GPA 3.71 / 4.0</p>
+            </li>
+            <li>
+              <div><p class="deg">B.Tech. Computer Science and Engineering</p><p class="school">GITAM University, Visakhapatnam, India</p></div>
+              <p class="when">2014 to 2018 · GPA 8.0 / 10</p>
+            </li>
+          </ul>
+          <p class="note">Both foreign degrees hold Anabin H+ status in Germany.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS + CERTS -->
+  <section class="section band" id="skills" aria-labelledby="h-skills">
+    <div class="wrap section-grid">
+      <h2 id="h-skills" class="rv">Skills and certifications</h2>
+      <div>
+        <dl class="skill-list">
+          <div class="row rv"><dt>Networking</dt><dd>BGP, OSPF, EIGRP, MPLS, VLANs, STP, NAT, dot1q, IPsec and SSL VPN, TCP/IP, DNS, DHCP</dd></div>
+          <div class="row rv"><dt>Routing &amp; switching</dt><dd>Cisco IOS, Cisco IE3400, Arista CloudVision (CVP)</dd></div>
+          <div class="row rv"><dt>Firewalls</dt><dd>Palo Alto NGFW, Panorama, Expedition, Fortinet FortiGate, Cisco ASA, GlobalProtect</dd></div>
+          <div class="row rv"><dt>Zero Trust &amp; NAC</dt><dd>Aruba ClearPass, TACACS+, RADIUS, User-ID, App-ID, ZTNA</dd></div>
+          <div class="row rv"><dt>Cloud</dt><dd>AWS (VPC, IAM, EC2, Transit Gateway), Azure (ExpressRoute, network security groups)</dd></div>
+          <div class="row rv"><dt>Monitoring &amp; SIEM</dt><dd>Splunk, SolarWinds Orion, Wireshark, ServiceNow</dd></div>
+          <div class="row rv"><dt>Industrial / OT</dt><dd>SCADA networks, Cisco IE-series, IEC 62443, ICS security fundamentals</dd></div>
+          <div class="row rv"><dt>Automation</dt><dd>Python, Docker, YAML</dd></div>
+          <div class="row rv"><dt>Frameworks</dt><dd>ITIL, change management, ISO 27001 awareness</dd></div>
+        </dl>
+
+        <div class="certs">
+          <h3 class="rv">Certifications</h3>
+          <ul class="cert-list">
+            <li class="rv"><span class="cert-name">Cisco Certified Network Associate (CCNA)<small>Cisco · valid through Dec 2026</small></span><span class="cert-status earned">Earned</span></li>
+            <li class="rv"><span class="cert-name">AWS Certified Cloud Practitioner<small>Amazon Web Services</small></span><span class="cert-status earned">Earned</span></li>
+            <li class="rv"><span class="cert-name">Google Cybersecurity Certificate<small>Google</small></span><span class="cert-status earned">Earned</span></li>
+            <li class="rv"><span class="cert-name">Practical Junior Penetration Tester (PJPT)<small>TCM Security</small></span><span class="cert-status earned">Earned</span></li>
+            <li class="rv"><span class="cert-name">CompTIA Security+<small>CompTIA</small></span><span class="cert-status">In progress</span></li>
+            <li class="rv"><span class="cert-name">Azure Network Engineer Associate (AZ-700)<small>Microsoft</small></span><span class="cert-status">In progress</span></li>
+            <li class="rv"><span class="cert-name">Fortinet NSE<small>Fortinet</small></span><span class="cert-status">In progress</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects" aria-labelledby="h-projects">
+    <div class="wrap section-grid">
+      <h2 id="h-projects" class="rv">Projects</h2>
+      <div>
+        <p class="intro rv">Lab and academic work outside client engagements, built and run end to end.</p>
+        <ul class="project-list">
+          <li class="rv">
+            <div><h3>AWS multi-account security baseline</h3><p class="project-kind">Academic · University of Illinois Chicago</p></div>
+            <div class="project-body">
+              <p>Designed a multi-account AWS baseline across IAM, KMS, VPC peering, Transit Gateway, and CloudTrail, with least privilege, encryption, segmentation, and audit logging. Remediated 25+ over-privileged IAM roles and enabled cross-account detection and incident response.</p>
+              <ul class="tags" aria-label="Technologies"><li>AWS</li><li>IAM</li><li>KMS</li><li>Transit Gateway</li><li>CloudTrail</li></ul>
+            </div>
+          </li>
+          <li class="rv">
+            <div><h3>Active Directory attack and defense</h3><p class="project-kind">Home lab</p></div>
+            <div class="project-body">
+              <p>Took over a lab domain controller through Kerberoasting, Pass-the-Hash, and NTLM relay, using Nmap, BloodHound, and PowerView. Wrote the hardening and remediation report.</p>
+              <ul class="tags" aria-label="Technologies"><li>Kerberoasting</li><li>NTLM relay</li><li>BloodHound</li><li>PowerView</li></ul>
+            </div>
+          </li>
+          <li class="rv">
+            <div><h3>OSINT investigations</h3><p class="project-kind">Independent research</p></div>
+            <div class="project-body">
+              <p>Mapped digital footprints, exposure surfaces, and threat indicators across social media, breached data, and metadata, using Maltego, theHarvester, and Shodan. Delivered structured threat intelligence reports.</p>
+              <ul class="tags" aria-label="Technologies"><li>Maltego</li><li>theHarvester</li><li>Shodan</li></ul>
+            </div>
+          </li>
+          <li class="rv">
+            <div><h3>Hardened Docker stack</h3><p class="project-kind">Self-hosted</p></div>
+            <div class="project-body">
+              <p>A production-hardened n8n environment with Portainer, Watchtower, CrowdSec, and a Docker socket proxy that limits the daemon to least-privilege access.</p>
+              <ul class="tags" aria-label="Technologies"><li>Docker</li><li>CrowdSec</li><li>Socket proxy</li><li>n8n</li></ul>
+            </div>
+          </li>
+          <li class="rv">
+            <div><h3>Homelab</h3><p class="project-kind">Self-hosted</p></div>
+            <div class="project-body">
+              <p>A ZimaBlade 7700 server running CasaOS on Debian, with Pi-hole, Tailscale, Portainer, Nextcloud, and Jellyfin.</p>
+              <ul class="tags" aria-label="Technologies"><li>Debian</li><li>Pi-hole</li><li>Tailscale</li><li>Nextcloud</li></ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK WITH ME -->
+  <section class="section band" id="work-with-me" aria-labelledby="h-work">
+    <div class="wrap section-grid">
+      <h2 id="h-work" class="rv">Work with me</h2>
+      <div class="rv">
+        <div class="brief lift">
+          <div class="brief-cap"><span>Role brief</span><span>Rohit Raj Rajana</span></div>
+          <dl>
+            <div class="row"><dt>Looking for</dt><dd>Network security, OT/IT security, and security engineering roles, with security architecture as the long-term direction.</dd></div>
+            <div class="row"><dt>Strongest in</dt><dd>Firewall design and migration (Palo Alto, FortiGate, Cisco ASA), Zero Trust access, and segmented industrial networks.</dd></div>
+            <div class="row"><dt>Environments</dt><dd>Enterprise campus and WAN, OT/SCADA field sites, hybrid cloud on AWS and Azure.</dd></div>
+            <div class="row"><dt>Next step</dt><dd>A call, an interview, or a technical screen.</dd></div>
+          </dl>
+          <p class="brief-foot"><span>Also available for tutoring and consulting.</span><a href="more.html#workwithme">See details &rarr;</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact" aria-labelledby="h-contact" style="border-bottom:none">
+    <div class="wrap section-grid">
+      <h2 id="h-contact" class="rv">Contact</h2>
+      <div>
+        <p class="contact-lead rv">LinkedIn is the fastest way to reach me. Email works too.</p>
+        <div class="btn-row rv">
+          <a class="btn btn-primary btn-plug" href="https://www.linkedin.com/in/rohit7raj/" target="_blank" rel="noopener"><span class="plug" aria-hidden="true"><span class="cable"></span><span class="jack"></span></span>Connect on LinkedIn</a>
+          <a class="btn btn-ghost copy-mail" href="mailto:rohit7rajana@gmail.com" data-email="rohit7rajana@gmail.com"><svg class="i-copy" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><svg class="i-ok" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span class="cm-label">rohit7rajana@gmail.com</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </main>
 
-<!-- FOOTER -->
-<footer>
-  <span class="footer-left">
-    currently in germany (<span id="berlin-time">--:--</span>)
-    <span id="status-dot" class="status-ping"><span class="status-ping-outer"></span><span class="status-ping-inner"></span></span>
-    <span id="status-moon" style="display:none;">🌙</span>
-    <span id="status-offline" style="display:none;"><span class="status-ping"><span class="status-ping-inner" style="background:var(--text-dim);opacity:0.35;"></span></span></span>
-    <span class="neko" id="neko" title="click me">🐱</span>
-  </span>
-  <div class="footer-right">
-    <a href="https://www.linkedin.com/in/rohit7raj/" target="_blank" rel="noopener">linkedin</a>
-    <a href="https://www.youtube.com/@itsrooh7t" target="_blank" rel="noopener">youtube</a>
-    <a href="https://www.instagram.com/rooh7t.studios/" target="_blank" rel="noopener">instagram</a>
-    <span class="footer-dot">·</span>
-    <button onclick="window.open('https://buymeacoffee.com/rooh7t','_blank')">☕ buy me a coffee</button>
+<footer class="wrap">
+  <p class="more-line">There is more: books, photography, writing, and homelab notes. <a href="more.html">More about me &rarr;</a></p>
+  <div class="site-footer">
+    <span>&copy; 2026 Rohit Raj Rajana · Saarbrücken, Germany</span>
+    <span class="legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz / Privacy</a> · <a href="#top">Back to top</a></span>
   </div>
+  <div class="wordmark" aria-hidden="true"><svg viewBox="0 0 1000 180" focusable="false"><text x="0" y="135" font-size="170" textLength="1000" lengthAdjust="spacingAndGlyphs">Rohit Raj Rajana</text></svg></div>
 </footer>
-<div style="width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--pad) 1.25rem;text-align:center;">
-  <span style="font-family:var(--mono);font-size:0.62rem;color:var(--text-dim);letter-spacing:0.08em;">packets secured · pages hand-coded · coffee consumed</span>
-</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
-gsap.registerPlugin(ScrollTrigger);
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-/* ── BANNER PARALLAX (GSAP scrub) ── */
-function initParallax(){
-  if(reducedMotion)return;
-  document.querySelectorAll('.page-section.active .page-banner-img').forEach(img=>{
-    if(img.dataset.parallaxInit)return;img.dataset.parallaxInit='1';
-    gsap.fromTo(img,{y:-20},{y:20,ease:'none',scrollTrigger:{trigger:img.parentElement,start:'top bottom',end:'bottom top',scrub:0.5}});
-  })
-}
-
-/* ── SECTION CHOREOGRAPHY ── */
-function initChoreography(){
-  if(reducedMotion)return;
-  document.querySelectorAll('.page-section.active .section').forEach(sec=>{
-    if(sec.dataset.choreoInit)return;sec.dataset.choreoInit='1';
-    const tl=gsap.timeline({scrollTrigger:{trigger:sec,start:'top 85%',toggleActions:'play none none none'}});
-    const label=sec.querySelector('.section-label');
-    const title=sec.querySelector('h1, h2, .title-row');
-    const paras=sec.querySelectorAll('p, .callout, .medium-callout, .pull-quote');
-    const cards=sec.querySelectorAll('.card, .exp-card, .cert-badge, .pursuit-item, .lang-card, .btb-card, .ds-op, .nav-block, .store-platform');
-    if(label)tl.from(label,{opacity:0,x:-12,duration:0.4,ease:'power2.out'},0);
-    if(title)tl.from(title,{opacity:0,y:20,duration:0.5,ease:'power2.out'},0.1);
-    paras.forEach((p,i)=>tl.from(p,{opacity:0,y:16,duration:0.4,ease:'power2.out'},0.2+i*0.06));
-    if(cards.length)tl.from(cards,{opacity:0,y:24,scale:0.96,duration:0.45,stagger:0.06,ease:'back.out(1.4)'},paras.length?0.3:0.15);
-  })
-}
-
-/* ── NAVIGATION ── */
-function showPage(name){
-  document.querySelectorAll('.page-section').forEach(s=>s.classList.remove('active'));
-  const p=document.getElementById('page-'+name);
-  if(p)p.classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
-  const nl=document.getElementById('nav-'+name);
-  if(nl)nl.classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
-  requestAnimationFrame(()=>{initReveals();initTilt();initLangBars();initParallax();initChoreography();initMagnetic()});
-  return false
-}
-function navTo(name){document.getElementById('mobile-menu').classList.remove('open');document.getElementById('icon-menu').classList.remove('hidden');document.getElementById('icon-close').classList.add('hidden');showPage(name)}
-
-/* ── THEME ── */
-function syncToggle(){const light=document.documentElement.getAttribute('data-theme')==='light';document.querySelectorAll('.theme-toggle-btn').forEach(b=>light?b.classList.add('is-light'):b.classList.remove('is-light'))}
-syncToggle();
-function toggleTheme(){const next=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('theme',next);syncToggle()}
-document.getElementById('tt-desk').addEventListener('click',toggleTheme);
-document.getElementById('tt-mob').addEventListener('click',toggleTheme);
-document.getElementById('menu-btn').addEventListener('click',function(){const open=document.getElementById('mobile-menu').classList.toggle('open');document.getElementById('icon-menu').classList.toggle('hidden',open);document.getElementById('icon-close').classList.toggle('hidden',!open)});
-
-/* ── AGE COUNTER ── */
-(function(){const bd=new Date(1996,8,12).getTime();const we=document.getElementById('age-whole');const de=document.getElementById('age-decimal');if(!we)return;function tick(){const age=(Date.now()-bd)/(365.2425*864e5);const w=Math.floor(age);const f=(age-w).toFixed(9).slice(1);we.textContent=w;de.textContent=f}tick();setInterval(tick,50)})();
-
-/* ── PURSUITS ACCORDION ── */
-document.querySelectorAll('.pursuit-toggle').forEach(btn=>{btn.addEventListener('click',function(){const id=btn.dataset.id;const body=document.getElementById('pursuit-'+id);const chev=btn.querySelector('.pursuit-chevron');const wasOpen=body.classList.contains('open');document.querySelectorAll('.pursuit-body').forEach(b=>b.classList.remove('open'));document.querySelectorAll('.pursuit-chevron').forEach(c=>c.classList.remove('open'));if(!wasOpen){body.classList.add('open');chev.classList.add('open')}})});
-
-/* ── NEKO ── */
-const nekoFrames=['🐱','😺','😸','🐾','😻','🐱'];let nekoIdx=0;const nekoEl=document.getElementById('neko');
-if(nekoEl){nekoEl.addEventListener('click',function(){nekoIdx=(nekoIdx+1)%nekoFrames.length;nekoEl.textContent=nekoFrames[nekoIdx];setTimeout(()=>{nekoEl.textContent='🐱';nekoIdx=0},1500)})}
-
-/* ── BERLIN TIME ── */
-function updateBerlin(){const el=document.getElementById('berlin-time');if(!el)return;const t=new Date().toLocaleTimeString('en-US',{timeZone:'Europe/Berlin',hour:'2-digit',minute:'2-digit',hour12:false});el.textContent=t;const h=parseInt(t.split(':')[0]);const dot=document.getElementById('status-dot');const moon=document.getElementById('status-moon');const offline=document.getElementById('status-offline');if(!dot)return;if(h>=5&&h<17){dot.style.display='';moon.style.display='none';offline.style.display='none'}else if(h>=17&&h<23){dot.style.display='none';moon.style.display='';offline.style.display='';if(nekoEl)nekoEl.textContent='😴'}}
-updateBerlin();setInterval(updateBerlin,30000);
-
-/* ── SCROLL REVEAL (GSAP) ── */
-function initReveals(){
-  const els=document.querySelectorAll('.reveal:not(.visible)');
-  if(!els.length)return;
-  if(reducedMotion){els.forEach(el=>el.classList.add('visible'));return}
-  els.forEach(el=>{
-    gsap.fromTo(el,{opacity:0,y:24},{opacity:1,y:0,duration:0.5,ease:'power2.out',
-      scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none',once:true},
-      onComplete:()=>el.classList.add('visible')
-    })
-  })
-}
-initReveals();
-
-/* ── 3D TILT ON CARDS ── */
-function initTilt(){
-  if(reducedMotion||'ontouchstart' in window)return;
-  document.querySelectorAll('.page-section.active .card, .page-section.active .exp-card, .page-section.active .ds-op').forEach(card=>{
-    if(card.dataset.tiltInit)return;card.dataset.tiltInit='1';
-    card.addEventListener('mousemove',e=>{
-      const r=card.getBoundingClientRect();
-      const x=(e.clientX-r.left)/r.width-0.5;
-      const y=(e.clientY-r.top)/r.height-0.5;
-      card.style.transform=`perspective(800px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-3px)`;
-      card.style.boxShadow='0 12px 32px rgba(0,0,0,0.12)';
-    });
-    card.addEventListener('mouseleave',()=>{
-      card.style.transform='';card.style.boxShadow='';
-    });
-  })
-}
-initTilt();
-
-/* ── MAGNETIC HOVER (CTAs) ── */
-function initMagnetic(){
-  if(reducedMotion||'ontouchstart' in window)return;
-  document.querySelectorAll('.ds-btn-p, .nav-block, .medium-callout, .product-popup-cta').forEach(el=>{
-    if(el.dataset.magInit)return;el.dataset.magInit='1';
-    el.addEventListener('mousemove',e=>{
-      const r=el.getBoundingClientRect();
-      const dx=(e.clientX-r.left-r.width/2)*0.2;
-      const dy=(e.clientY-r.top-r.height/2)*0.2;
-      gsap.to(el,{x:dx,y:dy,duration:0.3,ease:'power2.out'});
-    });
-    el.addEventListener('mouseleave',()=>{
-      gsap.to(el,{x:0,y:0,duration:0.4,ease:'elastic.out(1,0.4)'});
-    });
-  })
-}
-initMagnetic();
-
-/* ── LANGUAGE BAR ANIMATION ── */
-function initLangBars(){
-  document.querySelectorAll('.lang-fill').forEach(bar=>{
-    if(bar.dataset.animated)return;
-    const targetWidth=bar.style.width;
-    bar.classList.add('lang-fill-initial');
-    bar.dataset.animated='1';
-    const io=new IntersectionObserver(entries=>{
-      if(entries[0].isIntersecting){
-        setTimeout(()=>{bar.classList.remove('lang-fill-initial');bar.style.width=targetWidth},100);
-        io.unobserve(bar);
-      }
-    },{threshold:0.3});
-    io.observe(bar);
-  })
-}
-initLangBars();
-initParallax();
-initChoreography();
-
-/* ── COUNT-UP STATS (GSAP) ── */
-function countUp(){document.querySelectorAll('[data-count]').forEach(el=>{const target=parseInt(el.dataset.count);if(el.dataset.counted)return;
-  ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter:()=>{
-    el.dataset.counted='1';const obj={v:0};
-    gsap.to(obj,{v:target,duration:1.2,ease:'power2.out',onUpdate:()=>{el.textContent=Math.floor(obj.v)+'+'}});
-  }})
-})}
-countUp();
-
-/* ── HERO TITLE REVEAL ── */
 (function(){
-  const t=document.getElementById('hero-title');
-  if(!t||reducedMotion){if(t)t.classList.add('revealed');return}
-  setTimeout(()=>t.classList.add('revealed'),300);
-})();
+  var root=document.documentElement;
+  var mo=root.classList.contains('mo');
+  var vh=window.innerHeight;
 
-/* ── CURSOR SPOTLIGHT ON CARD GRIDS ── */
-(function(){
-  if(reducedMotion||'ontouchstart' in window)return;
-  document.querySelectorAll('.cards').forEach(grid=>{
-    grid.classList.add('card-grid-spotlight');
-    grid.addEventListener('mousemove',e=>{
-      const r=grid.getBoundingClientRect();
-      grid.style.setProperty('--spot-x',(e.clientX-r.left)+'px');
-      grid.style.setProperty('--spot-y',(e.clientY-r.top)+'px');
+  /* theme toggle (same storage key as more.html, so the choice carries across) */
+  var btn=document.getElementById('theme-btn');
+  function syncLabel(){btn.setAttribute('aria-label',root.getAttribute('data-theme')==='dark'?'Switch to light theme':'Switch to dark theme')}
+  syncLabel();
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next)}catch(e){}
+    var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',next==='dark'?'#090E11':'#F4F1E9');
+    syncLabel();
+    meshTheme();
+  });
+
+  /* mobile menu: close after choosing a link or pressing Escape */
+  var menu=document.getElementById('m-menu');
+  if(menu){
+    menu.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('a'))menu.open=false});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.open){menu.open=false;var s=menu.querySelector('summary');if(s)s.focus()}});
+  }
+
+  /* header: glass and border after the page scrolls */
+  var header=document.getElementById('site-header');
+  function headerState(){header.classList.toggle('scrolled',window.scrollY>8)}
+  headerState();
+  window.addEventListener('scroll',headerState,{passive:true});
+
+  /* nav: mark the section in view and slide the underline to it */
+  var nav=document.querySelector('.primary-nav');
+  var ind=document.getElementById('nav-ind');
+  var links=[].slice.call(document.querySelectorAll('.nav-list a'));
+  var current=null,ioCurrent=null;
+  function placeInd(){
+    var a=current&&links.filter(function(l){return l.getAttribute('href')==='#'+current})[0];
+    if(!a){ind.style.opacity='0';return}
+    var nr=nav.getBoundingClientRect(),ar=a.getBoundingClientRect();
+    if(!ar.width){ind.style.opacity='0';return}
+    var pad=11;
+    ind.style.transform='translateX('+(ar.left-nr.left+pad).toFixed(1)+'px) scaleX('+((ar.width-pad*2)/100).toFixed(3)+')';
+    ind.style.opacity='1';
+  }
+  function atBottom(){return window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4}
+  function pick(){setActive(atBottom()?'contact':ioCurrent)}
+  var wasBottom=false;
+  window.addEventListener('scroll',function(){var b=atBottom();if(b!==wasBottom){wasBottom=b;pick()}},{passive:true});
+  function setActive(id){
+    current=id;
+    links.forEach(function(l){if(l.getAttribute('href')==='#'+id)l.setAttribute('aria-current','location');else l.removeAttribute('aria-current')});
+    placeInd();
+  }
+  if('IntersectionObserver' in window){
+    var ids=links.map(function(l){return l.getAttribute('href').slice(1)});
+    var secIO=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting)ioCurrent=en.target.id;
+        else if(en.target.id===ioCurrent&&en.boundingClientRect.top>0){
+          var i=ids.indexOf(ioCurrent);ioCurrent=i>0?ids[i-1]:null;
+        }
+        pick();
+      });
+    },{rootMargin:'-40% 0px -55% 0px'});
+    ids.forEach(function(id){var s=document.getElementById(id);if(s)secIO.observe(s)});
+  }
+  window.addEventListener('resize',function(){vh=window.innerHeight;placeInd();req()});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(placeInd);
+
+  /* copy email: copies the address and still lets the mailto link open */
+  var live=document.createElement('p');live.className='sr-only';live.setAttribute('aria-live','polite');document.body.appendChild(live);
+  document.querySelectorAll('.copy-mail').forEach(function(a){
+    var lbl=a.querySelector('.cm-label'),orig=lbl.textContent,tm;
+    a.addEventListener('click',function(){
+      var addr=a.getAttribute('data-email');
+      if(!navigator.clipboard||!navigator.clipboard.writeText)return;
+      navigator.clipboard.writeText(addr).then(function(){
+        if(!a.classList.contains('copied'))a.style.minWidth=a.offsetWidth+'px';a.classList.add('copied');lbl.textContent='Copied';live.textContent='Email address copied.';
+        clearTimeout(tm);tm=setTimeout(function(){a.classList.remove('copied');lbl.textContent=orig;a.style.minWidth='';live.textContent=''},2000);
+      },function(){});
     });
   });
-  // Override spotlight position via CSS custom properties
-  const style=document.createElement('style');
-  style.textContent='.card-grid-spotlight::before{left:var(--spot-x,50%);top:var(--spot-y,50%)}';
-  document.head.appendChild(style);
-})();
 
-/* ── SHIMMER ON PRODUCT CARDS ── */
-(function(){
-  document.querySelectorAll('.product-cover-card').forEach(c=>c.classList.add('shimmer-card'));
-})();
+  /* career trace: tabs (click, hover, arrow keys) */
+  var tabs=[].slice.call(document.querySelectorAll('.hop'));
+  var panels=tabs.map(function(t){return document.getElementById(t.getAttribute('aria-controls'))});
+  var sitesSvg=document.getElementById('sites'),sitesNum=document.getElementById('sites-num');
+  var NS='http://www.w3.org/2000/svg';
+  for(var i=0;i<200;i++){
+    var c=document.createElementNS(NS,'circle');
+    c.setAttribute('cx',6+(i%25)*12);c.setAttribute('cy',6+Math.floor(i/25)*8.6);c.setAttribute('r',2.3);
+    c.style.transitionDelay=(i*4)+'ms';sitesSvg.appendChild(c);
+  }
+  var userTook=false,sel=3;
+  function sitesFill(){
+    if(!mo)return;
+    sitesSvg.classList.remove('fill');void sitesSvg.getBoundingClientRect();sitesSvg.classList.add('fill');
+    var t0=performance.now();
+    (function st(t){var p=Math.min(1,Math.max(0,(t-t0)/900));sitesNum.textContent=Math.round(200*p)+'+';if(p<1)requestAnimationFrame(st)})(t0);
+  }
+  function select(i,focus){
+    tabs.forEach(function(t,j){
+      var on=j===i;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;
+      panels[j].classList.toggle('off',!on);
+    });
+    if(focus)tabs[i].focus();
+    if(i===3&&sel!==3)sitesFill();
+    sel=i;
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){userTook=true;select(i)});
+    t.addEventListener('keydown',function(e){
+      var k=e.key,n=null;
+      if(k==='ArrowRight'||k==='ArrowDown')n=(i+1)%tabs.length;
+      else if(k==='ArrowLeft'||k==='ArrowUp')n=(i-1+tabs.length)%tabs.length;
+      else if(k==='Home')n=0;else if(k==='End')n=tabs.length-1;
+      if(n!==null){e.preventDefault();userTook=true;select(n,true)}
+    });
+    var ht;
+    t.addEventListener('pointerenter',function(e){if(e.pointerType!=='mouse')return;ht=setTimeout(function(){userTook=true;select(i)},110)});
+    t.addEventListener('pointerleave',function(){clearTimeout(ht)});
+  });
+  select(3);
 
-/* ── BOOKS ── */
-(function(){
-  const books=[
-    {title:"Tuesdays with Morrie",author:"Mitch Albom",takeaway:"a dying man taught me more about living than anything i've read since.",genre:"memoir",status:"read"},
-    {title:"The Compound Effect",author:"Darren Hardy",takeaway:"small choices, made consistently, quietly become the whole story.",genre:"self-help",status:"read"},
-    {title:"Greenlights",author:"Matthew McConaughey",takeaway:"some setbacks aren't stop signs — they're just redirects you didn't ask for.",genre:"memoir",status:"read"},
-    {title:"The Almanack of Naval Ravikant",author:"Eric Jorgenson",takeaway:"own equity, not time. that one line changed how i think about work.",genre:"philosophy",status:"read"},
-    {title:"A Man Called Ove",author:"Fredrik Backman",takeaway:"grumpy on the outside, broken on the inside — reminded me that everyone's carrying something.",genre:"fiction",status:"read"},
-    {title:"Eat That Frog",author:"Brian Tracy",takeaway:"do the hardest thing first. everything else gets easier after that.",genre:"self-help",status:"read"},
-    {title:"The Richest Man in Babylon",author:"George S. Clason",takeaway:"pay yourself first — ancient advice that most people still haven't acted on.",genre:"business",status:"read"},
-    {title:"Who Moved My Cheese",author:"Spencer Johnson",takeaway:"change is coming whether you're ready or not.",genre:"self-help",status:"read"},
-    {title:"The Dip",author:"Seth Godin",takeaway:"quitting strategically is a skill.",genre:"business",status:"read"},
-    {title:"Make Time",author:"Jake Knapp & John Zeratsky",takeaway:"highlight one thing each day.",genre:"self-help",status:"read"},
-    {title:"Steal Like an Artist",author:"Austin Kleon",takeaway:"nothing is original — collect what you love, remix it, and make it yours.",genre:"creativity",status:"read"},
-    {title:"Zero to One",author:"Peter Thiel",takeaway:"competition is for losers. build something the world doesn't have yet.",genre:"business",status:"read"},
-    {title:"Frames of Mind",author:"Howard Gardner",takeaway:"intelligence isn't one thing — it's many.",genre:"psychology",status:"read"},
-    {title:"Tools of Titans",author:"Tim Ferriss",takeaway:"a dense toolkit from 200 world-class people — you don't read it, you mine it.",genre:"self-help",status:"read"},
-    {title:"The Psychology of Money",author:"Morgan Housel",takeaway:"your relationship with money is shaped by when and where you grew up.",genre:"business",status:"read"},
-    {title:"Sapiens",author:"Yuval Noah Harari",takeaway:"we run the world on stories we collectively agreed to believe.",genre:"philosophy",status:"read"},
-    {title:"Red Rising",author:"Pierce Brown",takeaway:"",genre:"fiction",status:"reading"},
-    {title:"Ghost in the Wires",author:"Kevin Mitnick",takeaway:"",genre:"memoir",status:"want"},
-    {title:"Fourth Wing",author:"Rebecca Yarros",takeaway:"",genre:"fiction",status:"want"},
-    {title:"The Silent Patient",author:"Alex Michaelides",takeaway:"",genre:"fiction",status:"want"},
-    {title:"A Good Girl's Guide to Murder",author:"Holly Jackson",takeaway:"",genre:"fiction",status:"want"},
-    {title:"Thinking, Fast and Slow",author:"Daniel Kahneman",takeaway:"",genre:"psychology",status:"want"},
-    {title:"The Alchemist",author:"Paulo Coelho",takeaway:"",genre:"fiction",status:"want"},
-    {title:"12 Rules for Life",author:"Jordan Peterson",takeaway:"",genre:"philosophy",status:"want"},
-    {title:"The Ruthless Elimination of Hurry",author:"John Mark Comer",takeaway:"",genre:"self-help",status:"want"},
-    {title:"The Awe of God",author:"John Bevere",takeaway:"",genre:"philosophy",status:"want"},
-    {title:"The Road",author:"Cormac McCarthy",takeaway:"",genre:"fiction",status:"want"},
-    {title:"Darkness at Noon",author:"Arthur Koestler",takeaway:"",genre:"fiction",status:"want"},
-    {title:"Influence: The Psychology of Persuasion",author:"Robert Cialdini",takeaway:"",genre:"psychology",status:"want"},
-    {title:"The Way of the Superior Man",author:"David Deida",takeaway:"",genre:"self-help",status:"want"},
-    {title:"The Lean Startup",author:"Eric Ries",takeaway:"",genre:"business",status:"want"},
-    {title:"Man's Search for Meaning",author:"Viktor E. Frankl",takeaway:"",genre:"philosophy",status:"want"},
-    {title:"Atomic Habits",author:"James Clear",takeaway:"",genre:"self-help",status:"want"},
-    {title:"Can't Hurt Me",author:"David Goggins",takeaway:"",genre:"memoir",status:"want"},
-    {title:"The Intelligent Investor",author:"Benjamin Graham",takeaway:"",genre:"business",status:"want"},
-    {title:"Principles",author:"Ray Dalio",takeaway:"",genre:"business",status:"want"},
-    {title:"The 7 Habits of Highly Effective People",author:"Stephen R. Covey",takeaway:"",genre:"self-help",status:"want"},
-    {title:"The Subtle Art of Not Giving a F*ck",author:"Mark Manson",takeaway:"",genre:"self-help",status:"want"},
-    {title:"Elon Musk",author:"Walter Isaacson",takeaway:"",genre:"memoir",status:"want"}
-  ];
-  const statusMap={read:{label:'✓ read',cls:'status-read'},reading:{label:'▶ reading',cls:'status-reading'},want:{label:'○ want',cls:'status-want'}};
-  const FAVORITES=["Tuesdays with Morrie","The Compound Effect","Greenlights","The Richest Man in Babylon","Sapiens"];
-  let currentGenre='all',showAllBooks=false;
-  function renderBooks(genre){currentGenre=genre;const tbody=document.getElementById('books-tbody'),empty=document.getElementById('books-empty'),count=document.getElementById('book-count');if(!tbody)return;const readBooks=books.filter(b=>(b.status==='read'||b.status==='reading')&&(genre==='all'||b.genre===genre));count.textContent=readBooks.length;if(readBooks.length===0){tbody.innerHTML='';empty.style.display='block'}else{empty.style.display='none';tbody.innerHTML=readBooks.map(b=>{const s=statusMap[b.status];const takeaway=b.takeaway||'<span style="color:var(--text-dim);font-style:italic;">—</span>';return`<tr><td class="book-title-cell">${b.title}</td><td>${b.author}</td><td>${takeaway}</td><td><span class="book-genre-pill">${b.genre}</span></td><td><span class="book-status ${s.cls}">${s.label}</span></td></tr>`}).join('')}const totalRead=books.filter(b=>b.status==='read'||b.status==='reading').length;const ac=document.getElementById('allbooks-count');if(ac)ac.textContent=totalRead}
-  function renderCoverGrid(){const grid=document.getElementById('book-cover-grid');if(!grid)return;const showcase=books.filter(b=>FAVORITES.includes(b.title));window._showcaseBooks=showcase;grid.innerHTML=showcase.map((b,i)=>`<div class="book-cover-card" onclick='openBookTooltip(${i})'><div class="book-cover-img-wrap" id="cover-wrap-${i}"><div class="book-cover-placeholder"><div class="book-cover-placeholder-title">${b.title}</div><div class="book-cover-placeholder-author">${b.author}</div></div></div><div class="book-cover-info"><div class="book-cover-title-text">${b.title}</div><div class="book-cover-author-text">${b.author}</div></div></div>`).join('');showcase.forEach((b,i)=>{const query=encodeURIComponent(`${b.title} ${b.author}`);fetch(`https://openlibrary.org/search.json?q=${query}&limit=1&fields=cover_i,title`).then(r=>r.json()).then(data=>{const doc=data.docs&&data.docs[0];if(doc&&doc.cover_i){const wrap=document.getElementById(`cover-wrap-${i}`);if(wrap)wrap.innerHTML=`<img src="https://covers.openlibrary.org/b/id/${doc.cover_i}-M.jpg" alt="${b.title}">`}}).catch(()=>{})})}
-  window.openBookTooltip=function(i){const b=window._showcaseBooks[i];document.getElementById('bt-title').textContent=b.title;document.getElementById('bt-author').textContent=b.author;document.getElementById('bt-takeaway').textContent=b.takeaway||'no takeaway noted yet.';document.getElementById('book-tooltip-overlay').style.display='flex'};
-  window.closeBookTooltip=function(){document.getElementById('book-tooltip-overlay').style.display='none'};
-  window.toggleAllBooks=function(){showAllBooks=!showAllBooks;const section=document.getElementById('allbooks-section');const icon=document.getElementById('allbooks-toggle-icon');const label=document.getElementById('allbooks-toggle-label');const totalRead=books.filter(b=>b.status==='read'||b.status==='reading').length;if(showAllBooks){section.style.display='block';icon.textContent='●';label.innerHTML='hide full list';renderBooks(currentGenre)}else{section.style.display='none';icon.textContent='○';label.innerHTML=`show all books i've read (<span id="allbooks-count">${totalRead}</span>)`}};
-  renderBooks('all');renderCoverGrid();
-  // Add float animation to book covers
-  setTimeout(()=>{document.querySelectorAll('.book-cover-card').forEach((c,i)=>{c.querySelector('.book-cover-img-wrap').style.animationDelay=(i*0.4)+'s';c.querySelector('.book-cover-img-wrap').classList.add('float-anim')})},500);
-  document.querySelectorAll('.bfilter').forEach(btn=>{btn.addEventListener('click',function(){document.querySelectorAll('.bfilter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderBooks(btn.dataset.genre)})});
-})();
+  function req(){}
 
-/* ── GAMES ── */
-(function(){
-  const nowPlaying=[{name:'God of War'},{name:'Ghost of Tsushima'},{name:'Cyberpunk 2077: Phantom Liberty'},{name:'COD Mobile'},{name:'PUBG Mobile'}];
-  const played=[{name:'Red Dead Redemption 2 ★'},{name:"Assassin's Creed franchise (till Mirage)"},{name:'GTA franchise'},{name:'NFS franchise'},{name:'COD franchise'},{name:'Watch Dogs franchise'},{name:"Tom Clancy's Ghost Recon: Wildlands"},{name:"Tom Clancy's The Division"},{name:'Horizon Zero Dawn'},{name:'Forza Horizon 4'},{name:'Hitman 2'},{name:'The Crew 2'},{name:'Genshin Impact'}];
-  function renderGames(games,id){const el=document.getElementById(id);if(!el)return;el.innerHTML=games.map(g=>`<span class="chip">${g.name}</span>`).join('')}
-  renderGames(nowPlaying,'now-playing');renderGames(played,'played');
-})();
+  /* scroll progress line */
+  var prog=document.getElementById('progress');
+  function progress(){var h=document.documentElement.scrollHeight-window.innerHeight;prog.style.transform='scaleX('+(h>0?Math.min(1,window.scrollY/h):0).toFixed(4)+')'}
+  progress();window.addEventListener('scroll',progress,{passive:true});
 
-/* ── STORE PRODUCTS ── */
-(function(){
-  const products=[
-    {id:'ai-bundle',icon:'📦',name:'Your AI Head Start Bundle',sub:'field guide + prompt vault',edition:'rooh7t · bundle',title:'Your AI Head Start Bundle',hook:"you're not bad at AI. you were just never shown how to actually use it. the field guide + the prompt vault — everything you need in one package.",tags:['17 modules','8 AI tools','prompt library','complete bundle'],cta:'https://rooh7t.gumroad.com/l/YourAIHeadStartBundle'},
-    {id:'networking-8020',icon:'🌐',name:'Networking 80/20',sub:'the fundamentals',edition:'rooh7t',title:'Networking 80/20',hook:'the fundamentals that actually run production. no filler, no fluff — just the 20% of networking knowledge that covers 80% of real-world scenarios.',tags:['networking','fundamentals','production'],cta:'https://rooh7t.gumroad.com/l/networking8020'}
-  ];
-  window._products=products;
-  function renderProductGrid(){const grid=document.getElementById('product-cover-grid');if(!grid)return;grid.innerHTML=products.map((p,i)=>`<div class="product-cover-card" onclick="openProductPopup(${i})"><span class="product-cover-icon">${p.icon}</span><span class="product-cover-name">${p.name}</span><span class="product-cover-sub">${p.sub}</span></div>`).join('')}
-  window.openProductPopup=function(i){const p=window._products[i];document.getElementById('pp-edition').textContent=p.edition;document.getElementById('pp-title').innerHTML=p.title;document.getElementById('pp-hook').innerHTML=p.hook;document.getElementById('pp-tags').innerHTML=p.tags.map(t=>`<span class="product-popup-tag">${t}</span>`).join('');document.getElementById('pp-cta').href=p.cta;document.getElementById('product-popup-overlay').style.display='flex'};
-  window.closeProductPopup=function(){document.getElementById('product-popup-overlay').style.display='none'};
-  renderProductGrid();
-})();
-
-/* ── LIBRARY (PDFs + notes, from library.json) ── */
-(function(){
-  let libraryItems=[];
-  let activeFilter='all'; // 'all' | 'pdf' | 'note' | category name
-
-  function escapeHtml(s){
-    return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  /* network mesh background: nodes drift, link when close, and light up around the pointer */
+  var cv=document.getElementById('mesh'),cx=cv&&cv.getContext&&cv.getContext('2d');
+  var W=0,H=0,nodes=[],LINK=150,MC={n:'20,57,74',a:'10,122,101',na:.36,la:.17,ga:.16},mraf=0,lastT=0;
+  var ptr={x:0,y:0,gx:0,gy:0,a:0,on:false};
+  function meshTheme(){
+    if(!cx)return;
+    var cs=getComputedStyle(root);
+    MC.n=cs.getPropertyValue('--mesh').trim()||MC.n;MC.a=cs.getPropertyValue('--mesh-acc').trim()||MC.a;
+    MC.na=parseFloat(cs.getPropertyValue('--mesh-a'))||MC.na;MC.la=parseFloat(cs.getPropertyValue('--mesh-l'))||MC.la;MC.ga=parseFloat(cs.getPropertyValue('--mesh-glow'))||MC.ga;
+    if(!mraf)drawMesh(false);
+  }
+  function drawMesh(live){
+    cx.clearRect(0,0,W,H);
+    var a=live?ptr.a:0,px=ptr.gx,py=ptr.gy,R=210,i,j,nd,k=[];
+    if(a>0.01){
+      var g=cx.createRadialGradient(px,py,0,px,py,400);
+      g.addColorStop(0,'rgba('+MC.a+','+(MC.ga*a).toFixed(3)+')');g.addColorStop(1,'rgba('+MC.a+',0)');
+      cx.fillStyle=g;cx.fillRect(px-400,py-400,800,800);
+    }
+    for(i=0;i<nodes.length;i++){nd=nodes[i];var d=a>0.01?Math.sqrt((nd.x-px)*(nd.x-px)+(nd.y-py)*(nd.y-py)):1e9;k[i]=d<R?(1-d/R)*a:0}
+    cx.lineWidth=1;
+    for(i=0;i<nodes.length;i++){
+      for(j=i+1;j<nodes.length;j++){
+        var dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y,d2=dx*dx+dy*dy;
+        if(d2>=LINK*LINK)continue;
+        var f=1-Math.sqrt(d2)/LINK,b=Math.max(k[i],k[j]);
+        cx.strokeStyle='rgba('+(b>0.04?MC.a:MC.n)+','+(f*(MC.la+b*.4)).toFixed(3)+')';
+        cx.beginPath();cx.moveTo(nodes[i].x,nodes[i].y);cx.lineTo(nodes[j].x,nodes[j].y);cx.stroke();
+      }
+    }
+    for(i=0;i<nodes.length;i++){
+      nd=nodes[i];
+      cx.fillStyle='rgba('+((nd.acc||k[i]>0.04)?MC.a:MC.n)+','+Math.min(1,MC.na+k[i]*.55).toFixed(3)+')';
+      cx.beginPath();cx.arc(nd.x,nd.y,nd.r+k[i]*1.8,0,6.2832);cx.fill();
+      if(k[i]>0.04){cx.strokeStyle='rgba('+MC.a+','+(k[i]*.6).toFixed(3)+')';cx.beginPath();cx.moveTo(nd.x,nd.y);cx.lineTo(px,py);cx.stroke()}
+    }
+  }
+  function meshInit(){
+    if(!cx)return;
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    W=window.innerWidth;H=window.innerHeight;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);cx.setTransform(dpr,0,0,dpr,0,0);
+    var n=Math.max(26,Math.min(84,Math.round(W*H/17000)));LINK=W<700?115:150;
+    var sd=7;function rnd(){sd=(sd*16807)%2147483647;return sd/2147483647}
+    nodes=[];for(var i=0;i<n;i++){var an=rnd()*6.283,sp=.012+rnd()*.022;nodes.push({x:rnd()*W,y:rnd()*H,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp,r:1.1+rnd()*1.3,acc:rnd()<.14})}
+    drawMesh(false);
+  }
+  function meshStopped(){return !mo||root.classList.contains('paused')||document.hidden}
+  function meshLoop(t){
+    mraf=0;var dt=Math.min(50,t-(lastT||t));lastT=t;
+    if(meshStopped()){lastT=0;drawMesh(false);return}
+    ptr.a+=((ptr.on?1:0)-ptr.a)*.08;ptr.gx+=(ptr.x-ptr.gx)*.14;ptr.gy+=(ptr.y-ptr.gy)*.14;
+    for(var i=0;i<nodes.length;i++){
+      var nd=nodes[i];nd.x+=nd.vx*dt;nd.y+=nd.vy*dt;
+      if(nd.x<-12)nd.x=W+12;else if(nd.x>W+12)nd.x=-12;
+      if(nd.y<-12)nd.y=H+12;else if(nd.y>H+12)nd.y=-12;
+    }
+    drawMesh(true);mraf=requestAnimationFrame(meshLoop);
+  }
+  function meshKick(){if(cx&&mo&&!mraf)mraf=requestAnimationFrame(meshLoop)}
+  if(cx){
+    meshTheme();meshInit();
+    var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(meshInit,160)});
+    document.addEventListener('visibilitychange',meshKick);
+    if(mo&&window.matchMedia('(hover: hover) and (pointer: fine)').matches){
+      window.addEventListener('pointermove',function(e){if(e.pointerType&&e.pointerType!=='mouse')return;if(!ptr.on&&ptr.a<.02){ptr.gx=e.clientX;ptr.gy=e.clientY}ptr.x=e.clientX;ptr.y=e.clientY;ptr.on=true});
+      document.documentElement.addEventListener('pointerleave',function(){ptr.on=false});
+      window.addEventListener('blur',function(){ptr.on=false});
+    }
+    meshKick();
   }
 
-  function buildFilters(){
-    const wrap=document.getElementById('library-filters');
-    if(!wrap)return;
-    // collect unique non-null categories in order of appearance
-    const cats=[...new Set(libraryItems.map(i=>i.category).filter(Boolean))].sort();
-    wrap.innerHTML=
-      `<button class="bfilter active" data-f="all">all</button>`+
-      `<button class="bfilter" data-f="pdf">pdfs</button>`+
-      `<button class="bfilter" data-f="note">notes</button>`+
-      cats.map(c=>`<button class="bfilter" data-f="${escapeHtml(c)}">${escapeHtml(c.toLowerCase())}</button>`).join('');
-    wrap.querySelectorAll('.bfilter').forEach(btn=>{
-      btn.addEventListener('click',function(){
-        wrap.querySelectorAll('.bfilter').forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        activeFilter=btn.dataset.f;
-        renderLibrary();
+  if(!mo){
+    /* no motion: final states only */
+    var tl=document.getElementById('timeline');if(tl)tl.classList.add('drawn');
+    tabs.forEach(function(t){t.classList.add('lit')});
+    root.classList.add('ready');
+    return;
+  }
+
+  /* trace run: packet travels the wire, lights each hop, prints each line */
+  var tpath=document.getElementById('trace-path'),wire=document.getElementById('wire'),wfill=document.getElementById('wire-fill'),pkt=document.getElementById('pkt');
+  var outLines=[].slice.call(document.querySelectorAll('.trace-out .hl'));
+  var traceRaf=null,traceOff=true;
+  function vertical(){return wire.offsetHeight>wire.offsetWidth}
+  function setLen(){var v=vertical();tpath.style.setProperty('--len',(v?wire.offsetHeight:wire.offsetWidth)+'px')}
+  function runTrace(){
+    cancelAnimationFrame(traceRaf);
+    tpath.classList.remove('ambient');setLen();
+    var v=vertical(),len=v?wire.offsetHeight:wire.offsetWidth,lit=[false,false,false,false];
+    tabs.forEach(function(t){t.classList.remove('lit')});
+    outLines.forEach(function(l){l.classList.remove('show')});
+    userTook=false;pkt.classList.add('on');
+    var t0=performance.now(),DUR=5200;
+    function f(t){
+      var p=Math.min(1,Math.max(0,(t-t0)/DUR)),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+      wfill.style.transform=(v?'scaleY(':'scaleX(')+e.toFixed(4)+')';
+      pkt.style.transform=v?'translateY('+(e*len).toFixed(1)+'px)':'translateX('+(e*len).toFixed(1)+'px)';
+      for(var i=0;i<4;i++){
+        if(!lit[i]&&e>=i/3-0.002){lit[i]=true;tabs[i].classList.add('lit');outLines[i].classList.add('show');if(!userTook)select(i)}
+      }
+      if(p<1){traceRaf=requestAnimationFrame(f)}
+      else{outLines[4].classList.add('show');pkt.classList.remove('on');tpath.classList.add('ambient')}
+    }
+    traceRaf=requestAnimationFrame(f);
+  }
+  document.getElementById('replay').addEventListener('click',runTrace);
+  var started=false;
+  new IntersectionObserver(function(en){
+    traceOff=!en[0].isIntersecting;root.classList.toggle('trace-off',traceOff);
+    if(en[0].isIntersecting&&!started){started=true;runTrace()}
+  },{threshold:0.35}).observe(document.getElementById('career'));
+  window.addEventListener('resize',function(){if(tpath.classList.contains('ambient')){setLen();var v=vertical();wfill.style.transform=v?'scaleY(1)':'scaleX(1)'}});
+
+  /* pause control (WCAG 2.2.2) plus automatic pause off screen or in a hidden tab */
+  var mbtn=document.getElementById('motion-btn');
+  var paused=root.classList.contains('paused');
+  var heroOff=false;
+  function applyPause(){
+    var stop=paused||heroOff||document.hidden;
+    root.classList.toggle('hero-off',heroOff||document.hidden);
+    mbtn.setAttribute('aria-pressed',paused?'true':'false');
+    mbtn.setAttribute('aria-label',paused?'Play motion':'Pause motion');
+  }
+  mbtn.addEventListener('click',function(){
+    paused=!paused;
+    root.classList.toggle('paused',paused);
+    try{localStorage.setItem('motion',paused?'paused':'on')}catch(e){}
+    applyPause();meshKick();
+  });
+  document.addEventListener('visibilitychange',applyPause);
+  var hero=document.getElementById('hero');
+  new IntersectionObserver(function(en){heroOff=!en[0].isIntersecting;applyPause()}).observe(hero);
+
+  /* reveals: stagger siblings, then fade and rise once on first view */
+  var groups=new Map();
+  document.querySelectorAll('.rv').forEach(function(el){
+    var p=el.parentElement,n=groups.get(p)||0;groups.set(p,n+1);
+    if(!el.style.getPropertyValue('--d'))el.style.setProperty('--d',Math.min(n,6)*80+'ms');
+  });
+  var rio=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');rio.unobserve(en.target)}});
+  },{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv,.zone-tag').forEach(function(el){rio.observe(el)});
+
+  /* impact numbers count up once, on first view */
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    var out=el.querySelector('[aria-hidden="true"]');
+    if(!out)return;
+    var target=parseInt(el.getAttribute('data-count'),10);
+    var suffix=el.getAttribute('data-suffix')||'';
+    var meter=el.parentNode.querySelector('.meter'),bar=meter&&meter.querySelector('i');
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting)return;
+        io.disconnect();
+        var t0=performance.now(),dur=1100;
+        (function step(t){
+          var p=Math.min(1,Math.max(0,(t-t0)/dur));
+          var e=1-Math.pow(1-p,3);
+          out.textContent=Math.round(target*e)+suffix;
+          if(bar)bar.style.transform='scaleX('+e.toFixed(3)+')';
+          if(p<1)requestAnimationFrame(step);else if(meter)meter.classList.add('done');
+        })(t0);
       });
-    });
+    },{threshold:0.6});
+    out.textContent='0'+suffix;
+    io.observe(el);
+  });
+
+  /* experience timeline line draws as it scrolls into view */
+  var line=document.getElementById('timeline');
+  if(line){
+    var lio=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){line.classList.add('drawn');lio.disconnect()}});
+    },{threshold:0.1});
+    lio.observe(line);
   }
 
-  function renderLibrary(){
-    const grid=document.getElementById('library-grid');
-    const empty=document.getElementById('library-empty');
-    if(!grid)return;
-    const filtered=libraryItems.filter(i=>{
-      if(activeFilter==='all')return true;
-      if(activeFilter==='pdf'||activeFilter==='note')return i.type===activeFilter;
-      return i.category===activeFilter;
-    });
-    if(filtered.length===0){
-      grid.innerHTML='';
-      empty.style.display='block';
-      return;
-    }
-    empty.style.display='none';
-    grid.innerHTML=filtered.map(item=>{
-      const idx=libraryItems.indexOf(item);
-      const typeTag=item.type==='pdf'?'PDF':'Note';
-      const catTag=item.category?`<span class="card-tag">${escapeHtml(item.category)}</span>`:'';
-      const meta=item.type==='pdf'&&item.size_kb?`${item.size_kb} KB`:'';
-      return `<div class="card reveal visible" style="cursor:pointer" onclick="openLibraryItem(${idx})">
-        <div class="card-title">${escapeHtml(item.title)}</div>
-        <p class="card-desc">${meta}</p>
-        ${catTag}<span class="card-tag">${typeTag}</span>
-      </div>`;
-    }).join('');
-  }
-
-  window.openLibraryItem=function(idx){
-    const item=libraryItems[idx];
-    if(!item)return;
-    document.getElementById('lib-title').textContent=item.title;
-    const pdfWrap=document.getElementById('lib-pdf-wrap');
-    const noteWrap=document.getElementById('lib-note-wrap');
-    if(item.type==='pdf'){
-      document.getElementById('lib-pdf-embed').src=item.path;
-      document.getElementById('lib-pdf-download').href=item.path;
-      pdfWrap.style.display='block';noteWrap.style.display='none';
-    } else {
-      noteWrap.textContent=item.content;
-      noteWrap.style.display='block';pdfWrap.style.display='none';
-    }
-    document.getElementById('library-overlay').style.display='flex';
-  };
-  window.closeLibraryItem=function(){document.getElementById('library-overlay').style.display='none'};
-
-  fetch('/library.json')
-    .then(r=>r.ok?r.json():[])
-    .then(data=>{libraryItems=data;buildFilters();renderLibrary();})
-    .catch(()=>{renderLibrary();});
+  applyPause();
+  root.classList.add('ready');
 })();
 </script>
-<script>
-/* ── TIMELINE DRAW ── */
-(function(){var grids=document.querySelectorAll('.exp-grid');if(!grids.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('tl-drawn');io.unobserve(e.target)}})},{threshold:0.15});grids.forEach(function(g){io.observe(g)})})();
-</script>
-<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ab2da21cbba24a68b755ebfb50cec0f8"}'></script><!-- Cloudflare Pages Analytics --></body>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ab2da21cbba24a68b755ebfb50cec0f8"}'></script>
+</body>
 </html>
